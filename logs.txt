@@ -15,3 +15,5 @@ DAVID RICO: Añadi el remoto de Heroku pueden revisar con el comando git remote 
 DAVID RICO: Instale la Gem Devise, pueden ver lo en el Gemfile. Defini las opciones de url predeterminadas en los archivos de entorno. que esta en
             config/environments/development.rb. Agrege unas notificaciones de alerta en los layouts de la aplicacion, app/views/layouts/application.html.erb ademas unas
             views basica para verificar funcionalidad.
+DAVID RICO: Funcionalidad verificada del user con Device (sign_in, sign_up, sign_out). Cree la carpeta /docs/mockups y coloque ahi los todos los mockups que estaban en
+			el drive.
