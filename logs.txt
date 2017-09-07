@@ -1,0 +1,12 @@
+PRIMERA TERMINAL: David Rico
+SEGUNDA TERMINAL: Daniel Cifuentes
+TERCERA TERMINAL: Miguel Tovar
+CUARTA TERMINAL: Brayan Angarita
+
+# Aqui ponemos los comandos que vamos a utilizar
+
+DAVID RICO: Se crearon las branch develop y sprint-1.
+DAVID RICO: Para colocar la base de datos tal y como la piden (ya lo hice), modifican el archivo "database.yml", que se encuentra en /config/
+            y en production cambian los datos que le da la app que creamos en heroku. Abren la app, le dan en resources, luego donde dice
+            heroku postgres, van a la pestaña settings y le dan donde dice view credentials, y acoplan la base de datoscon los datos que dicen
+            ahi.
