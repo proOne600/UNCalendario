@@ -1,7 +1,7 @@
 PRIMERA TERMINAL: David Rico
 SEGUNDA TERMINAL: Daniel Cifuentes
 TERCERA TERMINAL: Miguel Tovar
-CUARTA TERMINAL: Bryan Angarita
+CUARTA TERMINAL: Brayan Angarita
 
 # Para empezar a trabajar hacen cd UNCalendario, y luego git checkout develop. Para revisar el server deben especificar el localhost, rails s -b 0.0.0.0, en caso de no conectar
 # se van a Preview y le dan en Preview Running Aplication.
