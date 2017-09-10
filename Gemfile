@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # 
 gem 'sprockets-rails'
+gem 'omniauth-facebook'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>UNCalendario</title>
+
+    <%= favicon_link_tag 'unc-logo.png' %>
+
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -26,7 +29,7 @@
             </button>
           </div>
 
-          <a class="navbar-brand" href="/home/index">UN Calendario</a>
+          <a class="navbar-brand" href="/">UN Calendario</a>
 
           <div class="collapse navbar-collapse" role="navitation">
             <ul class="nav navbar-nav navbar-right">
@@ -56,7 +59,8 @@
     <span class="copyright">&copy; Todos los derechos reservados Pro One 600</span>
     <ul class="list-inline  pull-right">
       <li>
-        <a href="contact.html" class="btn btn-primary"> CONTACTO</a>
+        <%= link_to "CONTACTO", contact_path, :class => 'btn btn-primary'  %>
+
       </li>
 
     </ul>

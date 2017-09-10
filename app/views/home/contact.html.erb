@@ -1,111 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="author" content="Pro One 600">
-    <meta name="description" content="">
-    <link rel="icon"  href="">
-    
-    <title>UN Calendario</title>
-
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag 'bootstrap' %>
-    <%= stylesheet_link_tag 'font-awesome.min' %>
-    <%= stylesheet_link_tag 'contact' %>
-
-    <%= javascript_include_tag 'bootstrap.min' %>
-    <%= javascript_include_tag 'jquery-3.2.1.min' %>
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <a class="navbar-brand" href="index.html">UN Calendario</a>
-
-            <div class="collapse navbar-collapse" role="navitation">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="login.html">Iniciar Sesión</a>
-                    </li>
-                    <li>
-                        <a href="sing-up.html">Regístrate</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="container featurette">
-            
-            <div class="row">
-                <form role="center-block form" id="register-form">
-                    <header class="text-center">
-                        <h1>¿Tienes dudas?</h1>
-                        <h2> ¡Freco! Cuentanos</h2>
-                        <p>Envianos tus peticiones y te respondemos lo antes posible</p>
-                    </header>
-                    <div class="text-center col-xs-10 col-sm-10 col-md-4 col-lg-12">
-                        <label class="radio-inline"><input type="radio" name="optradio"> Queja </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> Petición </label>
-                        <label class="radio-inline"><input type="radio" name="optradio"> Reclamo </label>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="form-group col-xs-10 col-sm-4 col-md-8 col-lg-6">
-                        <input type="text" class="form-control"  placeholder="Tu nombre" id="form-c">
-                    </div>
-                    <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-6">
-                        <select class="form-control" placeholder="Sede" id="form-c">
-                            <option value="" disabled selected>Sede</option>
-                            <option value="">Bogotá</option>
-                            <option value="">Ḿanizales</option>
-                            <option value="">Medellín</option>
-                            <option value="">Palmira</option>
-                            <option value="">Orinoquía</option>
-                            <option value="">Tumaco</option>
-                            <option value="">Caribe</option>
-                            <option value="">Amazonas</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-6">
-                        <input type="text" class="form-control"  placeholder="Telefono celular" id="form-c">
-                    </div>
-
-                    <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-6">
-                        <input type="email" class="form-control"  placeholder="Email" id="form-c">
-                    </div>
-                    <div class="clearfix"></div>
-                        <div class="form-group">
-                          <label for="Mensaje">Mensaje:</label>
-                          <textarea class="form-control" rows="3" id="msg"></textarea>
-                        </div>
-                    <div class="clearfix"></div>
-                    <div class="col-xs-10 col-sm-4 col-md-4 col-lg-12">
-                        <button type="submit" class="btn btn btn-primary pull-right">Enviar</button>
-                    </div>
-                </form>
-                <br /><br />
-            </div>
-        </section>
-    <footer class="footer">
-        <span class="copyright">&copy; Todos los derechos reservados Pro One 600</span>
-        <ul class="list-inline  pull-right">
-            <li>
-                <a href="index.html" class="btn btn-primary">Inicio</a>
-            </li>
-
-        </ul>
+<section class="container featurette">
         
-    </footer>
+        <div class="row">
+            <form role="center-block form" id="register-form">
+               
+                    <h1 class="text-center">¿Tienes dudas?</h1>
+                    <h2 class="text-center"> ¡Freco! Cuentanos</h2>
+                    <p class="text-center">Envianos tus peticiones y te respondemos lo antes posible</p>
+                <div class="text-center col-xs-10 col-sm-10 col-md-4 col-lg-12">
+                    <label class="radio-inline"><input type="radio" name="optradio"> Queja </label>
+                    <label class="radio-inline"><input type="radio" name="optradio"> Petición </label>
+                    <label class="radio-inline"><input type="radio" name="optradio"> Reclamo </label>
+                </div>
+                <br>
+                <div class="clearfix"></div>
 
-</body>
-</html>
+                <div class="form-group col-xs-10 col-sm-4 col-md-8 col-lg-6">
+                    <input type="text" class="form-control"  placeholder="Tu nombre" id="form-c">
+                </div>
+                <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-6">
+                    <select class="form-control" placeholder="Sede" id="form-c">
+                        <option value="" disabled selected>Sede</option>
+                        <option value="">Bogotá</option>
+                        <option value="">Ḿanizales</option>
+                        <option value="">Medellín</option>
+                        <option value="">Palmira</option>
+                        <option value="">Orinoquía</option>
+                        <option value="">Tumaco</option>
+                        <option value="">Caribe</option>
+                        <option value="">Amazonas</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-6">
+                    <input type="text" class="form-control"  placeholder="Telefono celular" id="form-c">
+                </div>
+
+                <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-6">
+                    <input type="email" class="form-control"  placeholder="Email" id="form-c">
+                </div>
+                <div class="clearfix"></div>
+                    <div class="form-group">
+                      <label for="Mensaje">Mensaje:</label>
+                      <textarea class="form-control" rows="3" id="msg"></textarea>
+                    </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-10 col-sm-4 col-md-4 col-lg-12">
+                    <button type="submit" class="btn btn btn-primary pull-right">Enviar</button>
+                </div>
+            </form>
+            <br /><br />
+        </div>
+    </section>
