@@ -48,6 +48,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'browserify-rails'
 end
 
 group :development do

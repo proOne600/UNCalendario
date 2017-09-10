@@ -1,4 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@font-face { font-family: 'Ancizar-Sans-Black'; src: url('/assets/Ancizar-Sans-Black.otf'); }
+@font-face { font-family: 'Ancizar-Sans-Bold'; src: url('/assets/Ancizar-Sans-Bold.otf'); } 
+@font-face { font-family: 'Ancizar-Sans-BoldItalic'; src: url('/assets/Ancizar-Sans-BoldItalic.otf'); } 
+@font-face { font-family: 'Ancizar-Sans-BlackItalic' ; src: url('/assets/Ancizar-Sans-Blackitalic.otf');}
+@font-face { font-family: 'Ancizar-Sans-Extrablack' ; src: url('/assets/Ancizar-Sans-Extrablack.otf');}
+@font-face { font-family: 'Ancizar-Sans-ExtrablackItalic' ; src: url('/assets/Ancizar-Sans-ExtrablackItalic.otf');}
+@font-face { font-family: 'Ancizar-Sans-Extrabold' ; src: url('Ancizar-Sans-Extrabold.otf');}
+@font-face { font-family: 'Ancizar-Sans-ExtraboldItalic' ; src: url('/assets/Ancizar-Sans-ExtraboldItalic.otf');}
+@font-face { font-family: 'Ancizar-Sans-Italic' ; src: url('/assets/Ancizar-Sans-Italic.otf');}
+@font-face { font-family: 'Ancizar-Sans-Light' ; src: url('/assets/Ancizar-Sans-Light.otf');}
+@font-face { font-family: 'Ancizar-Sans-LightItalic' ; src: url('/assets/Ancizar-Sans-LightItalic.otf');}
+@font-face { font-family: 'Ancizar-Sans-Regular' ; src: url('/assets/Ancizar-Sans-Regular.otf');}
+@font-face { font-family: 'Ancizar-Sans-Thin' ; src: url('/assets/Ancizar-Sans-Thin.otf');}
+@font-face { font-family: 'Ancizar-Sans-ThinItalic' ; src: url('/assets/Ancizar-Sans-ThinItalic.otf');}
+@font-face { font-family: 'Ancizar-Serif-Black' ; src: url('/assets/Ancizar-Serif-Black.otf');}
+@font-face { font-family: 'Ancizar-Serif-BlackItalic' ; src: url('/assets/Ancizar-Serif-BlackItalic.otf');}
+@font-face { font-family: 'Ancizar-Serif-Bold' ; src: url('/assets/Ancizar-Serif-Bold.otf');}
+@font-face { font-family: 'Ancizar-Serif-BoldItalic' ; src: url('/assets/Ancizar-Serif-BoldItalic.otf');}
+@font-face { font-family: 'Ancizar-Serif-Extrabold' ; src: url('/assets/Ancizar-Serif-Extrabold.otf');}
+@font-face { font-family: 'Ancizar-Serif-ExtraboldItalic' ; src: url('/assets/Ancizar-Serif-ExtraboldItalic.otf');}
+@font-face { font-family: 'Ancizar-Serif-Italic' ; src: url('/assets/Ancizar-Serif-Italic.otf');}
+@font-face { font-family: 'Ancizar-Serif-Light' ; src: url('/assets/Ancizar-Serif-Light.otf');}
+@font-face { font-family: 'Ancizar-Serif-LightItalic' ; src: url('/assets/Ancizar-Serif-LightItalic.otf');}
+@font-face { font-family: 'Ancizar-Serif-Regular' ; src: url('/assets/Ancizar-Serif-Regular.otf');}
+@font-face { font-family: 'Ancizar-Serif-Semibold' ; src: url('/assets/Ancizar-Serif-Semibold.otf');}
+@font-face { font-family: 'Ancizar-Serif-SemiboldItalic' ; src: url('/assets/Ancizar-Serif-SemiboldItalic.otf');}
+
 
 
 html, body{
@@ -14,7 +40,10 @@ body{
 
 
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+
+.navbar-default,
+.navbar-default .navbar-collapse, 
+.navbar-default .navbar-form{
 	background-color:  rgba(166, 28, 49, 1);
 	height: 8rem !important;
 	border-bottom-right-radius: 2rem;
@@ -26,19 +55,18 @@ body{
 	line-height: 5rem;
 	text-align: center;
 	width: 30rem;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Ancizar-Sans-Thin';
 	font-size: 3rem;
 	color: white !important;
 }
 
-.navbar-brand{
-	line-height: 5rem;
-	text-align: center;
-	width: 30rem;
-	font-family: 'Poppins', sans-serif;
-	font-size: 3rem;
-	color: white !important;
+.navbar-default .navbar-brand span{
+	font-size: 4rem;
+	font-family: 'Ancizar-Serif-Bold', sans-serif;
+
 }
+
+.navbar- b
 
 .navbar-default .navbar-right{
 
