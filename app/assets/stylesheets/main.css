@@ -123,6 +123,7 @@ a{
 #user_password_confirmation{
 	border-radius: 3rem;
 	width: 30rem;
+	color: black;
 }
 .notice,
 .alert{
