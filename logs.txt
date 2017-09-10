@@ -1,9 +1,14 @@
 PRIMERA TERMINAL: David Rico
 SEGUNDA TERMINAL: Daniel Cifuentes
 TERCERA TERMINAL: Miguel Tovar
-CUARTA TERMINAL: Brayan Angarita
+CUARTA TERMINAL: Bryan Angarita
 
-# Aqui ponemos los comandos que vamos a utilizar
+# Para empezar a trabajar hacen cd UNCalendario, y luego git checkout develop. Para revisar el server deben especificar el localhost, rails s -b 0.0.0.0, en caso de no conectar
+# se van a Preview y le dan en Preview Running Aplication.
+
+# Para ver los users que ya estan el la data base, corren la consola de rails(rails console) y colocan User.all
+
+# A continuacion coloquen lo que van haciendo o lo que ya hicieron, ademas de los comandos que utilizaron, para poder tener el registro de que tenemos y que nos falta.
 
 DAVID RICO: Se crearon las branch develop y sprint-1.
 DAVID RICO: Configure la aplicación de Rails del proyecto, para que use en el entorno de desarrollo y testing la gema de SQLITE para base de datos
@@ -17,3 +22,4 @@ DAVID RICO: Instale la Gem Devise, pueden ver lo en el Gemfile. Defini las opcio
             views basica para verificar funcionalidad.
 DAVID RICO: Funcionalidad verificada del user con Device (sign_in, sign_up, sign_out). Cree la carpeta /docs/mockups y coloque ahi los todos los mockups que estaban en
 			el drive.
+BRYAN ANGARITA: Se crearon vistas, de Landspace, Registro, Sign in y Contacto, sin aún poder conectar Landscape y Contacto
