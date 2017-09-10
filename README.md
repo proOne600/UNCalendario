@@ -33,7 +33,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-###LO QUE SE HIZO
+### LO QUE SE HIZO
 
 * DAVID RICO: Se crearon las branch develop y sprint-1.
 * DAVID RICO: Configure la aplicación de Rails del proyecto, para que use en el entorno de desarrollo y testing la gema de SQLITE para base de datos
