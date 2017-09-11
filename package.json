@@ -1,5 +1,7 @@
 {
   "name": "UNCalendario",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^5.4.1"
+  }
 }
