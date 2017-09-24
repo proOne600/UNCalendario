@@ -36,6 +36,7 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+	background-attachment: fixed;
 }
 
 
@@ -202,10 +203,8 @@ a{
 
 }
 .footer{
+  margin-top: 10rem;
   position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 1rem;
   padding-top: 2rem;
   background-color: rgba(0, 0, 0, 0.3);
