@@ -174,11 +174,22 @@ a{
 }
 
 #user_email,
+#user_name,
 #user_password,
 #user_password_confirmation{
 	border-radius: 3rem;
 	width: 30rem;
 	color: black;
+}
+
+.gender,
+.date-of-birth{
+	text-align: center;
+}
+
+.date-of-birth select{
+	color: black;
+
 }
 .notice,
 .alert{
@@ -191,8 +202,7 @@ a{
 
 }
 .footer{
-  display: inline-block;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
