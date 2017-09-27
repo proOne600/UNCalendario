@@ -13,6 +13,9 @@ UNCalendario una plataforma web que permita visualizar de forma centralizada los
 * Bryan Antonio Angarita Rodriguez - baangaritar@unal.edu.co - Desarrollador
 
 
+## **Link app(heroku)**
+* https://un-calendario.herokuapp.com/
+
 Things you may want to cover:
 
 * Ruby version 
@@ -33,4 +36,12 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+### LO QUE SE HIZO
+
+* DAVID RICO: Se crearon las branch develop y sprint-1.
+* DAVID RICO: Configure la aplicación de Rails del proyecto, para que use en el entorno de desarrollo y testing la gema de SQLITE para base de datos
+              y en producción la gema de POSTGRESQL.
+* DAVID RICO: Se instalo la Gem Devise. Se definieron las opciones de url predeterminadas en los archivos de entorno. Se agrego unas notificaciones
+			  de alerta en los layouts de la aplicacion, ademas las views basicas de Device para verificar funcionalidad.
+* DAVID RICO: Funcionalidad verificada del user con Device (sign_in, sign_up, sign_out).
+* BRYAN ANGARITA: Se crearon vistas, de Landspace, Registro, Sign in y Contacto. Se conectaron las vistas con la funcionalidad de la gem Devise.

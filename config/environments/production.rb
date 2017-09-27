@@ -1,9 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.assets.precompile = ['*.js', '*.css', '*.css.erb','*.png','*.jpg']
   # Code is not reloaded between requests.
   config.cache_classes = true
-
+  config.serve_static_assets = true
+  config.assets.compile = true
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -88,4 +89,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.serve_static_assets = true
+  config.assets.compile = true
 end

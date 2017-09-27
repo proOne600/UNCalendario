@@ -2,13 +2,27 @@
 <html>
   <head>
     <title>UNCalendario</title>
-    <%= csrf_meta_tags %>
 
+    <%= favicon_link_tag 'unc-logo.png' %>
+
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'bootstrap' %>
+    <%= stylesheet_link_tag 'font-awesome.min' %>
+    <%= stylesheet_link_tag 'main' %>
+
+    <%= javascript_include_tag 'jquery-3.2.1.min' %>
+    <%= javascript_include_tag 'bootstrap.min' %>
+
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
+
+
   </body>
 </html>

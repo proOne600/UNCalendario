@@ -3,10 +3,23 @@ SEGUNDA TERMINAL: Daniel Cifuentes
 TERCERA TERMINAL: Miguel Tovar
 CUARTA TERMINAL: Brayan Angarita
 
-# Aqui ponemos los comandos que vamos a utilizar
+# Para empezar a trabajar hacen cd UNCalendario, y luego git checkout develop. Para revisar el server deben especificar el localhost, rails s -b 0.0.0.0, en caso de no conectar
+# se van a Preview y le dan en Preview Running Aplication.
+
+# Para ver los users que ya estan el la data base, corren la consola de rails(rails console) y colocan User.all
+
+# A continuacion coloquen lo que van haciendo o lo que ya hicieron, ademas de los comandos que utilizaron, para poder tener el registro de que tenemos y que nos falta.
 
 DAVID RICO: Se crearon las branch develop y sprint-1.
-DAVID RICO: Para colocar la base de datos tal y como la piden (ya lo hice), modifican el archivo "database.yml", que se encuentra en /config/
-            y en production cambian los datos que le da la app que creamos en heroku. Abren la app, le dan en resources, luego donde dice
+DAVID RICO: Configure la aplicación de Rails del proyecto, para que use en el entorno de desarrollo y testing la gema de SQLITE para base de datos
+            y en producción la gema de POSTGRESQL. Para colocar la base de datos tal y como la piden (ya lo hice), modifican el archivo "database.yml",
+            que se encuentra en /config/ y en production cambian los datos que le da la app que creamos en heroku. Abren la app, le dan en resources, luego donde dice
             heroku postgres, van a la pestaña settings y le dan donde dice view credentials, y acoplan la base de datoscon los datos que dicen
             ahi.
+DAVID RICO: Añadi el remoto de Heroku pueden revisar con el comando git remote -v. Ya hice el push al remoto de heroku.
+DAVID RICO: Instale la Gem Devise, pueden ver lo en el Gemfile. Defini las opciones de url predeterminadas en los archivos de entorno. que esta en
+            config/environments/development.rb. Agrege unas notificaciones de alerta en los layouts de la aplicacion, app/views/layouts/application.html.erb ademas unas
+            views basica para verificar funcionalidad.
+DAVID RICO: Funcionalidad verificada del user con Device (sign_in, sign_up, sign_out). Cree la carpeta /docs/mockups y coloque ahi los todos los mockups que estaban en
+			el drive.
+BRYAN ANGARITA: Se crearon vistas, de Landspace, Registro, Sign in y Contacto, sin aún poder conectar Landscape y Contacto
