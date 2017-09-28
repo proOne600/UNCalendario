@@ -20,6 +20,11 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
   end
+  
+  def allowed_params
+    params.require(:event).permit(:id_user, :calification, :all_calification)
+  end
+
 
   # POST /events
   # POST /events.json
