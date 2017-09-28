@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :event_locations
   resources :event_tags
   resources :events
-  devise_for :users
   get 'sessions/create'
 
   get 'sessions/destroy'
