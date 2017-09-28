@@ -3,9 +3,9 @@ class Event < ApplicationRecord
     has_many :event_location
     has_many :event_tags
     
-    attr_accessible :id_user
-    attr_accessible :calification
-    attr_accessible :all_calification
+    # attr_accessible :id_user
+    # attr_accessible :calification
+    # attr_accessible :all_calification
     
     
 end
