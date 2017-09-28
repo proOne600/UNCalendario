@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910174551) do
+ActiveRecord::Schema.define(version: 20170922233112) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_locations", force: :cascade do |t|
+    t.string "coordinates"
+    t.integer "event_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_tags", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "id_category"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "published"
+    t.boolean "cancelled"
+    t.integer "id_user"
+    t.datetime "event_date"
+    t.time "event_init_hour"
+    t.time "event_end_hour"
+    t.datetime "even_end_date"
+    t.float "calification"
+    t.integer "all_calification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

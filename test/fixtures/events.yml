@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  published: false
+  cancelled: false
+  id_user: 1
+  event_date: 2017-09-22 17:02:37
+  event_init_hour: 2017-09-22 17:02:37
+  event_end_hour: 2017-09-22 17:02:37
+  even_end_date: 2017-09-22 17:02:37
+  calification: 1.5
+  all_calification: 1
+
+two:
+  name: MyString
+  description: MyText
+  published: false
+  cancelled: false
+  id_user: 1
+  event_date: 2017-09-22 17:02:37
+  event_init_hour: 2017-09-22 17:02:37
+  event_end_hour: 2017-09-22 17:02:37
+  even_end_date: 2017-09-22 17:02:37
+  calification: 1.5
+  all_calification: 1
