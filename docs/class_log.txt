@@ -1,1 +1,1 @@
-Se hizo merge de adelantos de Login de Google, y tambien de creacion de modelos de eventos y resolucion de conflictos en el merge.
+Se hizo merge de adelantos de Login de Google, de creacion de modelos de eventos y resolucion de conflictos en el merge.
