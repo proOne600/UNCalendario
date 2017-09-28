@@ -23,3 +23,9 @@ DAVID RICO: Instale la Gem Devise, pueden ver lo en el Gemfile. Defini las opcio
 DAVID RICO: Funcionalidad verificada del user con Device (sign_in, sign_up, sign_out). Cree la carpeta /docs/mockups y coloque ahi los todos los mockups que estaban en
 			el drive.
 BRYAN ANGARITA: Se crearon vistas, de Landspace, Registro, Sign in y Contacto, sin aún poder conectar Landscape y Contacto
+
+MIGUEL TOVAR: Se creo el scaffold "event", esperando a configurar el id para que se autogenere ascendentemente. Ya que cometi errores,
+            para solucionarlos, borre el scaffold 'rails destroy scaffold event' y la migracion 'rails d migrate create_events'. Con esto 
+            se puede crear el nuevo scaffold con las correcciones necesarias.
+DAVID RICO: Se instalo la gem 'omniauth-google-oauth2', que es para poder utilizar las credenciales del API de Login de Google.
+MIGUEL TOVAR: http://fernando-gaitan.com.ar/ruby-on-rails-parte-16-relaciones-en-los-modelos/
