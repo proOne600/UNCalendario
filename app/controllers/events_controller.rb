@@ -13,6 +13,8 @@ class EventsController < ApplicationController
   #Verificar usuario y su id
   def verID
     if(user_signed_in?)
+    end
+  end
 
   # GET /events/1
   # GET /events/1.json

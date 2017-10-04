@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'send/index'
+
   resources :categories
   resources :event_locations
   resources :event_tags
@@ -12,4 +14,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   get '/contact' => 'home#contact'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  get ‘send’ => ‘send#index’
+  post ‘send’ => ‘send#create’
+  
 end
