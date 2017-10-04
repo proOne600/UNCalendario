@@ -1,11 +1,18 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  
+  #before_save :create
+  
 
   # GET /events
   # GET /events.json
   def index
     @events = Event.all
   end
+  
+  #Verificar usuario y su id
+  def verID
+    if(user_signed_in?)
 
   # GET /events/1
   # GET /events/1.json
