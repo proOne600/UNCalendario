@@ -33,7 +33,6 @@ gem 'jbuilder', '~> 2.5'
 # 
 gem 'sprockets-rails'
 gem 'omniauth-facebook'
-gem 'jquery-rails'
 
 
 # Use Capistrano for deployment
