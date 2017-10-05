@@ -1,0 +1,2 @@
+class EventCalification < ApplicationRecord
+end

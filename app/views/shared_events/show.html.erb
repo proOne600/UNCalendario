@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @shared_event.event_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shared_event.user_id %>
+</p>
+
+<p>
+  <strong>Social network:</strong>
+  <%= @shared_event.social_network %>
+</p>
+
+<%= link_to 'Edit', edit_shared_event_path(@shared_event) %> |
+<%= link_to 'Back', shared_events_path %>

@@ -1,0 +1,2 @@
+class EventDocument < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class FavoriteEvent < ApplicationRecord
+end

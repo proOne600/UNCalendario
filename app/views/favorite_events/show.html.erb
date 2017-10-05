@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @favorite_event.event_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @favorite_event.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_favorite_event_path(@favorite_event) %> |
+<%= link_to 'Back', favorite_events_path %>

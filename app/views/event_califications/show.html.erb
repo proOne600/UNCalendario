@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @event_calification.event_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event_calification.user_id %>
+</p>
+
+<p>
+  <strong>Calification:</strong>
+  <%= @event_calification.calification %>
+</p>
+
+<%= link_to 'Edit', edit_event_calification_path(@event_calification) %> |
+<%= link_to 'Back', event_califications_path %>

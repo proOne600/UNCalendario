@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :roles
+  resources :assignments
+  resources :user_profiles
+  resources :shared_events
+  resources :event_comments
+  resources :event_documents
+  resources :favorite_events
+  resources :event_califications
   get 'send/index'
 
   resources :categories

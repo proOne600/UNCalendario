@@ -1,0 +1,2 @@
+class SharedEvent < ApplicationRecord
+end
