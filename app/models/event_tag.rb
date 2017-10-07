@@ -1,5 +1,5 @@
 class EventTag < ApplicationRecord
-    belongs_to :event
+    belongs_to :events
     belongs_to :category
 
     # attr_accessible :id_category

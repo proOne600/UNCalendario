@@ -6,6 +6,14 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
   
   has_many :event
+  has_many :event_califications
+  has_many :event_comments
+  has_many :favorite_events
+  has_many :shared_events
+  has_many :event_documents
+  has_one :user_profiles
+  belongs_to :assignments
+  
         
          
 

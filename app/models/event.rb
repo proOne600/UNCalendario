@@ -2,6 +2,11 @@ class Event < ApplicationRecord
     belongs_to :user
     has_many :event_location
     has_many :event_tags
+    has_many :event_califications
+    has_many :event_comments
+    has_many :event_documents
+    has_many :favorite_events
+    
     
 
 
