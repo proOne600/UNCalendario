@@ -217,7 +217,11 @@
               <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
               </li>
               <li class="divider"></li>
-              <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-toggle' do %>
+                    <i class="fa fa-sign-out fa-fw"></i>
+                    Logout
+                <% end %>
               </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -228,14 +232,13 @@
             <%= link_to new_user_registration_path, :class => 'dropdown-toggle' do %>
                 <i class="fa fa-user fa-fw"></i>
                 Registrate
-            <%end%>
+            <% end %>
           </li>
           <li>
-
-            <%= link_to new_user_session_path, :class => 'dropdown-toggle'  do%>
+            <%= link_to new_user_session_path, :class => 'dropdown-toggle' do %>
                 <i class="fa fa-user fa-fw"></i>
                 Iniciar Sesión
-            <%end%>
+            <% end %>
           </li>
       <% end %>
 
