@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :confirm_user, only: [:update, :destroy]
+  
+  
 
   # GET /events
   # GET /events.json
@@ -30,6 +33,8 @@ class EventsController < ApplicationController
   def allowed_params
     params.require(:event).permit(:id_user, :calification, :all_calification)
   end
+  
+  
 
 
   # POST /events
@@ -85,5 +90,12 @@ class EventsController < ApplicationController
       #params.require(:event).permit(:name, :description, :published, :cancelled, :current_user_id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
       #params.require(:event).permit(:name, :description, :published, :cancelled, @users.id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
     end
+  def confirm_user
+    if @event.user!=current_user
+      flash[:notice] = "No esta autorizado para realizar esta accion"
+      redirect_to "http://www.unal.edu.co"
+    end
+      
+  end
 
 end
