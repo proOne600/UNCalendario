@@ -275,4 +275,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, "APP_ID", "APP_SECRET"
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {}
+  config.secret_key = Figaro.env.devise_secret_key if Rails.env.production?
 end
