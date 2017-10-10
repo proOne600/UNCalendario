@@ -134,10 +134,16 @@ $gray-color: #B1B2B0;
 $primary-color: $green-color;
 $secondary-color: $red-color;
 
+body {
+  font-family: Ancizar-Sans-Thin;
+}
 
+.navbar-brand > img {
+  display: unset;
+}
 
 .logo-un {
-  min-height: 100px;
+  max-height: 150%;
 }
 
 //body{
