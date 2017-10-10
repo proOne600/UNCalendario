@@ -138,6 +138,8 @@ body {
   font-family: Ancizar-Sans-Thin;
 }
 
+//Navbar classes
+
 .navbar-brand > img {
   display: unset;
 }
@@ -145,6 +147,19 @@ body {
 .logo-un {
   max-height: 150%;
 }
+
+//Typography classes
+
+h1, h2 {
+  color: $primary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+
+
 
 //body{
 //	background-image: url(cover-un.jpg);
