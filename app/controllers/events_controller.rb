@@ -92,10 +92,17 @@ class EventsController < ApplicationController
     end
   def confirm_user
     if @event.user!=current_user
-      flash[:notice] = "No esta autorizado para realizar esta accion"
       redirect_to "http://www.unal.edu.co"
+      flash[:error] = "No esta autorizado para realizar esta accion"
+      
     end
       
   end
+  #def required_login
+  #  unless logged_in?
+  #    flash[:error] = "Necesita iniciar sesion para realizar esta accion"
+  #    redirect_to new_user_session_path
+  #  end
+  #end
 
 end
