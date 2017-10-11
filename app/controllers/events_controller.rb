@@ -43,6 +43,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user= current_user
+    ## Insercion de imagen
+    @event.image= params[:file]
+    ######################
 
     respond_to do |format|
       if @event.save

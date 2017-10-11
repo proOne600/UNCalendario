@@ -7,6 +7,9 @@ class Event < ApplicationRecord
     has_many :event_documents
     has_many :favorite_events
     
+    attr_accessor :image
+    
+    mount_uploader :image, ImageUploader
     
 
 

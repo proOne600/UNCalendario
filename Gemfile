@@ -9,7 +9,8 @@ end
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
-
+#Para subir archivos
+gem 'carrierwave', '~> 1.0'
 # Para paginacion
 gem 'will_paginate'
 #Para poder generar PDF

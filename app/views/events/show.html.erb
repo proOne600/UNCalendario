@@ -55,5 +55,9 @@
   <%= @event.all_calification %>
 </p>
 
+<!-- Mostrar la imagen del evento-->
+<%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
+<!-- -->
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
