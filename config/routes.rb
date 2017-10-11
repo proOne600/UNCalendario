@@ -9,11 +9,16 @@ Rails.application.routes.draw do
   resources :favorite_events
   resources :event_califications
   get 'send/index'
+  
+  resources :events do
+    resources :event_comments, only: [:create]
+  end
+
 
   resources :categories
   resources :event_locations
   resources :event_tags
-  resources :events
+  #resources :events
   get 'sessions/create'
 
   get 'sessions/destroy'
