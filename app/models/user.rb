@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :shared_events
   has_many :event_documents
   has_one :user_profiles
+
   # belongs_to :assignments
+
 
         
          

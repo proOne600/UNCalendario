@@ -2,7 +2,9 @@
 
 <h1>Eventos</h1>
 
+<%= will_paginate @events %>
 <div class="row">
+  
   <% @events.each do |event| %>
       <div class="col-lg-4">
         <div class="panel panel-primary">
@@ -50,3 +52,4 @@
   <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %>
   <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
 <% end %>
+<%= will_paginate @events %>
