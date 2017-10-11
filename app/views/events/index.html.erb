@@ -20,6 +20,7 @@
                 <%= link_to 'Eliminar', event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
               <% end %>
               <%= link_to 'Descargar PDF', event, method: :get_pdf %>
+              <%= link_to 'Comentar', new_event_comment_path %>
             </p>
           </div>
           <div class="panel-footer">
