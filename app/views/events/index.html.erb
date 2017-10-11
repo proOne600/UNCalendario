@@ -13,8 +13,10 @@
             <p><%= event.description %></p>
             <p>
               <%= link_to 'Ver', event %>
-              <%= link_to 'Editar', edit_event_path(event) %>
-              <%= link_to 'Eliminar', event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
+              <% if event.user == current_user %>
+                <%= link_to 'Editar', edit_event_path(event) %>
+                <%= link_to 'Eliminar', event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
+              <% end %>
               <%= link_to 'Descargar PDF', event, method: :get_pdf %>
             </p>
           </div>
@@ -42,5 +44,9 @@
   </div>
 </div>
 <br>
-
-<%= link_to 'New Event', new_event_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Crea un nuevo evento', new_event_path %>
+<% else %>
+  <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %>
+  <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
+<% end %>
