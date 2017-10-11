@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :get_pdf]
   before_action :confirm_user, only: [:update, :destroy]
   
   
@@ -53,6 +53,17 @@ class EventsController < ApplicationController
       end
     end
   end
+  
+  def get_pdf
+   send_data generate_pdf(@event), 
+    filename: "#{@event.name}.pdf", 
+    type: "application/pdf"
+  end
+    
+  
+  #end
+  
+  
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
@@ -83,6 +94,15 @@ class EventsController < ApplicationController
   def set_event
     @event = Event.find(params[:id])
   end
+  
+  def generate_pdf(event)
+    Prawn::Document.new do
+      text event.name, align: :center
+      text "Descripcion: #{event.description}"
+      text "Fecha inicio: #{event.event_date}"
+      text "Fecha final: #{event.even_end_date}"
+    end.render
+  end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:name, :description, :published, :cancelled, :event_date, :event_init_hour, :event_end_hour, :even_end_date)
@@ -92,7 +112,7 @@ class EventsController < ApplicationController
     end
   def confirm_user
     if @event.user!=current_user
-      redirect_to "http://www.unal.edu.co"
+      redirect_to events_path
       flash[:error] = "No esta autorizado para realizar esta accion"
       
     end

@@ -238,11 +238,24 @@
                       Logout
                   <% end %>
                 </li>
+                <li>
+                  <%= link_to events_path, :class => 'dropdown-toggle' do %>
+                      <i class="fa fa-user fa-fw"></i>
+                      Ver eventos
+                   <% end %>
+                </li>
               </ul>
               <!-- /.dropdown-user -->
             </li>
             <!-- /.dropdown -->
         <% else %>
+        
+            <li>
+              <%= link_to events_path, :class => 'dropdown-toggle' do %>
+                  <i class="fa fa-user fa-fw"></i>
+                  Ver eventos
+              <% end %>
+            </li>
             <li>
               <%= link_to new_user_registration_path, :class => 'dropdown-toggle' do %>
                   <i class="fa fa-user fa-fw"></i>

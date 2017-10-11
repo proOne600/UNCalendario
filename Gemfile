@@ -10,6 +10,9 @@ gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
+#Para poder generar PDF
+gem 'prawn'
+
 gem 'omniauth-google-oauth2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

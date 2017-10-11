@@ -14,6 +14,9 @@
             <ul class="nav navbar-nav navbar-right">
               <% if user_signed_in? %>
                 <li>
+                   <%= link_to "Ver Eventos", events_path, :class => 'navbar-link'  %>
+                </li>
+                <li>
                   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
                 </li>
                 <li>
@@ -21,11 +24,15 @@
                 </li>
               <% else %>
                 <li>
+                   <%= link_to "Ver Eventos", events_path, :class => 'navbar-link'  %>
+                </li>
+                <li>
                   <%= link_to "Registrate", new_user_registration_path, :class => 'navbar-link'  %> 
                 </li>
                 <li>
                    <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
                 </li>
+                
               <% end %>
             </ul>
           </div>
