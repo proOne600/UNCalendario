@@ -12,12 +12,8 @@ class User < ApplicationRecord
   has_many :shared_events
   has_many :event_documents
   has_one :user_profiles
-<<<<<<< HEAD
- ## belongs_to :assignments
-=======
   # belongs_to :assignments
->>>>>>> 39252a819c3de2c42813ec5d02492bd9fda338da
-  
+
         
          
 
