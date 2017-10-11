@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'sessions/destroy'
+  
+  ## Ruta para creacion de PDF
+  post 'events/:id' => 'events#get_pdf'
+  #######################
+
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: "home#index"
