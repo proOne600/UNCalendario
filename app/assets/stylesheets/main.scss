@@ -157,6 +157,14 @@ h1, h2 {
 .secondary-color {
   color: $secondary-color;
 }
+.panel-primary {
+  border-color: $green-color;
+}
+.panel-primary > .panel-heading {
+  background-color: $green-color;
+  border-color: $green-color;
+  font-size: 1.4em;
+}
 
 
 

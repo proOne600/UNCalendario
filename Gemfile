@@ -16,7 +16,11 @@ gem 'will_paginate'
 #Para poder generar PDF
 gem 'prawn'
 
+#faker
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
