@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   ## Ruta para creacion de PDF
   post 'events/:id' => 'events#get_pdf'
   #######################
+  
+  post 'events/:id/grade' => 'events#grade'
 
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

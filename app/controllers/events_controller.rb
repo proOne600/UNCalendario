@@ -82,6 +82,10 @@ class EventsController < ApplicationController
       end
     end
   end
+  
+  def grade(grad)
+    cal[current_user]=grad
+  end
 
   # DELETE /events/1
   # DELETE /events/1.json
@@ -122,6 +126,9 @@ class EventsController < ApplicationController
     end
       
   end
+  
+  #cal = {}
+  
   #def required_login
   #  unless logged_in?
   #    flash[:error] = "Necesita iniciar sesion para realizar esta accion"
