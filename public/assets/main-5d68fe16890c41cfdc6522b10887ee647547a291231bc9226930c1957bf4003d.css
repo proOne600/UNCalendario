@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'Ancizar-Sans-Black';
+  src: url(/assets/Ancizar-Sans-Black-7a76fc7098ef2789fc047b49063d12a58e20e751f440c8955937a45a206c8fe5.otf);
+}
+@font-face {
+  font-family: 'Ancizar-Sans-Bold';
+  src: url(/assets/Ancizar-Sans-Bold-fac1f18a92d76991eef6d0b58d9a540f1de49626191f1cc7a1cf6d9a3c6b938f.otf);
+}
+@font-face {
+  font-family: 'Ancizar-Sans-BoldItalic';
+  src: url(/assets/Ancizar-Sans-BoldItalic-164bad1f9a45f11d0f055bb5b19fb95809ee9fd3809c729624c2af69105d1b38.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-BlackItalic";
+  src: url(/Ancizar-Sans-Blackitalic.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-Extrablack";
+  src: url(/assets/Ancizar-Sans-Extrablack-35d47e88e6f8615033853e8e3785ead2f232823470b9e5c5d67aad5c1bf8442b.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-ExtrablackItalic";
+  src: url(/assets/Ancizar-Sans-ExtrablackItalic-6042aac975003e4c2bd74148ba1b8cf56342cb7a64dfd2b2dc05108b2670f161.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-Extrabold";
+  src: url("Ancizar-Sans-Extrabold.otf");
+}
+@font-face {
+  font-family: "Ancizar-Sans-ExtraboldItalic";
+  src: url(/assets/Ancizar-Sans-ExtraboldItalic-36401d12268f43e157a6a008830984b24947a7ebfc8259a055714052bc1141c6.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-Italic";
+  src: url(/assets/Ancizar-Sans-Italic-cfb569e7adb1c974a3f387d9a2dbd508eb2298f44df14c0111ba87c013b8eff8.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-Light";
+  src: url(/assets/Ancizar-Sans-Light-eb0cf1e2adda605e6b4a1be6ed02a7707ec464dd918ebe8744dc88f38192c4ca.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-LightItalic";
+  src: url(/assets/Ancizar-Sans-LightItalic-df8d12fe6edbd3decff7da9f69573595be189a577ffc529ce30ff675a7b02380.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-Regular";
+  src: url(/assets/Ancizar-Sans-Regular-045053603cafca413f50429e7a6a335def2cf97ab90761831f27f5bc25bdd865.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-Thin";
+  src: url(/assets/Ancizar-Sans-Thin-f0cef919b38ab2ad0e07f0e793cfc3ae8a98b62f3e97dd9889389bfabcb86ac2.otf);
+}
+@font-face {
+  font-family: "Ancizar-Sans-ThinItalic";
+  src: url(/assets/Ancizar-Sans-ThinItalic-7604cc4adec8c5944eca7495f25f6210c5208576f8a6a842bc221c9245eee11c.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-Black";
+  src: url(/assets/Ancizar-Serif-Black-63bfc0a7f6e8f8bfd9d8550ac3e6a1956d22c6d8b16b606da082c87c04881cb3.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-BlackItalic";
+  src: url(/assets/Ancizar-Serif-BlackItalic-29d2309266db788248755acb4873586bda0c59b81f9b269760b58c44b4c60e79.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-Bold";
+  src: url(/assets/Ancizar-Serif-Bold-f733877e348872722429684994b4c3e301a9467b1643f184d1b9f34bef951d31.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-BoldItalic";
+  src: url(/assets/Ancizar-Serif-BoldItalic-51501bbe6cd793167d4cd19552528a8f0a5bf4b45eed11c2202a61e9c08ba4d5.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-Extrabold";
+  src: url(/assets/Ancizar-Serif-Extrabold-fc46d6237b8467bdfa4eb46115f35bc80f826fcedcb77ed6a32536d40efb4732.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-ExtraboldItalic";
+  src: url(/assets/Ancizar-Serif-ExtraboldItalic-98f31a549c8b2314e59de4ade84bbe080fc63630507f826d3bbb033a02c56247.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-Italic";
+  src: url(/assets/Ancizar-Serif-Italic-0fb561e6558371e0a27e0eea24d6193c9082e7b6b673ad943f871d2996e9d1af.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-Light";
+  src: url(/assets/Ancizar-Serif-Light-b526d188119ab6cb32a8951d5a7dc41ab0c55c58f9779eba3f2827d065394572.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-LightItalic";
+  src: url(/assets/Ancizar-Serif-LightItalic-3fd168aaf4f21004bf8ae4d28613cac05d8fb250c1ca36b3c7b64e9f16866682.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-Regular";
+  src: url(/assets/Ancizar-Serif-Regular-6204260dbede71b5c9ef3cca435d5def9a4cd6309ca41c09c33bf5fd262fe39f.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-Semibold";
+  src: url(/assets/Ancizar-Serif-Semibold.otf);
+}
+@font-face {
+  font-family: "Ancizar-Serif-SemiboldItalic";
+  src: url(/assets/Ancizar-Serif-SemiboldItalic-6638443fb2bef0636a9bd5c7c992ef4be30c27a0afc5481b109aa088839940e6.otf);
+}
+/* line 137, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/main.scss */
+body {
+  font-family: Ancizar-Sans-Thin;
+}
+
+/* line 143, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/main.scss */
+.navbar-brand > img {
+  display: unset;
+}
+
+/* line 147, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/main.scss */
+.logo-un {
+  max-height: 150%;
+}
+
+/* line 153, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/main.scss */
+h1, h2 {
+  color: #94B43B;
+}
+
+/* line 157, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/main.scss */
+.secondary-color {
+  color: #A61C31;
+}
+
+/* line 160, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/main.scss */
+.panel-primary {
+  border-color: #94B43B;
+}
+
+/* line 163, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/main.scss */
+.panel-primary > .panel-heading {
+  background-color: #94B43B;
+  border-color: #94B43B;
+  font-size: 1.4em;
+}
