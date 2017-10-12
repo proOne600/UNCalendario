@@ -86,6 +86,19 @@ class EventsController < ApplicationController
   def grade(grad)
     cal[current_user]=grad
   end
+  
+  @asis=Array.new
+  def asistir
+    @asis.push(current_user.id.to_s)
+  end
+  
+  def noasistire
+    @asis.delete(current_user.id.to_s)
+  end
+  
+  def dentro?
+    @asis.include?(current_user.id.to_s)
+  end
 
   # DELETE /events/1
   # DELETE /events/1.json

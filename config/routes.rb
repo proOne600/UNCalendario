@@ -23,11 +23,17 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
   
+  #get 'events/:id/asistir' => 'events#asistir'
+  post 'events/:id/asistir' => 'events#asistir'
   ## Ruta para creacion de PDF
+  #get 'events/:id/get_pdf' => 'events#get_pdf'
   post 'events/:id' => 'events#get_pdf'
   #######################
+  #get 'events/:id/grade' => 'events#grade'
+  post 'events/:id' => 'events#grade'
   
-  post 'events/:id/grade' => 'events#grade'
+  #get 'events/:id/noasistire' => 'events#noasistire'
+  post 'events/:id' => 'events#noasistire'
 
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
