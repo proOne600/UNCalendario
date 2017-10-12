@@ -8,6 +8,6 @@
 
 user = User.create! :name => 'John Doe', :email => 'mail@mail.com', :password => '1234567890', :password_confirmation => '1234567890'
 
-100.times do
+10.times do
   evento = Event.create! :name => Faker::Lorem.sentence(2), :description => Faker::Lorem.sentence(20), :user=> user
 end
