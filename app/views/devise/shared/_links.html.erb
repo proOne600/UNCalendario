@@ -22,20 +22,16 @@
   <div class="col-lg-4 col-lg-offset-4">
   <!--Google-->
   <%- if devise_mapping.omniauthable? %>
-      <%- resource_class.omniauth_providers.each do |provider| %>
           <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-block btn-social btn-google-plus' do %>
               <i class="fa fa-google-plus"></i>
               Iniciar sesión con Google
-          <% end %>
       <% end -%>
   <% end -%>
   <!--facebook-->
   <%- if devise_mapping.omniauthable? %>
-      <%- resource_class.omniauth_providers.each do |provider| %>
           <%= link_to user_facebook_omniauth_authorize_path, class: 'btn btn-block btn-social btn-facebook' do %>
               <i class="fa fa-facebook"></i>
               Iniciar sesión con Facebook
-          <% end %>
       <% end -%>
   <% end -%>
   </div>
