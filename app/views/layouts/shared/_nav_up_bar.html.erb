@@ -1,54 +1,9 @@
 <ul class="nav navbar-top-links navbar-right">
   <% if user_signed_in? %>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+        <a href="#" class="dropdown primary-color">
+          Hola <%= current_user.email %>
         </a>
-        <ul class="dropdown-menu dropdown-messages">
-          <li>
-            <a href="#">
-              <div>
-                <strong>John Smith</strong>
-                <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-              </div>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">
-              <div>
-                <strong>John Smith</strong>
-                <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-              </div>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">
-              <div>
-                <strong>John Smith</strong>
-                <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-              </div>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a class="text-center" href="#">
-              <strong>Read All Messages</strong>
-              <i class="fa fa-angle-right"></i>
-            </a>
-          </li>
-        </ul>
-        <!-- /.dropdown-messages -->
       </li>
       <!-- /.dropdown -->
       <li class="dropdown">
@@ -138,8 +93,8 @@
           <li>
             <a href="#">
               <div>
-                <i class="fa fa-comment fa-fw"></i> New Comment
-                <span class="pull-right text-muted small">4 minutes ago</span>
+                <i class="fa fa-comment fa-fw"></i> Nuevo Commentario
+                <span class="pull-right text-muted small">4 minutos atrás</span>
               </div>
             </a>
           </li>
@@ -148,7 +103,7 @@
             <a href="#">
               <div>
                 <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                <span class="pull-right text-muted small">12 minutes ago</span>
+                <span class="pull-right text-muted small">12 minutos atrás</span>
               </div>
             </a>
           </li>
@@ -157,7 +112,7 @@
             <a href="#">
               <div>
                 <i class="fa fa-envelope fa-fw"></i> Message Sent
-                <span class="pull-right text-muted small">4 minutes ago</span>
+                <span class="pull-right text-muted small">4 minutos atrás</span>
               </div>
             </a>
           </li>
@@ -166,7 +121,7 @@
             <a href="#">
               <div>
                 <i class="fa fa-tasks fa-fw"></i> New Task
-                <span class="pull-right text-muted small">4 minutes ago</span>
+                <span class="pull-right text-muted small">4 minutos atrás</span>
               </div>
             </a>
           </li>
@@ -175,14 +130,14 @@
             <a href="#">
               <div>
                 <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                <span class="pull-right text-muted small">4 minutes ago</span>
+                <span class="pull-right text-muted small">4 minutos atrás</span>
               </div>
             </a>
           </li>
           <li class="divider"></li>
           <li>
             <a class="text-center" href="#">
-              <strong>See All Alerts</strong>
+              <strong>Ver todas las notificaciones</strong>
               <i class="fa fa-angle-right"></i>
             </a>
           </li>
@@ -195,21 +150,21 @@
           <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
         </a>
         <ul class="dropdown-menu dropdown-user">
-          <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+          <li><a href="#"><i class="fa fa-user fa-fw"></i> Mi perfil</a>
           </li>
-          <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+          <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
+          </li>
+          <li>
+            <%= link_to events_path, :class => 'dropdown-toggle' do %>
+                <i class="fa fa-calendar fa-fw"></i>
+                Ver eventos
+            <% end %>
           </li>
           <li class="divider"></li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-toggle' do %>
                 <i class="fa fa-sign-out fa-fw"></i>
-                Logout
-            <% end %>
-          </li>
-          <li>
-            <%= link_to events_path, :class => 'dropdown-toggle' do %>
-                <i class="fa fa-user fa-fw"></i>
-                Ver eventos
+                Salir
             <% end %>
           </li>
         </ul>
