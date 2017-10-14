@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Event Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>User</th>
+      <th>Name</th>
+      <th>File</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_documents.each do |event_document| %>
+      <tr>
+        <td><%= event_document.event_id %></td>
+        <td><%= event_document.user_id %></td>
+        <td><%= event_document.name %></td>
+        <td><%= event_document.file %></td>
+        <td><%= link_to 'Show', event_document %></td>
+        <td><%= link_to 'Edit', edit_event_document_path(event_document) %></td>
+        <td><%= link_to 'Destroy', event_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event Document', new_event_document_path %>

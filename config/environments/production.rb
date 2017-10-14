@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.assets.precompile = ['*.js', '*.scss', '*.css.erb','*.png','*.jpg']
+  config.assets.precompile = ['*.js', '*.scss','*.css','*.css.erb','*.png','*.jpg']
   # Code is not reloaded between requests.
   config.cache_classes = true
   config.serve_static_assets = true
@@ -25,7 +25,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
+  # config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.

@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>UNCalendario</title>
+<%= render('layouts/shared/head') %>
+<body>
+<div id="wrapper">
+  <!-- Navigation -->
+  <%= render('layouts/shared/nav') %>
 
-    <%= favicon_link_tag 'unc-logo.png' %>
-
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <%= stylesheet_link_tag 'font-awesome.min' %>
-    <%= stylesheet_link_tag 'main' %>
-
-
-  </head>
-
-  <body>
-    <%= render "layouts/header" %>
+  <div id="page-wrapper">
+    <%= render 'layouts/shared/messages' %>
     <%= yield %>
-    <%= render "layouts/footer" %>
+  </div>
 
-
-  </body>
-</html>
+</div>
+</body>

@@ -1,0 +1,32 @@
+<%= form_with(model: shared_event, local: true) do |form| %>
+  <% if shared_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shared_event.errors.count, "error") %> prohibited this shared_event from being saved:</h2>
+
+      <ul>
+      <% shared_event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.number_field :event_id, id: :shared_event_event_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :shared_event_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :social_network %>
+    <%= form.text_field :social_network, id: :shared_event_social_network %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

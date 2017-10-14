@@ -1,0 +1,2 @@
+module SharedEventsHelper
+end

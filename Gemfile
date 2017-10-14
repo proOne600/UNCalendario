@@ -9,8 +9,18 @@ end
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
+#Para subir archivos
+gem 'carrierwave', '~> 1.0'
+# Para paginacion
+gem 'will_paginate'
+#Para poder generar PDF
+gem 'prawn'
 
+#faker
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -32,10 +42,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # 
 gem 'sprockets-rails'
-gem 'omniauth-facebook'
-gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
-
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

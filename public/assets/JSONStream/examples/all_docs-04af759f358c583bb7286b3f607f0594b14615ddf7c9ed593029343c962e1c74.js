@@ -1,0 +1,1 @@
+var request=require("request"),JSONStream=require("JSONStream"),es=require("event-stream"),parser=JSONStream.parse(["rows",!0]),req=request({url:"http://isaacs.couchone.com/registry/_all_docs"}),logger=es.mapSync(function(e){return console.error(e),e});req.pipe(parser),parser.pipe(logger);

@@ -1,59 +1,63 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre del evento:</strong>
   <%= @event.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripcion:</strong>
   <%= @event.description %>
 </p>
 
 <p>
-  <strong>Published:</strong>
+  <strong>Publicado:</strong>
   <%= @event.published %>
 </p>
 
 <p>
-  <strong>Cancelled:</strong>
+  <strong>Cancelado:</strong>
   <%= @event.cancelled %>
 </p>
 
-<p>
-  <strong>Id user:</strong>
-  <%= @event.id_user %>
-</p>
+<!-- <p>
+  <strong>Usuario creador:</strong> 
+  <%= @event.user.name %>
+</p> -->
 
 <p>
-  <strong>Event date:</strong>
+  <strong>Inicio del evento:</strong>
   <%= @event.event_date %>
 </p>
 
 <p>
-  <strong>Event init hour:</strong>
+  <strong>Hora de inicio:</strong>
   <%= @event.event_init_hour %>
 </p>
 
 <p>
-  <strong>Event end hour:</strong>
+  <strong>Hora final:</strong>
   <%= @event.event_end_hour %>
 </p>
 
 <p>
-  <strong>Even end date:</strong>
+  <strong>Fin del evento :</strong>
   <%= @event.even_end_date %>
 </p>
 
 <p>
-  <strong>Calification:</strong>
+  <strong>Calificacion:</strong>
   <%= @event.calification %>
 </p>
 
 <p>
-  <strong>All calification:</strong>
+  <strong>Todas las calificaciones:</strong>
   <%= @event.all_calification %>
 </p>
+
+<!-- Mostrar la imagen del evento-->
+<%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
+<!-- -->
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

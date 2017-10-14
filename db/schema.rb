@@ -10,12 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924012052) do
+ActiveRecord::Schema.define(version: 20171011144927) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_califications", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.integer "calification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_comments", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_documents", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.string "name"
+    t.string "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,6 +81,38 @@ ActiveRecord::Schema.define(version: 20170924012052) do
     t.datetime "even_end_date"
     t.float "calification"
     t.integer "all_calification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "image"
+  end
+
+  create_table "favorite_events", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shared_events", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.string "social_network"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.date "birth"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
