@@ -1,10 +1,5 @@
 <ul class="nav navbar-top-links navbar-right">
   <% if user_signed_in? %>
-      <li>
-            
-        <div>Se inicio sesion como: <%= current_user.email %></div>  
-            
-      </li>
       <li class="dropdown">
         <a href="#" class="dropdown primary-color">
           Hola <%= current_user.email %>
