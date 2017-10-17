@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  after_create :send_auth_mail
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
@@ -14,6 +15,10 @@ class User < ApplicationRecord
   has_one :user_profiles
 
   # belongs_to :assignments
+  
+  def send_auth_mail
+    UserMailer.welcome_email(self).deliver_now
+  end
 
 
   # def self.from_omniauth(access_token)
