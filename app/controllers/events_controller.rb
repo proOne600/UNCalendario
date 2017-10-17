@@ -1,14 +1,13 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :get_pdf]
   before_action :confirm_user, only: [:update, :destroy]
-  
-  
+
 
   # GET /events
   # GET /events.json
   def index
-   #@events = Event.all
-   @events = Event.all.paginate(:page => params[:page], :per_page => 6)
+    #@events = Event.all
+    @events = Event.all.paginate(:page => params[:page], :per_page => 6)
   end
 
   #Verificar usuario y su id
@@ -34,8 +33,6 @@ class EventsController < ApplicationController
   def allowed_params
     params.require(:event).permit(:id_user, :calification, :all_calification)
   end
-  
-  
 
 
   # POST /events
@@ -57,17 +54,16 @@ class EventsController < ApplicationController
       end
     end
   end
-  
+
   def get_pdf
-   send_data generate_pdf(@event), 
-    filename: "#{@event.name}.pdf", 
-    type: "application/pdf"
+    send_data generate_pdf(@event),
+              filename: "#{@event.name}.pdf",
+              type: "application/pdf"
   end
-    
-  
+
+
   #end
-  
-  
+
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
@@ -82,20 +78,21 @@ class EventsController < ApplicationController
       end
     end
   end
-  
+
   def grade(grad)
     cal[current_user]=grad
   end
-  
+
   @asis=Array.new
+
   def asistir
     @asis.push(current_user.id.to_s)
   end
-  
+
   def noasistire
     @asis.delete(current_user.id.to_s)
   end
-  
+
   def dentro?
     @asis.include?(current_user.id.to_s)
   end
@@ -115,7 +112,7 @@ class EventsController < ApplicationController
   def set_event
     @event = Event.find(params[:id])
   end
-  
+
   def generate_pdf(event)
     Prawn::Document.new do
       text event.name, align: :center
@@ -124,24 +121,26 @@ class EventsController < ApplicationController
       text "Fecha final: #{event.even_end_date}"
     end.render
   end
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(:name, :description, :published, :cancelled, :event_date, :event_init_hour, :event_end_hour, :even_end_date)
-      #params.require(:event).permit(:name, :description, :published, :cancelled, :id_user, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
-      #params.require(:event).permit(:name, :description, :published, :cancelled, :current_user_id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
-      #params.require(:event).permit(:name, :description, :published, :cancelled, @users.id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
-    end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.require(:event).permit(:name, :description, :published, :cancelled, :event_date, :event_init_hour, :event_end_hour, :even_end_date)
+    #params.require(:event).permit(:name, :description, :published, :cancelled, :id_user, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
+    #params.require(:event).permit(:name, :description, :published, :cancelled, :current_user_id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
+    #params.require(:event).permit(:name, :description, :published, :cancelled, @users.id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
+  end
+
   def confirm_user
     if @event.user!=current_user
       redirect_to events_path
       flash[:error] = "No esta autorizado para realizar esta accion"
-      
+
     end
-      
+
   end
-  
+
   #cal = {}
-  
+
   #def required_login
   #  unless logged_in?
   #    flash[:error] = "Necesita iniciar sesion para realizar esta accion"
