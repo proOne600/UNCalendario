@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-    default from: 'uncalendario@mail.com'
+    default from: 'uncalendarionotifier@gmail.com'
     
     def welcome_email(user)
         @user=user
