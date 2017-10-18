@@ -164,6 +164,12 @@
           </li>
           <li class="divider"></li>
           <li>
+            <%= link_to user_registration_path,data: {confirm: '¿Estas seguro de querer eliminarlo?'}, method: :delete, :class => 'dropdown-toggle' do %>
+                <i class="fa fa-sign-out fa-fw"></i>
+                Cancelar mi cuenta
+            <% end %>
+          </li>
+          <li>
             <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-toggle' do %>
                 <i class="fa fa-sign-out fa-fw"></i>
                 Salir
