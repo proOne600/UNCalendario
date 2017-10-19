@@ -57,10 +57,11 @@
   </div>
 </div>
 <br>
+<%= will_paginate @events %> <br>
 <% if user_signed_in? %>
     <%= link_to 'Crea un nuevo evento', new_event_path %>
 <% else %>
-    <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %>
+    <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %> <br>
     <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
 <% end %>
-<%= will_paginate @events %>
+
