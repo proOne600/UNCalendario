@@ -6,10 +6,10 @@
     <body>
         <h1>Has creado un nuevo evento, <%= @user.email %></h1>
         <p>
-            Nombre del evento: nombre </p>
-         <p>Descripcion del evento: descripcion.<br>
-            Fecha inicio: una fecha.<br>
-            Fecha final: Una fecha.<br>
+            Nombre del evento: <%= @event.name %> </p>
+         <p>Descripcion del evento: <%= @event.description %>.<br>
+            Fecha inicio: <%= @event.event_date %>.<br>
+            Fecha inicio: <%= @event.even_end_date %>.<br>
         </p>
         <p>
             To login to the site, just follow this link: <%= @url %>.
