@@ -27,7 +27,7 @@
 
 <p>
   <strong>Inicio del evento:</strong>
-  <%= @event.event_date %>
+  <%= @event.event_date.to_formatted_s(:short) %>
 </p>
 
 <p>
@@ -42,7 +42,7 @@
 
 <p>
   <strong>Fin del evento :</strong>
-  <%= @event.even_end_date %>
+  <%= @event.even_end_date.to_formatted_s(:short) %>
 </p>
 
 <p>
