@@ -118,8 +118,8 @@ class EventsController < ApplicationController
     Prawn::Document.new do
       text event.name, align: :center
       text "Descripcion: #{event.description}"
-      text "Fecha inicio: #{event.event_date}"
-      text "Fecha final: #{event.even_end_date}"
+      text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
+      text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
     end.render
   end
 
