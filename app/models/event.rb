@@ -10,6 +10,8 @@ class Event < ApplicationRecord
     attr_accessor :image
     
     mount_uploader :image, ImageUploader
+    validates :name, :description, presence: true
+
     
 
 

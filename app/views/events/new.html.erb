@@ -1,5 +1,16 @@
-<h1>New Event</h1>
 
-<%= render 'form', event: @event %>
+<div id="new_event_form">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h1 class="text-center">Agrega tu evento</h1>
+
+		</div>
+  <div class="panel-body">
+  			<%= render 'form', event: @event %>
+
+  </div>
+</div>
+
+</div>
 
 <%= link_to 'Back', events_path %>
