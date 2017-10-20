@@ -17,7 +17,7 @@ class User < ApplicationRecord
   # belongs_to :assignments
   
   def send_auth_mail
-    UserMailer.welcome_email(self).deliver_now
+    UserMailer.delay.welcome_email(self)
   end
 
 
