@@ -4,14 +4,16 @@
 <div class="row">
 
   <% @events.each do |event| %>
-      <div class="col-lg-4">
+      <div class="col-lg-4" id="events_view">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <%= event.name %>
           </div>
           <div class="panel-body">
-
-            <p><%= event.description %></p>
+            <div class="box">
+              <p><%= event.description %></p>
+            </div>
+            <p><%= event.image %></p>
             <p>
               <%= link_to 'Ver', event %>
               <% if event.user == current_user %>
