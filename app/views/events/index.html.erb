@@ -1,5 +1,5 @@
 <h1>Eventos</h1>
-
+<!-- <%= will_paginate @events %> <br> -->
 <%= link_to 'Ver version calendario', events_path %> <br>
 
 <!-- Aqui comienza el calendario! -->
@@ -107,7 +107,7 @@
   </div>
 </div>
 <br>
-<%= will_paginate @events %> <br>
+<!-- <%= will_paginate @events %> <br> -->
 <% if user_signed_in? %>
     <%= link_to 'Crea un nuevo evento', new_event_path %>
 <% else %>
