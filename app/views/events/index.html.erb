@@ -49,6 +49,7 @@
 </table>
 
 <!-- Aqui termina el calendario -->
+ <%= will_paginate @events %> 
 <div class="row">
 
   <% @events.each do |event| %>
@@ -105,6 +106,7 @@
   </div>
 </div>
 <br>
+<%= will_paginate @events %> <br> 
 <% if user_signed_in? %>
     <%= link_to 'Crea un nuevo evento', new_event_path %>
 <% else %>
