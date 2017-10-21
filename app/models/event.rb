@@ -25,6 +25,14 @@ class Event < ApplicationRecord
     #def creation
      #   EventMailer.created_event(@event,self).deliver_now
     #end
+    
+    def start_time
+        self.event_date ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+    end
+    
+    def end_time
+        self.even_end_date ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+    end
 
     
     
