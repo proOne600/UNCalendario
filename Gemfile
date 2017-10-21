@@ -19,6 +19,9 @@ gem 'prawn'
 #Usar metodos Delayed Job
 gem 'delayed_job_active_record'
 
+#Crear Calendario
+gem "simple_calendar", "~> 2.0"
+
 #faker
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 gem 'omniauth'
