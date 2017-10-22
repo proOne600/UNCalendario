@@ -1,5 +1,5 @@
 <h1>Eventos</h1>
-<%= link_to 'Ver version calendario', events_path %> <br>
+<%= link_to 'Ver version calendario', horario_url %> <br>
 
 <!-- Aqui comienza el calendario! -->
 <%= month_calendar events: @events do |date, events| %>
@@ -53,14 +53,16 @@
 <div class="row">
 
   <% @events.each do |event| %>
-      <div class="col-lg-4">
+      <div class="col-lg-4" id="events_view">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <%= event.name %>
           </div>
           <div class="panel-body">
-
-            <p><%= event.description %></p>
+            <div class="box">
+              <p><%= event.description %></p>
+            </div>
+            <p><%= event.image %></p>
             <p>
               <%= link_to 'Ver', event %>
               <% if event.user == current_user %>
@@ -83,7 +85,7 @@
             </p>
           </div>
           <div class="panel-footer">
-            <%= event.event_date %> 
+            <%= event.event_date %>
           </div>
         </div>
       </div>
@@ -110,7 +112,7 @@
 <% if user_signed_in? %>
     <%= link_to 'Crea un nuevo evento', new_event_path %>
 <% else %>
-    <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %> <br>
+    <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %>
     <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
 <% end %>
-
+<%= will_paginate @events %>
