@@ -1,72 +1,83 @@
 <h1>Eventos</h1>
-<%= link_to 'Ver version calendario', events_path(:param1 => "months") %> <br>
-
-<!-- Aqui comienza el calendario! -->
-<!-- Aqui termina el calendario -->
- <%= will_paginate @events %> 
-<div class="row">
-
-  <% @events.each do |event| %>
-      <div class="col-lg-4" id="events_view">
-        <div class="panel panel-primary">
-          <div class="panel-heading text-center">
-            <%= event.name %>
-          </div>
-          <div class="panel-body">
-            <div class="box">
-              <p><%= event.description %></p>
-            </div>
-            <p><%= event.image %></p>
-            <p>
-              <%= link_to 'Ver', event %>
-              <% if event.user == current_user %>
-                  <%= link_to 'Editar', edit_event_path(event) %>
-                  <%= link_to 'Eliminar', event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
-              <% end %>
-              <%= link_to 'Descargar PDF', event, method: :get_pdf %>
-
-              <% if user_signed_in? %>
-                <%= link_to 'Comentar',  new_event_comment_path %>
-                <%= link_to 'Calificar', method: :grade %>
-              
-                <% if @asis.to_s.include?(current_user.id.to_s) %>
-                  <%= link_to 'Ya no Asistire',event, method: :noasistire %>
-                <% else %>
-                  <%= link_to 'Asistire',event, method: :asistir %>
+<%= link_to 'Ver version calendario', events_path(:param1 => "months") %>
+    <br>
+    <!-- Aqui comienza el calendario! -->
+    <!-- Aqui termina el calendario -->
+    <%= will_paginate @events %>
+        <div class="row">
+            <% @events.each do |event| %>
+                <div class="col-lg-4" id="events_view">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading text-center">
+                            <h2><%= event.name %></h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="box">
+                                <p class="panel-event_description">
+                                    <%= event.description %>
+                                </p>
+                            </div>
+                                <%= event.image %>
+                            <p id="panel-date-event">
+                                <%= event.event_date.strftime("Será el %m/%d/%Y  a las  %I:%M%p")  %>
+                            </p>
+                        </div>
+                            <div class="panel-footer">
+                                <ul class="list-inline">
+                                    <li>
+                                        <%= link_to 'Ver', event, id:"show", title:"ver" %>
+                                    </li>
+                                    <% if event.user == current_user %>
+                                        <li><%= link_to 'Editar', edit_event_path(event), id:"edit", title:"Editar"%></li>
+                                        <li><%= link_to 'Eliminar', event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'}, id:"delete", title:"Eliminar"%></li>
+                                    <% end %>
+                                    <li><%= link_to 'Descargar PDF', event, method: :get_pdf, id:"download", title:"Descargar PDF"%></li>   
+                                    <% if user_signed_in? %>
+                                        <li><%= link_to 'Comentar',  new_event_comment_path, id:"comment", title:"Comentar"%></li>
+                                        <li><%= link_to 'Calificar',new_event_comment_path, id:"rate", title:"Calificar" %></li>
+                                        <% if @asis.to_s.include?(current_user.id.to_s) %>
+                                            <li> <%= link_to 'Ya no Asistire',event, method: :noasistire, id:"not_assist", title:"No asistiré" %></li>
+                                        <% else %>
+                                            <li><%= link_to 'Asistire',event, method: :asistir, id:"assist", title:"Asistiré" %></li>
+                                         <% end %>
+                                     <% end %>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+                <!--<td><%= event.description %></td>-->
+                <!--<td><%= event.published %></td>-->
+                <!--<td><%= event.cancelled %></td>-->
+                <!--<td><%= event.id_user %></td>-->
+                <!--<td></td>-->
+                <!--<td><%= event.event_init_hour %></td>-->
+                <!--<td><%= event.event_end_hour %></td>-->
+                <!--<td><%= event.even_end_date %></td>-->
+                <!--<td><%= event.calification %></td>-->
+                <!--<td><%= event.all_calification %></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
                 <% end %>
-              <% end %>
-
-            </p>
-          </div>
-          <div class="panel-footer">
-            <%= event.event_date %>
-          </div>
+                <% if user_signed_in? %>
+                <div class="col-lg-4">
+                    <div class="panel panel-primary" id="create_event">
+                        <div class="panel-heading text-center">
+                            <h2>Crea un nuevo evento</h2>
+                        </div>
+                        <div class="panel-body">
+                                <%= link_to 'Crea un nuevo evento', new_event_path, class:"fa fa-plus-cicle btn btn-default" %>
+                        </div>
+                    </div>
+                </div>
+                
+                    <% else %>
+                        <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %>
+                            <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
+                                <% end %>
+                                    <%= will_paginate @events %>
         </div>
-      </div>
-      <!--<td><%= event.description %></td>-->
-      <!--<td><%= event.published %></td>-->
-      <!--<td><%= event.cancelled %></td>-->
-      <!--<td><%= event.id_user %></td>-->
-      <!--<td></td>-->
-      <!--<td><%= event.event_init_hour %></td>-->
-      <!--<td><%= event.event_end_hour %></td>-->
-      <!--<td><%= event.even_end_date %></td>-->
-      <!--<td><%= event.calification %></td>-->
-      <!--<td><%= event.all_calification %></td>-->
-      <!--<td></td>-->
-      <!--<td></td>-->
-      <!--<td></td>-->
-  <% end %>
-  <div class="col-lg-4">
-
-  </div>
-</div>
-<br>
-<%= will_paginate @events %> <br> 
-<% if user_signed_in? %>
-    <%= link_to 'Crea un nuevo evento', new_event_path %>
-<% else %>
-    <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %>
-    <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
-<% end %>
-<%= will_paginate @events %>
+        <br>
+        <%= will_paginate @events %>
+            <br>
+            

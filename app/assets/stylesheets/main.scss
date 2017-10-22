@@ -380,18 +380,126 @@ h2 {
     content: '\f044';
 }
 
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
+
+
+.panel-footer #comment,
+
+{
+    visibility: hidden;
+}
+.panel-footer #comment:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\F075';
+}
+
+.panel-footer #rate,
+
+{
+    visibility: hidden;
+}
+.panel-footer #rate:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f006';
+}
+
+.panel-footer #assist,
+
+{
+    visibility: hidden;
+}
+.panel-footer #assist:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f058';
+}
+
+.panel-footer #not_assist,
+
+{
+    visibility: hidden;
+}
+.panel-footer #not_assist:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f057';
+}
 
 .panel-footer a{
     color: $primary-color;
-}
-#events_view .panel-body{
-  background-color: grey;
-}
-
-#events_view .panel-body{
-  
+    font-size: 0rem;
+    margin-left:1rem;
 }
 
+.panel-footer a:hover{
+    color: $secondary-color;
+}
+
+
+#events_view .panel-body{
+  background-color: rgba(143, 143, 143, 0.1);
+}
+
+#events_view .panel-heading h2{
+    color: white;
+    font-family: 'Ancizar-Serif-Semibold', sans-serif;
+}
+
+#events_view .panel-body .panel-event_description{
+    text-align: justify;
+    text-align-last: center;
+}
+#events_view #panel-date-event{
+    position: absolute;
+    bottom: 6.8rem;
+    color: $secondary-color;
+    right: 2rem;
+} 
 
 #file-btn{
     position: relative;
@@ -415,14 +523,49 @@ h2 {
     cursor: pointer;
 }
 
+#events_view .panel-primary,
+#create_event{
+    min-height: 35rem;
+}
+
 #show_event .panel-heading{
     background-color: $primary-color;
 }
 
-#show_event .panel-heading h2{
+#show_event .panel-heading h2
+#show_event .panel-heading h2 a{
     color: white;
     font-family: 'Ancizar-Serif-Extrabold';
 }   
+
+#create_event .panel-heading h2{
+ color: white;
+    font-family: 'Ancizar-Serif-Semibold';   
+}
+
+#create_event .panel-body a{
+    visibility: hidden;
+}
+
+#create_event .panel-body a:before  {
+    margin-top: 3.5rem;
+    margin-left: 8rem;
+    width: 10rem;
+    display:block;
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 10rem; 
+    content: '\f055';
+    color: #aaa;
+}
+
+#create_event .panel-body a:before:hover{
+    color: #fff;
+}
+
+
+
+
 
 
 //body{
