@@ -204,43 +204,44 @@ h2 {
 }
 
 //Event, forms
-#new_event_form {
+.event_form {
     width: 50%;
     margin-right: auto;
     margin-left: auto;
     border-radius: 0.5rem;
 }
 
-#new_event_form h1{
+.event_form h1{
   color: white !important;
 }
 
 
-#new_event_form .field {  
+.event_form .field {  
     margin-top: 1rem;
 }
 
-#new_event_form .panel-default .panel-heading{
+.event_form .panel-default .panel-heading{
   background-color: $secondary-color;
 }
 
-#new_event_form .panel-default {
+.event_form .panel-default {
   border-style: none;
   background-color: rgba(143, 143, 143, 0.3);
-  border-radius: 0.7rem;
+  border-radius: 2rem;
 }
 
 
-#new_event_form label {
+.event_form label {
     text-align: center;
     align-items: center;
     width: 100%;
-       display:inline-block;
+    display:inline-block;
+    font-family: 'Ancizar-Serif-Bold', sans-serif;
 
 }
 
-#new_event_form input,
-#new_event_form textarea {
+.event_form input,
+.event_form textarea {
     min-width: 90%;
     resize: none;
     border-radius: 0.5rem;
@@ -248,15 +249,18 @@ h2 {
     border-style: none;
     border-bottom: 1px solid $secondary-color;
     background-color: transparent;
+    text-align: center; 
+    font-family: 'Ancizar-Serif-Light', sans-serif;
+
 }
 
-#new_event_form .date_select {
+.event_form .date_select {
 
     text-align: center;
     align-items: center;
 }
 
-#new_event_form #event_image{
+.event_form #event_image{
   border-style: none;
   min-width: 50%;
   align-items: center;
@@ -267,33 +271,119 @@ h2 {
 
 
 #new_event_form #event_id_user,
+#edit_event_form #event_id_user,
 #new_event_form #event_cancelled,
+#edit_event_form #event_cancelled,
 #new_event_form #event_published,
+#edit_event_form #event_published,
 #new_event_form #event_calification,
 #new_event_form #event_all_calification,
+#edit_event_form #event_calification,
+#edit_event_form #event_all_calification,
 #new_event_form label[for=event_Público],
+#edit_event_form label[for=event_Público],
 #new_event_form label[for=event_Cancelado],
+#edit_event_form label[for=event_Cancelado],
 #new_event_form label[for=event_id_user],
 #new_event_form label[for=event_Calificación],
-#new_event_form label[for=event_all_calification]
+#new_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_Calificación],
+#edit_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_id_user]
 {
     display: none;
     visibility: hidden;
 }
 
-#new_event_form input:focus,
-#new_event_form textarea:focus {
+.event_form input:focus,
+.event_form textarea:focus {
 
     box-shadow: 0px 0px 8px 2px $secondary-color;
   outline: none;
 }
 
-#new_event_form .btn-success{
+.event_form .btn-success{
   background-color: $primary-color;
   border-color: transparent;
   }
+.event_form .panel-footer{
+    background-color: $secondary-color;
+}
+
+.event_form .panel-footer a{
+    color: white;
+    text-align: center;
+}
+
+.panel-footer #back,
+
+{
+    visibility: hidden;
+}
+.panel-footer #back:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f0a8';
+}
+
+.panel-footer #show,
+
+{
+    visibility: hidden;
+}
+.panel-footer #show:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f06e';
+}
+
+.panel-footer #delete,
+
+{
+    visibility: hidden;
+}
+.panel-footer #delete:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f00d';
+}
+
+.panel-footer #download,
+
+{
+    visibility: hidden;
+}
+.panel-footer #download:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f019';
+}
+
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
 
 
+.panel-footer a{
+    color: $primary-color;
+}
 #events_view .panel-body{
   background-color: grey;
 }
@@ -301,6 +391,38 @@ h2 {
 #events_view .panel-body{
   
 }
+
+
+#file-btn{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 19rem;
+}
+
+#file-btn input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+
+#show_event .panel-heading{
+    background-color: $primary-color;
+}
+
+#show_event .panel-heading h2{
+    color: white;
+    font-family: 'Ancizar-Serif-Extrabold';
+}   
 
 
 //body{
