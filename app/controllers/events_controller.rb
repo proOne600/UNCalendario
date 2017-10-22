@@ -10,6 +10,10 @@ class EventsController < ApplicationController
    #@events = Event.all
    @events = Event.all.paginate(:page => params[:page], :per_page => 6)
   end
+  
+  def viewCalendar
+    @events = Event.all
+  end
 
   #Verificar usuario y su id
   def verID

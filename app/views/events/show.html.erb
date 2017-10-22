@@ -58,6 +58,12 @@
 <!-- Mostrar la imagen del evento-->
 <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
 <!-- -->
+<% if @event.user == current_user %>
+  <%= link_to 'Edit', edit_event_path(@event) %> 
+<% end %> |
+<%= link_to 'Back', events_path %><br>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Eliminar', @event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %><br>
+<%= link_to 'Descargar PDF', @event, method: :get_pdf %><br>
+
+

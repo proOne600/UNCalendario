@@ -14,6 +14,10 @@ class User < ApplicationRecord
   has_one :user_profiles
 
   # belongs_to :assignments
+  
+  def send_auth_mail
+    UserMailer.delay.welcome_email(self)
+  end
 
 
   # def self.from_omniauth(access_token)
