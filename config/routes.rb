@@ -36,7 +36,8 @@ Rails.application.routes.draw do
   post 'events/:id' => 'events#noasistire'
   
   #Link al calendario
-  get 'events/' => 'events#viewCalendar', as:'horario'
+  #match 'events/' => 'events#viewCalendar', :defaults => { :id => 'about' }
+  #get '/events' => 'events#viewCalendar',as: 'horario'
 
 
   devise_for :users, :controllers => {:omniauth_callbacks => 'users/omniauth_callbacks'}
