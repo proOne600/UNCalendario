@@ -37,7 +37,9 @@
             </p>
           </div>
           <div class="panel-footer">
-            <%= event.event_date %> 
+            <% if event.event_date.present? %>
+              <%= event.event_date.to_formatted_s(:short) %> 
+            <% end %>
           </div>
         </div>
       </div>
