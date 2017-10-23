@@ -58,6 +58,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
+        #EventMailer.delay(run_at: 30.seconds.from_now, priority: 2).created_event(@event,@event.user)
+        EventMailer.delay.created_event(@event,@event.user)
         format.html {redirect_to @event, notice: 'Event was successfully created.'}
         format.json {render :show, status: :created, location: @event}
       else
@@ -68,9 +70,9 @@ class EventsController < ApplicationController
   end
   
   def get_pdf
-   send_data generate_pdf(@event), 
-    filename: "#{@event.name}.pdf", 
-    type: "application/pdf"
+    send_data generate_pdf(@event),
+              filename: "#{@event.name}.pdf",
+              type: "application/pdf"
   end
     
   
@@ -129,8 +131,12 @@ class EventsController < ApplicationController
     Prawn::Document.new do
       text event.name, align: :center
       text "Descripcion: #{event.description}"
-      text "Fecha inicio: #{event.event_date}"
-      text "Fecha final: #{event.even_end_date}"
+      if event.event_date.present?
+        text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
+      end
+      if event.even_end_date.present?
+        text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
+      end
     end.render
   end
     # Never trust parameters from the scary internet, only allow the white list through.

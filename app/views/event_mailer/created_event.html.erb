@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1>¡Has creado un nuevo evento! <%= @user.name %></h1>
+        <p>
+            Nombre del evento: <%= @event.name %> </p>
+         <p>Descripcion del evento: <%= @event.description %>.<br>
+            Fecha inicio: <%= @event.event_date.to_formatted_s(:long_ordinal) %>.<br>
+            Fecha terminacion: <%= @event.even_end_date.to_formatted_s(:long_ordinal) %>.<br>
+        </p>
+        <p>
+            To login to the site, just follow this link: <%= @url %>.
+        </p>
+        <p>Thanks for joining and have a great day!</p>
+    </body>
+</html>
