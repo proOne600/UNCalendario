@@ -58,7 +58,6 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        #EventMailer.delay(run_at: 30.seconds.from_now, priority: 2).created_event(@event,@event.user)
         EventMailer.delay.created_event(@event,@event.user)
         format.html {redirect_to @event, notice: 'Event was successfully created.'}
         format.json {render :show, status: :created, location: @event}
@@ -70,9 +69,9 @@ class EventsController < ApplicationController
   end
   
   def get_pdf
-    send_data generate_pdf(@event),
-              filename: "#{@event.name}.pdf",
-              type: "application/pdf"
+   send_data generate_pdf(@event), 
+    filename: "#{@event.name}.pdf", 
+    type: "application/pdf"
   end
     
   
@@ -129,6 +128,8 @@ class EventsController < ApplicationController
   
   def generate_pdf(event)
     Prawn::Document.new do
+      text event.name, align: :center
+      text "Descripcion: #{event.description}"
       text event.name, align: :center
       text "Descripcion: #{event.description}"
       if event.event_date.present?
