@@ -12,3 +12,5 @@
 GOOGLE_CLIENT_ID: 426995133353-mjm3jm9j5176sssmso2oa0ipo0ju58a2.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET: 1YswXahBIj03SGQBF8JEgPmU
 DEVISE_SECRET_KEY: 99384ef2e97d39c5e8aad6f4146e4589a4671f49b51a32ad1602177ac8adc976651b815399189e82a58d66be56ac92d0778b323c60dc668cb9a49088a0b69987
+gmail_password: 'uncalendario2017'
+gmail_username: 'uncalendarionotifier@gmail.com'
