@@ -5,68 +5,6 @@
         <h2><%= @event.name %></h2>
     </div>
     <div class="panel-body">
-       <p>
-        <strong>Descripcion:</strong>
-        <%= @event.description %>
-    </p>
-    <p>
-        <strong>Publicado:</strong>
-        <%= @event.published %>
-    </p>
-    <p>
-        <strong>Cancelado:</strong>
-        <%= @event.cancelled %>
-    </p>
-    <!-- <p>
-  <strong>Usuario creador:</strong> 
-  <%= @event.user.name %>
-</p> -->
-    <p>
-        <strong>Inicio del evento:</strong>
-        <%= @event.event_date %>
-    </p>
-    <p>
-        <strong>Hora de inicio:</strong>
-        <%= @event.event_init_hour %>
-    </p>
-    <p>
-        <strong>Hora final:</strong>
-        <%= @event.event_end_hour %>
-    </p>
-    <p>
-        <strong>Fin del evento :</strong>
-        <%= @event.even_end_date %>
-    </p>
-    <p>
-        <strong>Calificacion:</strong>
-        <%= @event.calification %>
-    </p>
-    <p>
-        <strong>Todas las calificaciones:</strong>
-        <%= @event.all_calification %>
-    </p>
-    <!-- Mostrar la imagen del evento-->
-    <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
-        <!-- -->
-    </div>
-    <div class="panel-footer">
-      <%= link_to 'Back', events_path, id:"back", title:"Atras"%> 
-      <% if @event.user == current_user %>
-            <%= link_to 'Edit', edit_event_path(@event), id:"edit", title:"Edita tu evento"%>
-      <% end %>
-      <%= link_to 'Eliminar', @event, id:"delete", title:"Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %> 
-      <%= link_to 'Descargar PDF', @event, id: "download", title:"Descargar PDF",method: :get_pdf %> 
-    </div>
-   
-</div>
-</section>
-
-<p id="notice">
-    <%= notice %>
-</p>
-=======
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Nombre del evento:</strong>
   <%= @event.name %>
@@ -128,14 +66,19 @@
 
 <!-- Mostrar la imagen del evento-->
 <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
-<!-- -->
-<% if @event.user == current_user %>
-  <%= link_to 'Edit', edit_event_path(@event) %> 
-<% end %> |
-<%= link_to 'Back', events_path %><br>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Back', events_path, id:"back", title:"Atras"%> 
+      <% if @event.user == current_user %>
+            <%= link_to 'Edit', edit_event_path(@event), id:"edit", title:"Edita tu evento"%>
+      <% end %>
+      <%= link_to 'Eliminar', @event, id:"delete", title:"Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %> 
+      <%= link_to 'Descargar PDF', @event, id: "download", title:"Descargar PDF",method: :get_pdf %> 
+    </div>
+   
+</div>
+</section>
 
-<%= link_to 'Eliminar', @event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %><br>
-<%= link_to 'Descargar PDF', @event, method: :get_pdf %><br>
-
-
->>>>>>> develop
+<p id="notice">
+    <%= notice %>
+</p>
