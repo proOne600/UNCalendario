@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section id="show_event">
   <div class="panel panel-success">
     <div class="panel-heading text-center">
@@ -63,3 +64,78 @@
 <p id="notice">
     <%= notice %>
 </p>
+=======
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre del evento:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Publicado:</strong>
+  <%= @event.published %>
+</p>
+
+<p>
+  <strong>Cancelado:</strong>
+  <%= @event.cancelled %>
+</p>
+
+
+<p>
+  <strong>Inicio del evento:</strong>
+  <% if @event.event_date.present? %>
+    <%= @event.event_date.to_formatted_s(:long) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Hora de inicio:</strong>
+  <% if @event.event_init_hour.present? %>
+    <%= @event.event_init_hour.to_formatted_s(:time) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Hora final:</strong>
+  <% if @event.event_end_hour.present? %>
+    <%= @event.event_end_hour.to_formatted_s(:time) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Fin del evento :</strong>
+  <% if @event.even_end_date.present? %>
+    <%= @event.even_end_date.to_formatted_s(:long) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Calificacion:</strong>
+  <%= @event.calification %>
+</p>
+
+<p>
+  <strong>Todas las calificaciones:</strong>
+  <%= @event.all_calification %>
+</p>
+
+<!-- Mostrar la imagen del evento-->
+<%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
+<!-- -->
+<% if @event.user == current_user %>
+  <%= link_to 'Edit', edit_event_path(@event) %> 
+<% end %> |
+<%= link_to 'Back', events_path %><br>
+
+<%= link_to 'Eliminar', @event, method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %><br>
+<%= link_to 'Descargar PDF', @event, method: :get_pdf %><br>
+
+
+>>>>>>> develop

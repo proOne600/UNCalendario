@@ -59,6 +59,7 @@
                 <!--<td></td>-->
                 <!--<td></td>-->
                 <% end %>
+<<<<<<< HEAD
                 <% if user_signed_in? %>
                 <div class="col-lg-4">
                     <div class="panel panel-primary" id="create_event">
@@ -76,6 +77,21 @@
                             <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
                                 <% end %>
                                     <%= will_paginate @events %>
+=======
+              <% end %>
+
+            </p>
+          </div>
+          <div class="panel-footer">
+            <% if event.event_date.present? %>
+              <%= event.event_date.to_formatted_s(:long) %> <br>
+            <% end %>
+            - <br>
+            <% if event.even_end_date.present? %>
+              <%= event.even_end_date.to_formatted_s(:long) %> <br>
+            <% end %>
+          </div>
+>>>>>>> develop
         </div>
         <br>
         <%= will_paginate @events %>
