@@ -12,13 +12,19 @@
                             <h2><%= event.name %></h2>
                         </div>
                         <div class="panel-body">
-                            <div class="box">
-                                <p class="panel-event_description">
-                                    <%= event.description %>
-                                </p>
+                            <div class='screen ' style="background-image: url(assets/event-1.jpg);">
+                                <div class='row '>
+                                    <div class='col-sm-12 center-block '>
+                                        <div class='box ' >
+                                            <p class='white-text '><%= event.description %></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                                <%= event.image %>
-                            <p id="panel-date-event">
+
+                        </div>
+                            <div class="panel-footer">
+                            <p id="panel-date-event" class="text-center h5">
                                 <% if event.event_date.present? %>
                                   <%= event.event_date.to_formatted_s(:long) %> <br>
                                 <% end %>
@@ -27,8 +33,7 @@
                                   <%= event.even_end_date.to_formatted_s(:long) %> <br>
                                 <% end %>
                             </p>
-                        </div>
-                            <div class="panel-footer">
+
                                 <ul class="list-inline">
                                     <li>
                                         <%= link_to 'Ver', event, id:"show", title:"ver" %>

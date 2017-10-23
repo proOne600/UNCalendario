@@ -1,3 +1,422 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Event, forms
+.event_form {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 0.5rem;
+}
+
+.event_form h1{
+  color: white !important;
+}
+
+
+.event_form .field {  
+    margin-top: 1rem;
+}
+
+.event_form .panel-default .panel-heading{
+  background-color: $secondary-color;
+}
+
+.event_form .panel-default {
+  border-style: none;
+  background-color: rgba(143, 143, 143, 0.3);
+  border-radius: 2rem;
+}
+
+
+.event_form label {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    display:inline-block;
+    font-family: 'Ancizar-Serif-Bold', sans-serif;
+
+}
+
+.event_form input,
+.event_form textarea {
+    min-width: 90%;
+    resize: none;
+    border-radius: 0.5rem;
+    margin-left: 2rem;
+    border-style: none;
+    border-bottom: 1px solid $secondary-color;
+    background-color: transparent;
+    text-align: center; 
+    font-family: 'Ancizar-Serif-Light', sans-serif;
+
+}
+
+.event_form .date_select {
+
+    text-align: center;
+    align-items: center;
+}
+
+.event_form #event_image{
+  border-style: none;
+  min-width: 50%;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#new_event_form #event_id_user,
+#edit_event_form #event_id_user,
+#new_event_form #event_cancelled,
+#edit_event_form #event_cancelled,
+#new_event_form #event_published,
+#edit_event_form #event_published,
+#new_event_form #event_calification,
+#new_event_form #event_all_calification,
+#edit_event_form #event_calification,
+#edit_event_form #event_all_calification,
+#new_event_form label[for=event_Público],
+#edit_event_form label[for=event_Público],
+#new_event_form label[for=event_Cancelado],
+#edit_event_form label[for=event_Cancelado],
+#new_event_form label[for=event_id_user],
+#new_event_form label[for=event_Calificación],
+#new_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_Calificación],
+#edit_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_id_user]
+{
+    display: none;
+    visibility: hidden;
+}
+
+.event_form input:focus,
+.event_form textarea:focus {
+
+    box-shadow: 0px 0px 8px 2px $secondary-color;
+  outline: none;
+}
+
+.event_form .btn-success{
+  background-color: $primary-color;
+  border-color: transparent;
+  }
+.event_form .panel-footer{
+    background-color: $secondary-color;
+}
+
+.event_form .panel-footer a{
+    color: white;
+    text-align: center;
+}
+
+.panel-footer #back,
+
+{
+    visibility: hidden;
+}
+.panel-footer #back:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f0a8';
+}
+
+.panel-footer #show,
+
+{
+    visibility: hidden;
+}
+.panel-footer #show:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f06e';
+}
+
+.panel-footer #delete,
+
+{
+    visibility: hidden;
+}
+.panel-footer #delete:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f00d';
+}
+
+.panel-footer #download,
+
+{
+    visibility: hidden;
+}
+.panel-footer #download:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f019';
+}
+
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
+
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
+.panel-footer #edit,
+
+{
+    visibility: hidden;
+}
+.panel-footer #edit:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f044';
+}
+
+
+.panel-footer #comment,
+
+{
+    visibility: hidden;
+}
+.panel-footer #comment:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\F075';
+}
+
+.panel-footer #rate,
+
+{
+    visibility: hidden;
+}
+.panel-footer #rate:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f006';
+}
+
+.panel-footer #assist,
+
+{
+    visibility: hidden;
+}
+.panel-footer #assist:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f058';
+}
+
+.panel-footer #not_assist,
+
+{
+    visibility: hidden;
+}
+.panel-footer #not_assist:before  {
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 2rem; 
+    display: inline-block; 
+    content: '\f057';
+}
+
+.panel-footer a{
+    color: $primary-color;
+    font-size: 0rem;
+    margin-left:1rem;
+}
+
+.panel-footer a:hover{
+    color: $secondary-color;
+}
+
+#events_view .panel-heading h2{
+    color: white;
+    font-family: 'Ancizar-Serif-Semibold', sans-serif;
+}
+
+#events_view .panel-body .white-text{
+    text-align: justify;
+    text-align-last: center;
+}
+
+
+
+
+#events_view .panel-primary{
+	height: 40rem !important;
+}
+
+#events_view .panel-primary .panel-body{
+	height: 22.4rem !important;
+	padding: 0;
+}
+
+
+#events_view .panel-primary .panel-body .screen {
+    cursor: pointer;
+}
+
+.screen,
+.screen .row,
+.screen .col-sm-12 {
+	height: 100%;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.box {
+    position: absolute;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    right: 1.5rem;
+    bottom: 100%;
+    left: 1.5rem;
+    -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+    -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+    transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+
+.box .white-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 14em;
+}
+
+.screen:hover .box {
+    visibility: visible;
+    bottom: 0;
+}
+#events_view #panel-date-event{
+
+    color: $secondary-color;
+    height: 1rem;
+    margin-top: 0;
+    border-bottom: 1px solid $primary-color;
+    padding-bottom: 2rem;
+} 
+
+#file-btn{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 19rem;
+}
+
+#file-btn input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+
+
+
+
+#show_event .panel-heading{
+    background-color: $primary-color;
+}
+
+#show_event .panel-heading h2
+#show_event .panel-heading h2 a{
+    color: white;
+    font-family: 'Ancizar-Serif-Extrabold';
+}   
+
+#create_event .panel-heading h2{
+ color: white;
+    font-family: 'Ancizar-Serif-Semibold';   
+}
+
+#create_event .panel-body a{
+    visibility: hidden;
+}
+
+#create_event .panel-body a:before  {
+    margin-top: 3.5rem;
+    margin-left: 8rem;
+    width: 10rem;
+    display:block;
+    visibility: visible;
+    font-family: FontAwesome; 
+    font-size: 10rem; 
+    content: '\f055';
+    color: #aaa;
+}
+
+#create_event .panel-body a:before:hover{
+    color: #fff;
+}
