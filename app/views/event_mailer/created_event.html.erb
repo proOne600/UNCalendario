@@ -8,8 +8,9 @@
         <p>
             Nombre del evento: <%= @event.name %> </p>
          <p>Descripcion del evento: <%= @event.description %>.<br>
-            Fecha inicio: <%= @event.event_date %> - <%= @event.event_init_hour %> .<br>
-            Fecha terminacion: <%= @event.even_end_date %> - <%= @event.event_end_hour %> .<br>
+            Fecha y hora inicio: <%= @event.event_date %> - <%= @event.event_init_hour.to_formatted_s(:time) %> .<br>
+            
+            Fecha y hora terminacion: <%= @event.even_end_date %> - <%= @event.event_end_hour.to_formatted_s(:time) %> .<br>
         </p>
         <p>
             To login to the site, just follow this link: <%= @url %>.
