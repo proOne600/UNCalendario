@@ -1,7 +1,11 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+$green-color: #94B43B;
+$red-color: #A61C31;
+$gray-color: #B1B2B0;
+$primary-color: $green-color;
+$secondary-color: $red-color;
 //Event, forms
 .event_form {
     width: 50%;
