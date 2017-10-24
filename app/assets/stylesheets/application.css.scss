@@ -3,4 +3,9 @@
 @import "theme/dist/sb-admin-2";
 @import "theme/bootstrap-social/bootstrap-social";
 @import "main";
-@import "events"
+@import "events";
+$green-color: #94B43B;
+$red-color: #A61C31;
+$gray-color: #B1B2B0;
+$primary-color: $green-color;
+$secondary-color: $red-color;
