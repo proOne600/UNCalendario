@@ -1,83 +1,89 @@
 <section id="show_event">
   <div class="panel panel-success">
     <div class="panel-heading text-center">
-        <h2><%= @event.name %></h2>
+      <h2><%= @event.name %></h2>
     </div>
     <div class="panel-body">
-<p>
-  <strong>Nombre del evento:</strong>
-  <%= @event.name %>
-</p>
+      <p>
+        <strong>Nombre del evento:</strong>
+        <%= @event.name %>
+      </p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @event.description %>
-</p>
+      <p>
+        <strong>Descripcion:</strong>
+        <%= @event.description %>
+      </p>
 
-<p>
-  <strong>Publico:</strong>
-  <%= @event.published %>
-</p>
-
-<p>
-  <strong>Privado:</strong>
-  <%= @event.cancelled %>
-</p>
+      <p>
+        <strong>Categoria</strong>
+        <%= @category.name %>
+      </p>
 
 
-<p>
-  <strong>Inicio del evento:</strong>
-  <% if @event.event_date.present? %>
-    <%= @event.event_date.to_formatted_s(:short) %>
-  <% end %>
-</p>
+      <p>
+        <strong>Publico:</strong>
+        <%= @event.published %>
+      </p>
 
-<p>
-  <strong>Hora de inicio:</strong>
-  <% if @event.event_init_hour.present? %>
-    <%= @event.event_init_hour.to_formatted_s(:time) %>
-  <% end %>
-</p>
+      <p>
+        <strong>Privado:</strong>
+        <%= @event.cancelled %>
+      </p>
 
-<p>
-  <strong>Hora final:</strong>
-  <% if @event.event_end_hour.present? %>
-    <%= @event.event_end_hour.to_formatted_s(:time) %>
-  <% end %>
-</p>
 
-<p>
-  <strong>Fin del evento :</strong>
-  <% if @event.even_end_date.present? %>
-    <%= @event.even_end_date.to_formatted_s(:short) %>
-  <% end %>
-</p>
+      <p>
+        <strong>Inicio del evento:</strong>
+        <% if @event.event_date.present? %>
+            <%= @event.event_date.to_formatted_s(:short) %>
+        <% end %>
+      </p>
 
-<p>
-  <strong>Calificacion:</strong>
-  <%= @event.calification %>
-</p>
+      <p>
+        <strong>Hora de inicio:</strong>
+        <% if @event.event_init_hour.present? %>
+            <%= @event.event_init_hour.to_formatted_s(:time) %>
+        <% end %>
+      </p>
 
-<p>
-  <strong>Todas las calificaciones:</strong>
-  <%= @event.all_calification %>
-</p>
+      <p>
+        <strong>Hora final:</strong>
+        <% if @event.event_end_hour.present? %>
+            <%= @event.event_end_hour.to_formatted_s(:time) %>
+        <% end %>
+      </p>
 
-<!-- Mostrar la imagen del evento-->
-<%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
+      <p>
+        <strong>Fin del evento :</strong>
+        <% if @event.even_end_date.present? %>
+            <%= @event.even_end_date.to_formatted_s(:short) %>
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Calificacion:</strong>
+        <%= @event.calification %>
+      </p>
+
+      <p>
+        <strong>Todas las calificaciones:</strong>
+        <%= @event.all_calification %>
+      </p>
+
+      <!-- Mostrar la imagen del evento-->
+      <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
     </div>
     <div class="panel-footer">
-      <%= link_to 'Back', events_path, id:"back", title:"Atras"%> 
+      <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
       <% if @event.user == current_user %>
-            <%= link_to 'Edit', edit_event_path(@event), id:"edit", title:"Edita tu evento"%>
+          <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
       <% end %>
-      <%= link_to 'Eliminar', @event, id:"delete", title:"Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %> 
-      <%= link_to 'Descargar PDF', @event, id: "download", title:"Descargar PDF",method: :get_pdf %> 
+      <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
+      <%= link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf %>
     </div>
-   
-</div>
+
+  </div>
 </section>
 
 <p id="notice">
-    <%= notice %>
+  <%= notice %>
 </p>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019232132) do
+ActiveRecord::Schema.define(version: 20171025044946) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer "user_id"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20171019232132) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "image"
+    t.integer "category_id"
   end
 
   create_table "favorite_events", force: :cascade do |t|
