@@ -131,8 +131,6 @@ class EventsController < ApplicationController
     Prawn::Document.new do
       text event.name, align: :center
       text "Descripcion: #{event.description}"
-      text event.name, align: :center
-      text "Descripcion: #{event.description}"
       if event.event_date.present?
         text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
       end
