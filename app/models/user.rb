@@ -19,6 +19,10 @@ class User < ApplicationRecord
   def send_auth_mail
     UserMailer.delay.welcome_email(self)
   end
+  
+  def self.total_size
+    self.count
+  end
 
 
   # def self.from_omniauth(access_token)
