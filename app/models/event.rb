@@ -30,6 +30,10 @@ class Event < ApplicationRecord
     def end_time
         self.even_end_date ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
     end
+    
+    #def total_size
+    #    Event.count
+    #end
 
     
     
