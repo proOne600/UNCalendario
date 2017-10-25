@@ -12,6 +12,7 @@ class EventsController < ApplicationController
       render 'viewCalendar'
     else
       @events = Event.all.paginate(:page => params[:page], :per_page => 6)
+     # @size = Event.total_size
       render 'index'
     end
   end
@@ -128,8 +129,6 @@ class EventsController < ApplicationController
   
   def generate_pdf(event)
     Prawn::Document.new do
-      text event.name, align: :center
-      text "Descripcion: #{event.description}"
       text event.name, align: :center
       text "Descripcion: #{event.description}"
       if event.event_date.present?
