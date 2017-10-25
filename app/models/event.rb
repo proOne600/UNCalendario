@@ -33,10 +33,10 @@ class Event < ApplicationRecord
     
     
     #@total_size = Event.all.count
-   # def self.total_size
-    #  self.count
-    #
-    #end
+    def self.total_size
+      self.count
+    end
+   # @total =self.count
 
     
     
