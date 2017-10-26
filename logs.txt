@@ -29,3 +29,14 @@ MIGUEL TOVAR: Se creo el scaffold "event", esperando a configurar el id para que
             se puede crear el nuevo scaffold con las correcciones necesarias.
 DAVID RICO: Se instalo la gem 'omniauth-google-oauth2', que es para poder utilizar las credenciales del API de Login de Google.
 MIGUEL TOVAR: http://fernando-gaitan.com.ar/ruby-on-rails-parte-16-relaciones-en-los-modelos/
+
+
+MIGUEL TOVAR(ERRORES DESPUES DE SPRINT 3):
+- Carga de archivos: Revisar instalacion y uso de gema carrierwave, apesar de que realize todos llos pasos, carga el archivo pero este no se guarda
+    en la carpeta uploads.
+- Crear comentario: Necesita que se le pase el evento al que pertenece, no solo el id del evento, sino el evento como tal.
+- Crear calificacion y Opcion asistire: Hay un problema en la rutas, se necesita que pasen por 'events/:id' para que sea pliquen solo al evento actual,
+    pero dicha ruta ya esta siendo usada por get_pdf y no deja que se le asigne una ruta diferente. Por lo cual no puede acceder a la opciones
+    de ASISTIR.
+    
+    

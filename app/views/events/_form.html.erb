@@ -1,78 +1,86 @@
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_with(model: event, local: true) do |f| %>
+    <% if event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+          <ul>
+            <% event.errors.full_messages.each do |message| %>
+                <li>
+                  <%= message %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :Nombre %>
+      <%= f.text_field :name, id: :event_name, :required => true %>
     </div>
-  <% end %>
+    <div class="form-group">
+      <%= f.label :Descripcion %>
+      <%= f.text_area :description, id: :event_description, :required => true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :event_name %>
-  </div>
+    <div class="form-group">
+      <%= f.label :category_id %>
+      <%= f.select :category_id, options_for_select(@categories),{prompt:'Seleccione'}, {required: true , class:'form-control'}%>
+    </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :event_description %>
-  </div>
+    <div class="form-group">
+      <%= f.label :Publico %>
+      <%= f.check_box :published, id: :event_published %>
+    </div>
+    <div class="form-group">
+      <%= f.label :Cancelado %>
+      <%= f.check_box :cancelled, id: :event_cancelled %>
+    </div>
+    <div class="field date">
+      <%= f.label :Fecha_del_evento %>
+      <br>
+      <div class="date_select">
+        <%= f.date_select :event_date, order: [:day, :month, :year], id: :event_event_date %>
+      </div>
+    </div>
+    <div class="field date">
+      <%= f.label :Hora_de_inicio %>
+      <br>
+      <div class="date_select">
+        <%= f.time_select :event_init_hour, id: :event_event_init_hour %>
+      </div>
+    </div>
+    <div class="field date">
+      <%= f.label :Hora_de_finalizacion %>
+      <br>
+      <div class="date_select">
+        <%= f.time_select :event_end_hour, id: :event_event_end_hour %>
+      </div>
+    </div>
+    <div class="field date">
+      <%= f.label :Fecha_de_finalizacion %>
+      <br>
+      <div class="date_select">
+        <%= f.date_select :even_end_date, order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c' %>
+      </div>
+    </div>
+     <div class="form-group">
+          <%= f.label :Ubicación %><br/>
+          <%= f.text_field :address, autofocus: true, class: 'form-control' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :published %>
-    <%= form.check_box :published, id: :event_published %>
-  </div>
+    <!-- Insertar imagen -->
+    <div>
+      <%= f.label :Imagen_del_evento %>
+      <div class="btn btn-default" id="file-btn">
+        <i class="fa fa-picture-o" aria-hidden="true"></i>
+        <span>Agrega una imagen</span>
+        <%= f.file_field :image, id: :event_image %>
+      </div>
+    </div>
+    <!-- Insertar imagen -->
+    <div class="actions">
+      <br>
 
-  <div class="field">
-    <%= form.label :cancelled %>
-    <%= form.check_box :cancelled, id: :event_cancelled %>
-  </div>
-
-  <div class="field">
-    <%= form.label :id_user %>
-    <%= form.number_field :id_user, id: :event_id_user %>
-  </div>
-
-  <div class="field">
-    <%= form.label :event_date %>
-    <%= form.datetime_select :event_date, id: :event_event_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :event_init_hour %>
-    <%= form.time_select :event_init_hour, id: :event_event_init_hour %>
-  </div>
-
-  <div class="field">
-    <%= form.label :event_end_hour %>
-    <%= form.time_select :event_end_hour, id: :event_event_end_hour %>
-  </div>
-
-  <div class="field">
-    <%= form.label :even_end_date %>
-    <%= form.datetime_select :even_end_date, id: :event_even_end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :calification %>
-    <%= form.text_field :calification, id: :event_calification %>
-  </div>
-
-  <div class="field">
-    <%= form.label :all_calification %>
-    <%= form.number_field :all_calification, id: :event_all_calification %>
-  </div>
-  <!-- Insertar imagen -->
-  <div>
-    <%= form.label :image %>
-    <%= form.file_field :image, id: :event_image %>
-  </div>
-  <!-- Insertar imagen -->
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+      <%= button_tag(:class => "btn btn-success center-block") do %>
+          <i class="fa fa-calendar-plus-o" aria-hidden="true"> Crear evento</i>
+      <% end %>
+    </div>
 <% end %>

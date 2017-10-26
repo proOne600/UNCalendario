@@ -1,63 +1,165 @@
-<p id="notice"><%= notice %></p>
+<section id="show_event">
+  <div class="panel panel-success">
+    <div class="panel-heading text-center">
+      <h2><%= @event.name %></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-xs-12">
+          <h2><%= @event.name %></h2>
+          <p class="lead">
+            <%= @event.description %>
+          </p>
 
-<p>
-  <strong>Nombre del evento:</strong>
-  <%= @event.name %>
+
+          <p>
+            <strong>Categoria</strong>
+            <%= @event.category.name %>
+          </p>
+
+        <% if @event.published? %>
+          <p>
+            <strong>Este evento es privado</strong>
+          </p>
+        <% else %>
+          <p>
+            <strong>Este evento es publico</strong>
+          </p>
+        <% end %>
+
+          <p>
+            <strong>Publico:</strong>
+            <%= @event.published %>
+          </p>
+
+          <p>
+            <strong>Privado:</strong>
+            <%= @event.cancelled %>
+          </p>
+
+
+          <p>
+            <strong>Inicio del evento:</strong>
+            <% if @event.event_date.present? %>
+                <%= @event.event_date.to_formatted_s(:short) %>
+            <% end %>
+          </p>
+
+          <p>
+            <strong>Hora de inicio:</strong>
+            <% if @event.event_init_hour.present? %>
+                <%= @event.event_init_hour.to_formatted_s(:time) %>
+            <% end %>
+          </p>
+
+          <p>
+            <strong>Hora final:</strong>
+            <% if @event.event_end_hour.present? %>
+                <%= @event.event_end_hour.to_formatted_s(:time) %>
+            <% end %>
+          </p>
+
+          <p>
+            <strong>Fin del evento :</strong>
+            <% if @event.even_end_date.present? %>
+                <%= @event.even_end_date.to_formatted_s(:short) %>
+            <% end %>
+          </p>
+
+          <p>
+            <strong>Calificacion:</strong>
+            <%= @event.calification %>
+          </p>
+
+          <p>
+            <strong>Todas las calificaciones:</strong>
+            <%= @event.all_calification %>
+          </p>
+
+          <!-- Mostrar la imagen del evento-->
+          <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
+
+        </div>
+        <div class="col-md-6 col-lg-6 col-xs-12">
+            <div class="row">
+                <div class="map">
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                    <script>
+                      function initMap() {
+                        var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                          zoom: 20,
+                          center: uluru
+                        });
+                        var marker = new google.maps.Marker({
+                          position: uluru,
+                          map: map
+                        });
+                      }
+                    </script>
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
+                    </script>
+                </div>
+            </div>
+            <p>Dirección: cerca de <%= @event.address %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="chat-panel panel panel-default">
+            <div class="panel-heading">
+              <i class="fa fa-comments fa-fw"></i> Comentarios de la comunidad
+              <span>( <%= @event.reviews.count %> )</span>
+              <div class="average-review-rating float-right" data-score=<%= @average_review %>></div>
+
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <ul class="chat">
+                <%= render @event.reviews %>
+              </ul>
+            </div>
+            <!-- /.panel-body -->
+            <div class="panel-footer">
+              <div class="input-group">
+                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here...">
+                <span class="input-group-btn">
+                  <button class="btn btn-warning btn-sm" id="btn-chat">
+                    Send
+                  </button>
+                </span>
+              </div>
+            </div>
+            <!-- /.panel-footer -->
+          </div>
+          <%= link_to 'Calificar', new_event_review_path(@event) %>
+
+      </div>
+
+
+
+    <div class="panel-footer">
+      <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
+      <% if @event.user == current_user %>
+          <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
+      <% end %>
+      <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
+      <%= link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf %>
+    </div>
+
+  </div>
+</section>
+
+<p id="notice">
+  <%= notice %>
 </p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Publicado:</strong>
-  <%= @event.published %>
-</p>
-
-<p>
-  <strong>Cancelado:</strong>
-  <%= @event.cancelled %>
-</p>
-
-<!-- <p>
-  <strong>Usuario creador:</strong> 
-  <%= @event.user.name %>
-</p> -->
-
-<p>
-  <strong>Inicio del evento:</strong>
-  <%= @event.event_date %>
-</p>
-
-<p>
-  <strong>Hora de inicio:</strong>
-  <%= @event.event_init_hour %>
-</p>
-
-<p>
-  <strong>Hora final:</strong>
-  <%= @event.event_end_hour %>
-</p>
-
-<p>
-  <strong>Fin del evento :</strong>
-  <%= @event.even_end_date %>
-</p>
-
-<p>
-  <strong>Calificacion:</strong>
-  <%= @event.calification %>
-</p>
-
-<p>
-  <strong>Todas las calificaciones:</strong>
-  <%= @event.all_calification %>
-</p>
-
-<!-- Mostrar la imagen del evento-->
-<%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
-<!-- -->
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<script type="text/javascript" charset="utf-8">
+    $('.average-review-rating').raty({
+        readOnly: true,
+        score: function () {
+            return $(this).attr('data-score')
+        },
+        path: '/assets/'
+    })
+</script>

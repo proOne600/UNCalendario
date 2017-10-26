@@ -1,0 +1,14 @@
+<%= form_for([@event, @event.reviews.build]) do |f| %>
+    <div id="rating-form">
+    </div>
+    <p>comment</p>
+    <%= f.text_field :comment %>
+    <%= f.button :submit %>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $('#rating-form').raty({
+      path: '/assets/',
+      scoreName: 'review[rating]'
+  })
+</script>

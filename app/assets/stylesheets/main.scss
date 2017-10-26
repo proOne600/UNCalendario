@@ -14,117 +14,117 @@
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-BlackItalic' ;
+  font-family: 'Ancizar-Sans-BlackItalic';
   src: asset_url('Ancizar-Sans-Blackitalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-Extrablack' ;
+  font-family: 'Ancizar-Sans-Extrablack';
   src: asset_url('Ancizar-Sans-Extrablack.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-ExtrablackItalic' ;
+  font-family: 'Ancizar-Sans-ExtrablackItalic';
   src: asset_url('Ancizar-Sans-ExtrablackItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-Extrabold' ;
+  font-family: 'Ancizar-Sans-Extrabold';
   src: url('Ancizar-Sans-Extrabold.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-ExtraboldItalic' ;
+  font-family: 'Ancizar-Sans-ExtraboldItalic';
   src: asset_url('Ancizar-Sans-ExtraboldItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-Italic' ;
+  font-family: 'Ancizar-Sans-Italic';
   src: asset_url('Ancizar-Sans-Italic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-Light' ;
+  font-family: 'Ancizar-Sans-Light';
   src: asset_url('Ancizar-Sans-Light.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-LightItalic' ;
+  font-family: 'Ancizar-Sans-LightItalic';
   src: asset_url('Ancizar-Sans-LightItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-Regular' ;
+  font-family: 'Ancizar-Sans-Regular';
   src: asset_url('Ancizar-Sans-Regular.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-Thin' ;
+  font-family: 'Ancizar-Sans-Thin';
   src: asset_url('Ancizar-Sans-Thin.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Sans-ThinItalic' ;
+  font-family: 'Ancizar-Sans-ThinItalic';
   src: asset_url('Ancizar-Sans-ThinItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-Black' ;
+  font-family: 'Ancizar-Serif-Black';
   src: asset_url('Ancizar-Serif-Black.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-BlackItalic' ;
+  font-family: 'Ancizar-Serif-BlackItalic';
   src: asset_url('Ancizar-Serif-BlackItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-Bold' ;
+  font-family: 'Ancizar-Serif-Bold';
   src: asset_url('Ancizar-Serif-Bold.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-BoldItalic' ;
+  font-family: 'Ancizar-Serif-BoldItalic';
   src: asset_url('Ancizar-Serif-BoldItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-Extrabold' ;
+  font-family: 'Ancizar-Serif-Extrabold';
   src: asset_url('Ancizar-Serif-Extrabold.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-ExtraboldItalic' ;
+  font-family: 'Ancizar-Serif-ExtraboldItalic';
   src: asset_url('Ancizar-Serif-ExtraboldItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-Italic' ;
+  font-family: 'Ancizar-Serif-Italic';
   src: asset_url('Ancizar-Serif-Italic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-Light' ;
+  font-family: 'Ancizar-Serif-Light';
   src: asset_url('Ancizar-Serif-Light.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-LightItalic' ;
+  font-family: 'Ancizar-Serif-LightItalic';
   src: asset_url('Ancizar-Serif-LightItalic.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-Regular' ;
+  font-family: 'Ancizar-Serif-Regular';
   src: asset_url('Ancizar-Serif-Regular.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-Semibold' ;
+  font-family: 'Ancizar-Serif-Semibold';
   src: asset_url('/assets/Ancizar-Serif-Semibold.otf');
 }
 
 @font-face {
-  font-family: 'Ancizar-Serif-SemiboldItalic' ;
+  font-family: 'Ancizar-Serif-SemiboldItalic';
   src: asset_url('Ancizar-Serif-SemiboldItalic.otf');
 }
 
@@ -134,23 +134,77 @@ $gray-color: #B1B2B0;
 $primary-color: $green-color;
 $secondary-color: $red-color;
 
+html, body, #page-wrapper {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: 0rem;
+  border-left: none;
+}
+
 body {
-  font-family: Ancizar-Sans-Thin;
+  font-family: 'Ancizar-Sans-Thin';
+  border-bottom-left-radius: 1rem;
+  background-image: url(background-2.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(background-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 //Navbar classes
+.navbar-default {
+  height: 7rem;
+  background-color: rgba(148, 180, 59, 0.4);
+  line-height: 4rem;
+  box-shadow: 1px 1px 1px $primary-color;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
 
-.navbar-brand > img {
+.navbar.top-links,
+.navbar-top-links li,
+.navbar-top-links li a {
+  font-family: 'Ancizar-Serif-Regular', sans-serif;
+  font-size: 1.6rem;
+  height: 100%;
+  min-width: 15rem;
+  line-height: 3.7rem;
+  text-align: center;
+  color: white;
+  border-radius: 1rem;
+}
+
+.navbar-top-links li a:hover {
+  background-color: #88A61F;
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+  line-height: 4rem;
+  color: white;
+  font-size: 2.4rem;
+  font-family: 'Ancizar-Serif-Semibold', sans-serif;
+}
+
+.navbar-brand img {
   display: unset;
 }
 
 .logo-un {
   max-height: 150%;
+
 }
 
 //Typography classes
+h1,
+h2 {
+  color: $primary-color;
+  font-family: 'Ancizar-Sans-Bold', sans-serif;
+  text-transform: uppercase;
+}
 
-h1, h2 {
+.primary-color {
   color: $primary-color;
 }
 
@@ -158,28 +212,52 @@ h1, h2 {
   color: $secondary-color;
 }
 
+.panel-primary {
+  border-color: $green-color;
+}
 
+.panel-primary > .panel-heading {
+  background-color: $green-color;
+  border-color: $green-color;
+  font-size: 1.4em;
+}
 
+#page-wrapper {
+}
+
+.sidebar {
+  margin-top: 7rem;
+  background-color: transparent;
+  border-style: none;
+  box-shadow: 0px 0px 0px white;
+}
+
+.sidebar .navbar-default {
+  background-color: transparent;
+}
+
+//General classes
+
+.float-right {
+  float: right;
+}
 
 //body{
-//	background-image: url(cover-un.jpg);
-//	background-repeat: no-repeat;
-//	background-size: cover;
-//	background-position: center center;
-//	background-attachment: fixed;
+//  background-image: url(cover-un.jpg);
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//  background-position: center center;
+//  background-attachment: fixed;
 //}
-
 //.navbar-default .navbar-brand{
-//	line-height: 5rem;
-//	text-align: center;
-//	width: 30rem;
-//	font-family: 'Ancizar-Sans-Thin';
-//	font-size: 3rem;
+//  line-height: 5rem;
+//  text-align: center;
+//  width: 30rem;
+//  font-family: 'Ancizar-Sans-Thin';
+//  font-size: 3rem;
 //}
 //
 //.navbar-default .navbar-brand span{
-//	font-size: 4rem;
-//	font-family: 'Ancizar-Serif-Bold', sans-serif;
+//  font-size: 4rem;
+//  font-family: 'Ancizar-Serif-Bold', sans-serif;
 //}
-
-

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011144927) do
+ActiveRecord::Schema.define(version: 20171026172546) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer "user_id"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20171011144927) do
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
   create_table "event_califications", force: :cascade do |t|
@@ -85,6 +100,10 @@ ActiveRecord::Schema.define(version: 20171011144927) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "image"
+    t.integer "category_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
   end
 
   create_table "favorite_events", force: :cascade do |t|
@@ -92,6 +111,15 @@ ActiveRecord::Schema.define(version: 20171011144927) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "event_id"
   end
 
   create_table "roles", force: :cascade do |t|

@@ -1,0 +1,450 @@
+@charset "UTF-8";
+/* line 10, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 0.5rem;
+}
+
+/* line 17, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form h1 {
+  color: white !important;
+}
+
+/* line 22, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .field {
+  margin-top: 1rem;
+}
+
+/* line 26, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-default .panel-heading {
+  background-color: #A61C31;
+}
+
+/* line 30, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-default {
+  border-style: none;
+  background-color: rgba(143, 143, 143, 0.3);
+  border-radius: 2rem;
+}
+
+/* line 37, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form label {
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  display: inline-block;
+  font-family: 'Ancizar-Serif-Bold', sans-serif;
+}
+
+/* line 46, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form input,
+.event_form textarea {
+  min-width: 90%;
+  resize: none;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  border-style: none;
+  border-bottom: 1px solid #A61C31;
+  background-color: transparent;
+  text-align: center;
+  font-family: 'Ancizar-Serif-Light', sans-serif;
+}
+
+/* line 60, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .date_select {
+  text-align: center;
+  align-items: center;
+}
+
+/* line 66, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form #event_image {
+  border-style: none;
+  min-width: 50%;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 76, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#new_event_form #event_id_user,
+#edit_event_form #event_id_user,
+#new_event_form #event_cancelled,
+#edit_event_form #event_cancelled,
+#new_event_form #event_published,
+#edit_event_form #event_published,
+#new_event_form #event_calification,
+#new_event_form #event_all_calification,
+#edit_event_form #event_calification,
+#edit_event_form #event_all_calification,
+#new_event_form label[for=event_Público],
+#edit_event_form label[for=event_Público],
+#new_event_form label[for=event_Cancelado],
+#edit_event_form label[for=event_Cancelado],
+#new_event_form label[for=event_id_user],
+#new_event_form label[for=event_Calificación],
+#new_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_Calificación],
+#edit_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_id_user] {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 101, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form input:focus,
+.event_form textarea:focus {
+  box-shadow: 0px 0px 8px 2px #A61C31;
+  outline: none;
+}
+
+/* line 108, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .btn-success {
+  background-color: #94B43B;
+  border-color: transparent;
+}
+
+/* line 112, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-footer {
+  background-color: #A61C31;
+}
+
+/* line 116, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-footer a {
+  color: white;
+  text-align: center;
+}
+
+/* line 121, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #back {
+  visibility: hidden;
+}
+
+/* line 126, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #back:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f0a8';
+}
+
+/* line 134, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #show {
+  visibility: hidden;
+}
+
+/* line 139, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #show:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f06e';
+}
+
+/* line 147, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #delete {
+  visibility: hidden;
+}
+
+/* line 152, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #delete:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f00d';
+}
+
+/* line 160, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #download {
+  visibility: hidden;
+}
+
+/* line 165, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #download:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f019';
+}
+
+/* line 173, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit {
+  visibility: hidden;
+}
+
+/* line 178, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f044';
+}
+
+/* line 186, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit {
+  visibility: hidden;
+}
+
+/* line 191, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f044';
+}
+
+/* line 198, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit {
+  visibility: hidden;
+}
+
+/* line 203, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f044';
+}
+
+/* line 210, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit {
+  visibility: hidden;
+}
+
+/* line 215, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f044';
+}
+
+/* line 224, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #comment {
+  visibility: hidden;
+}
+
+/* line 229, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #comment:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\F075';
+}
+
+/* line 237, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #rate {
+  visibility: hidden;
+}
+
+/* line 242, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #rate:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f006';
+}
+
+/* line 250, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #assist {
+  visibility: hidden;
+}
+
+/* line 255, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #assist:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f058';
+}
+
+/* line 263, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #not_assist {
+  visibility: hidden;
+}
+
+/* line 268, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #not_assist:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f057';
+}
+
+/* line 276, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer a {
+  color: #94B43B;
+  font-size: 0rem;
+  margin-left: 1rem;
+}
+
+/* line 282, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer a:hover {
+  color: #A61C31;
+}
+
+/* line 286, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#events_view .panel-heading h2 {
+  color: white;
+  font-family: 'Ancizar-Serif-Semibold', sans-serif;
+}
+
+/* line 291, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#events_view .panel-body .white-text {
+  text-align: justify;
+  text-align-last: center;
+}
+
+/* line 299, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#events_view .panel-primary {
+  height: 40rem !important;
+}
+
+/* line 303, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#events_view .panel-primary .panel-body {
+  height: 22.4rem !important;
+  padding: 0;
+}
+
+/* line 309, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#events_view .panel-primary .panel-body .screen {
+  cursor: pointer;
+}
+
+/* line 313, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.screen,
+.screen .row,
+.screen .col-sm-12 {
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* line 322, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.box {
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  right: 1.5rem;
+  bottom: 100%;
+  left: 1.5rem;
+  -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* line 338, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.box .white-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: block;
+  /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 14em;
+}
+
+/* line 355, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+.screen:hover .box {
+  visibility: visible;
+  bottom: 0;
+}
+
+/* line 359, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#events_view #panel-date-event {
+  color: #A61C31;
+  height: 1rem;
+  margin-top: 0;
+  border-bottom: 1px solid #94B43B;
+  padding-bottom: 2rem;
+}
+
+/* line 368, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#file-btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 19rem;
+}
+
+/* line 378, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#file-btn input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* line 393, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#show_event .panel-heading {
+  background-color: #94B43B;
+}
+
+/* line 397, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#show_event .panel-heading h2
+#show_event .panel-heading h2 a {
+  color: white;
+  font-family: 'Ancizar-Serif-Extrabold';
+}
+
+/* line 403, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#create_event .panel-heading h2 {
+  color: white;
+  font-family: 'Ancizar-Serif-Semibold';
+}
+
+/* line 408, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#create_event .panel-body a {
+  visibility: hidden;
+}
+
+/* line 412, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#create_event .panel-body a:before {
+  margin-top: 3.5rem;
+  margin-left: 8rem;
+  width: 10rem;
+  display: block;
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 10rem;
+  content: '\f055';
+  color: #aaa;
+}
+
+/* line 424, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/events.scss */
+#create_event .panel-body a:before:hover {
+  color: #fff;
+}

@@ -12,8 +12,12 @@ module UNCalendario
     config.load_defaults 5.1
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.time_zone = "Bogota"
+    config.active_record.default_timezone= :utc
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.active_job.queue_adapter = :delayed_job
+    config.beginning_of_week = :sunday
   end
 end

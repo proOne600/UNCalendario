@@ -16,6 +16,24 @@ gem 'will_paginate'
 #Para poder generar PDF
 gem 'prawn'
 
+#upload files
+gem 'paperclip'
+gem 'dropzonejs-rails'
+#Agrupar por dias o fechas
+gem 'groupdate'
+
+#Crear graficos
+gem "chartkick"
+
+#Usar metodos Delayed Job
+gem 'delayed_job_active_record'
+
+#Crear Calendario
+gem "simple_calendar", "~> 2.0"
+
+#faker
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 # Use Puma as the app server
@@ -39,8 +57,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # 
 gem 'sprockets-rails'
-gem 'omniauth-facebook'
 
+gem 'geocoder'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

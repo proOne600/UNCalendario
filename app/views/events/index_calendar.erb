@@ -1,0 +1,22 @@
+<h1>Eventos</h1>
+<%= render 'index_categories_filter' %>
+
+<%= link_to 'Ver version mosaico', events_path %> <br>
+
+<%= month_calendar events: @events do |date, events| %>
+    <%= date.day %>
+
+    <% events.each do |event| %>
+        <div>
+          <%= link_to event.name, event %>
+        </div>
+    <% end %>
+<% end %>
+
+
+<% if user_signed_in? %>
+    <%= link_to 'Crea un nuevo evento', new_event_path %>
+<% else %>
+    <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path %> <br>
+    <%= link_to '¿No tienes una cuenta? ¡Registrate!', new_user_registration_path %>
+<% end %>
