@@ -46,7 +46,7 @@ $secondary-color: $red-color;
     border-style: none;
 
 }
-#event_view .panel-heading h5,
+#event_view .panel-heading h5
 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -259,7 +259,7 @@ $secondary-color: $red-color;
     text-align: center;
 }
 
-.panel-footer #back,
+.panel-footer #back
 
 {
     visibility: hidden;
@@ -272,8 +272,7 @@ $secondary-color: $red-color;
     content: '\f0a8';
 }
 
-.panel-footer #show,
-
+.panel-footer #show
 {
     visibility: hidden;
 }
@@ -285,7 +284,7 @@ $secondary-color: $red-color;
     content: '\f06e';
 }
 
-.panel-footer #delete,
+.panel-footer #delete
 
 {
     visibility: hidden;
@@ -298,7 +297,7 @@ $secondary-color: $red-color;
     content: '\f00d';
 }
 
-.panel-footer #download,
+.panel-footer #download
 
 {
     visibility: hidden;
@@ -311,7 +310,7 @@ $secondary-color: $red-color;
     content: '\f019';
 }
 
-.panel-footer #edit,
+.panel-footer #edit
 
 {
     visibility: hidden;
