@@ -1,7 +1,7 @@
 ###Trabajos realizado por cada integrante del grupo #SPRINT 4:
 
-- Miguel Tovar: Correccion errores al crear evento, creacion funcionalidad Generar PDF de cada evento, Inclusion de paginacion en la vista
-            de eventos, autentificacion de usuario al editar o remover eventos. Intentos: Crear comentario, crear calificacion, subir archivos.
+- Miguel Tovar: Creacion de MAILER para usuario y eventos, funcionalidad, recibir notificacion al crear evento y al registrarse, implementacion 
+-               calendario de eventos, creacion modulo de estadisticas y descarga de los mismos en un formato.
             
 - Daniel Cifuentes: Soporte desarrollo querys, faker, filtro home, comentarios, calificaciones.
 
