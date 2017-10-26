@@ -20,17 +20,15 @@
             <strong>Categoria</strong>
             <%= @event.category.name %>
           </p>
-
-
-          <p>
-            <strong>Publico:</strong>
-            <%= @event.published %>
-          </p>
-
-          <p>
-            <strong>Privado:</strong>
-            <%= @event.cancelled %>
-          </p>
+          <% if @event.published? %>
+              <p>
+                <strong>Este evento es privado</strong>
+              </p>
+          <% else %>
+              <p>
+                <strong>Este evento es publico</strong>
+              </p>
+          <% end %>
 
 
           <p>
@@ -76,6 +74,7 @@
 
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12">
+<<<<<<< HEAD
           <%= link_to 'Calificar', new_event_review_path(@event) %>
 
         </div>
@@ -83,6 +82,63 @@
       </div>
 
     </div>
+=======
+          <div class="row">
+            <div class="map">
+              <div id="map" style="height: 400px; width: 100%;"></div>
+              <script>
+                  function initMap() {
+                      var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
+                      var map = new google.maps.Map(document.getElementById('map'), {
+                          zoom: 20,
+                          center: uluru
+                      });
+                      var marker = new google.maps.Marker({
+                          position: uluru,
+                          map: map
+                      });
+                  }
+              </script>
+              <script async defer
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
+              </script>
+            </div>
+          </div>
+          <p>Dirección: cerca de <%= @event.address %></p>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xs-12">
+          <div class="chat-panel panel panel-default">
+            <div class="panel-heading">
+              <i class="fa fa-comments fa-fw"></i> Comentarios de la comunidad
+              <span>( <%= @event.reviews.count %> )</span>
+              <div class="average-review-rating float-right" data-score=<%= @average_review %>></div>
+
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <ul class="chat">
+                <%= render @event.reviews %>
+              </ul>
+            </div>
+            <!-- /.panel-body -->
+            <div class="panel-footer">
+              <%= link_to 'Calificar', new_event_review_path(@event), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#myModal', :class => 'btn btn-warning withe'} %>
+            </div>
+            <!-- /.panel-footer -->
+          </div>
+
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+>>>>>>> 93de6e438273b08a36ec73f34087dc1604b7b6de
 
     <div class="panel-footer">
       <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
@@ -96,6 +152,29 @@
   </div>
 </section>
 
+
+
 <p id="notice">
   <%= notice %>
 </p>
+<<<<<<< HEAD
+=======
+
+
+<script type="text/javascript" charset="utf-8">
+    $('.average-review-rating').raty({
+        readOnly: true,
+        score: function () {
+            return $(this).attr('data-score')
+        },
+        path: '/assets/'
+    })
+</script>
+
+<script>
+    $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    })
+</script>
+>>>>>>> 93de6e438273b08a36ec73f34087dc1604b7b6de
