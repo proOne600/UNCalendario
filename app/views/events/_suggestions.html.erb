@@ -1,12 +1,16 @@
 <li class="left clearfix">
   <span class="chat-img pull-left">
-    <%= image_tag('event-2.jpg',  size: '50') %>
+    <%= link_to event_path(suggestions) do %>
+      <%= image_tag('event-2.jpg', size: '50') %>
+    <% end %>
   </span>
   <div class="chat-body clearfix">
     <div class="header">
-      <strong class="primary-font"><%= suggestions.name %></strong>
+      <%= link_to event_path(suggestions) do %>
+        <strong class="primary-font"><%= suggestions.name %></strong>
+      <% end %>
       <small class="pull-right text-muted">
-        <i class="fa fa-clock-o fa-fw"></i> <%= time_ago_in_words(suggestions.event_date) %>
+        <i class="fa fa-clock-o fa-fw"></i> Comenzará en <%= time_ago_in_words(suggestions.event_date) %>
       </small>
     </div>
     <p>
