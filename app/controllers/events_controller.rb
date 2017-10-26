@@ -6,11 +6,18 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    if params[:param1] == "months"
-      @events = Event.all
-      render 'viewCalendar'
+    @categories = Category.all
+    if params[:category].blank?
+      @events = Event.where('event_date > ?', Date.today).order('event_date ASC')
     else
-      @events = Event.all.paginate(:page => params[:page], :per_page => 30)
+      @category_id = Category.find_by_name(params[:category])
+      @events = Event.where('event_date > ?', Date.today).where('category_id = ?', @category_id).order('event_date ASC')
+    end
+
+    if params[:param1] == 'months'
+      render 'index_calendar'
+    else
+      @events = @events.paginate(:page => params[:page], :per_page => 30)
       @size = Event.total_size
       render 'index'
     end

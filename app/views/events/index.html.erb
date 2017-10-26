@@ -1,4 +1,5 @@
 <h1 class="text-center text-header">Eventos</h1>
+<%= render 'index_categories_filter' %>
 <br>
 <%= will_paginate @events %>
 <div class="row" id="event_view">
@@ -46,7 +47,3 @@
   <%= link_to '', events_path(:param1 => "months"), id: "calendar_edition", class: "pull-right fa fa-calendar btn btn-default", title: "Versión calendario" %>
   <br>
   <%= will_paginate @events %>
-  <br>
-  <h6>Numero de eventos creados:</h6>
-  <%= will_paginate @events %>
-            
