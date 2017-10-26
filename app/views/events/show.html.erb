@@ -59,16 +59,10 @@
                 <%= @event.even_end_date.to_formatted_s(:short) %>
             <% end %>
           </p>
+          <hr>
 
-          <p>
-            <strong>Calificacion:</strong>
-            <%= @event.calification %>
-          </p>
-
-          <p>
-            <strong>Todas las calificaciones:</strong>
-            <%= @event.all_calification %>
-          </p>
+          <%= social_share_button_tag(@event.name[0..20].gsub(/\s\w+\s*$/,'...') + ' en ' + time_ago_in_words(@event.event_date) + 'mas detalles en ')%>
+          <hr>
 
           <!-- Mostrar la imagen del evento-->
           <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>

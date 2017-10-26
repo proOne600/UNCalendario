@@ -60,6 +60,12 @@ gem 'sprockets-rails'
 
 gem 'geocoder'
 
+# Social sharing
+gem 'social-share-button'
+
+#Language
+gem 'rails-i18n'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
