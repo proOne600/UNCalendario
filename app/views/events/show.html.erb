@@ -76,14 +76,7 @@
 
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12">
-          <%= link_to 'Calificar', new_event_review_path(@event) %>
-
-        </div>
-        
-      </div>
-
-    </div>
-          <div class="row">
+           <div class="row">
             <div class="map">
               <div id="map" style="height: 400px; width: 100%;"></div>
               <script>
@@ -105,9 +98,23 @@
             </div>
           </div>
           <p>Dirección: cerca de <%= @event.address %></p>
+          <%= link_to 'Calificar', new_event_review_path(@event) %>
         </div>
-        <div class="col-md-6 col-lg-6 col-xs-12">
-          <div class="chat-panel panel panel-default">
+        
+      </div>
+
+    </div>
+    <div class="panel-footer">
+      <div class="links">
+         <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
+      <% if @event.user == current_user %>
+          <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
+      <% end %>
+      <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
+      <%= link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf %>
+      </div>
+      <div class="commentaries" style="height: 20rem;">
+          <div class="chat-panel panel panel-default" style="height: 20rem;">
             <div class="panel-heading">
               <i class="fa fa-comments fa-fw"></i> Comentarios de la comunidad
               <span>( <%= @event.reviews.count %> )</span>
@@ -115,7 +122,7 @@
 
             </div>
             <!-- /.panel-heading -->
-            <div class="panel-body">
+            <div class="panel-body" style="height: 10rem; overflow: scroll;">
               <ul class="chat">
                 <%= render @event.reviews %>
               </ul>
@@ -133,26 +140,11 @@
               </div>
             </div>
           </div>
-
-        </div>
       </div>
-    </div>
-
->>>>>>> 93de6e438273b08a36ec73f34087dc1604b7b6de
-
-    <div class="panel-footer">
-      <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
-      <% if @event.user == current_user %>
-          <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
-      <% end %>
-      <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
-      <%= link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf %>
     </div>
 
   </div>
 </section>
-
-
 
 <p id="notice">
   <%= notice %>
