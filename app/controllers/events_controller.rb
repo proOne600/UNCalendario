@@ -52,7 +52,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-        @categories = Category.all.map {|c| [c.name, c.id]}
+    @categories = Category.all.map {|c| [c.name, c.id]}
 
   end
 
@@ -158,7 +158,7 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:name, :description, :published, :cancelled, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :category_id)
+    params.require(:event).permit(:name, :description, :published, :cancelled, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :category_id, :address)
     #params.require(:event).permit(:name, :description, :published, :cancelled, :id_user, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
     #params.require(:event).permit(:name, :description, :published, :cancelled, :current_user_id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
     #params.require(:event).permit(:name, :description, :published, :cancelled, @users.id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
@@ -172,6 +172,7 @@ class EventsController < ApplicationController
     end
 
   end
+
 
   #cal = {}
 

@@ -61,6 +61,10 @@
         <%= f.date_select :even_end_date, order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c' %>
       </div>
     </div>
+     <div class="form-group">
+          <%= f.label :Ubicación %><br/>
+          <%= f.text_field :address, autofocus: true, class: 'form-control' %>
+        </div>
 
     <!-- Insertar imagen -->
     <div>
