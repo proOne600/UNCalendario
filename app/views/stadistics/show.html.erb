@@ -31,6 +31,8 @@
       
       
       <%= pie_chart Event.group(:category_id).count %>
+      
+      <%= link_to 'Descargar estadisticas',stadistics_generate_path %>
 
       
     </div>
