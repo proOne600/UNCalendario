@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   resources :categories
   resources :event_locations
   resources :event_tags
-  resources :events
+  resources :events do
+    resources :reviews
+  end
+
   get 'sessions/create'
 
   get 'sessions/destroy'

@@ -16,6 +16,10 @@ gem 'will_paginate'
 #Para poder generar PDF
 gem 'prawn'
 
+#upload files
+gem 'paperclip'
+gem 'dropzonejs-rails'
+
 #Usar metodos Delayed Job
 gem 'delayed_job_active_record'
 

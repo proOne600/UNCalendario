@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :shared_events
   has_many :event_documents
   has_one :user_profiles
+  has_many :reviews
 
   # belongs_to :assignments
   
