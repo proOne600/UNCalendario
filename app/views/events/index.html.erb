@@ -48,7 +48,8 @@
       <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path, class: "btn btn-default" %>
       <%= link_to '¿No tienes una cuenta?', new_user_registration_path, class: "btn btn-default", id: "¡Registrate!" %>
   <% end %>
+  <%= link_to 'Descargar eventos', events_docs_path, class: "btn btn-default" %>
   <%= link_to '', events_path(:param1 => "months"), id: "calendar_edition", class: "pull-right fa fa-calendar btn btn-default", title: "Versión calendario" %>
   <br>
-  <%= will_paginate @events %>
+  <%= will_paginate @events %> <br>
   <%= link_to 'Estadisticas', stadistics_path, class: "btn btn-default" %>

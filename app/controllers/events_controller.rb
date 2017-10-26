@@ -92,7 +92,7 @@ class EventsController < ApplicationController
   
   def get_events
     send_data gen_documents(@events),
-              filename: "EventosSeleccionados.pdf"
+              filename: "Eventos.pdf",
               type: "application/pdf"
   end
 
