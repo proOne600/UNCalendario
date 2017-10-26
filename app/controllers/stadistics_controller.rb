@@ -17,7 +17,9 @@ class StadisticsController < ApplicationController
 	
 	def generate_stadistics
         Prawn::Document.new do
+            font("Courier-Bold", :size => 25)
             text "Estadisticas", align: :center
+            font("Courier", :size => 14)
             text "Numero total de eventos: #{Event.total_size}"
             text "Numero total de usuarios: #{User.total_size}"
             text "Mujeres registradas: #{User.total_women}"
