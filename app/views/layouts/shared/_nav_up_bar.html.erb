@@ -1,4 +1,27 @@
 <ul class="nav navbar-top-links navbar-right">
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-search fa-fw"></i> <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-tasks">
+      <!--Search bar input-->
+      <li class="sidebar-search">
+        <div class="input-group custom-search-form">
+          <input type="text" class="form-control" placeholder="Buscar evento...">
+          <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+        </div>
+        <!-- /input-group -->
+      </li>
+      <!--END Search bar input-->
+      <li class="divider"></li>
+
+    </ul>
+    <!-- /.dropdown-tasks -->
+  </li>
   <% if user_signed_in? %>
       <!-- /.dropdown -->
       <li class="dropdown">
@@ -118,28 +141,5 @@
         <% end %>
       </li>
   <% end %>
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="fa fa-search fa-fw"></i> <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-tasks">
-      <!--Search bar input-->
-      <li class="sidebar-search">
-        <div class="input-group custom-search-form">
-          <input type="text" class="form-control" placeholder="Buscar evento...">
-          <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
-        </div>
-        <!-- /input-group -->
-      </li>
-      <!--END Search bar input-->
-      <li class="divider"></li>
-
-    </ul>
-    <!-- /.dropdown-tasks -->
-  </li>
 
 </ul>
