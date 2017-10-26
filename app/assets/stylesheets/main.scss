@@ -145,7 +145,7 @@ body {
   font-family: 'Ancizar-Sans-Thin';
   border-bottom-left-radius: 1rem;
   background-image: url(background-2.jpg);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(background-2.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(background-3.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -153,48 +153,6 @@ body {
 }
 
 //Navbar classes
-.navbar-default {
-  height: 7rem;
-  background-color: rgba(148, 180, 59, 0.4);
-  line-height: 4rem;
-  box-shadow: 1px 1px 1px $primary-color;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
-.navbar.top-links,
-.navbar-top-links li,
-.navbar-top-links li a {
-  font-family: 'Ancizar-Serif-Regular', sans-serif;
-  font-size: 1.6rem;
-  height: 100%;
-  min-width: 15rem;
-  line-height: 3.7rem;
-  text-align: center;
-  color: white;
-  border-radius: 1rem;
-}
-
-.navbar-top-links li a:hover {
-  background-color: #88A61F;
-  color: white;
-}
-
-.navbar-default .navbar-brand {
-  line-height: 4rem;
-  color: white;
-  font-size: 2.4rem;
-  font-family: 'Ancizar-Serif-Semibold', sans-serif;
-}
-
-.navbar-brand img {
-  display: unset;
-}
-
-.logo-un {
-  max-height: 150%;
-
-}
 
 //Typography classes
 h1,
@@ -225,16 +183,6 @@ h2 {
 #page-wrapper {
 }
 
-.sidebar {
-  margin-top: 7rem;
-  background-color: transparent;
-  border-style: none;
-  box-shadow: 0px 0px 0px white;
-}
-
-.sidebar .navbar-default {
-  background-color: transparent;
-}
 
 //General classes
 
