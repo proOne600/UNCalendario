@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_event
+  before_action :authenticate_user!, only: [:destroy, :new]
 
   def new
     @review = Review.new
