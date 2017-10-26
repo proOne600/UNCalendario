@@ -19,6 +19,11 @@ gem 'prawn'
 #upload files
 gem 'paperclip'
 gem 'dropzonejs-rails'
+#Agrupar por dias o fechas
+gem 'groupdate'
+
+#Crear graficos
+gem "chartkick"
 
 #Usar metodos Delayed Job
 gem 'delayed_job_active_record'

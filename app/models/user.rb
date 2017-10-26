@@ -24,6 +24,14 @@ class User < ApplicationRecord
   def self.total_size
     self.count
   end
+  
+  def self.total_women
+    self.where(is_female: true).count
+  end
+  
+  def self.total_men
+    self.where(is_female: false).count
+  end
 
 
   # def self.from_omniauth(access_token)

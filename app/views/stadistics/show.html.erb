@@ -1,0 +1,46 @@
+<section id="show_event">
+  <div class="panel panel-success">
+    <div class="panel-heading text-center">
+      <h2>Estadisticas</h2>
+    </div>
+    <div class="panel-body">
+      <p>
+        <strong>Numero de eventos creados:</strong>
+        <%= @total_events %>
+      </p>
+      
+      
+
+      <p>
+        <strong>Numero de usuarios creados:</strong>
+        <%= @total_users %>
+      </p>
+      
+      
+
+      <p>
+        <strong>Numero de mujeres registradas:</strong>
+        <%= @women %>
+      </p>
+
+
+      <p>
+        <strong>Numero de hombres registrados:</strong>
+        <%= @men %>
+      </p>
+      
+      
+      <%= pie_chart Event.group(:category_id).count %>
+      
+      <%= link_to 'Descargar estadisticas',stadistics_generate_path %>
+
+      
+    </div>
+   
+
+  </div>
+</section>
+
+<p id="notice">
+  <%= notice %>
+</p>
