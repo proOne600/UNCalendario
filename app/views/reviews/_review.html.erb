@@ -1,0 +1,21 @@
+<li class="left clearfix">
+  <span class="chat-img pull-left">
+    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+  </span>
+  <div class="chat-body clearfix">
+    <div class="header">
+      <strong class="primary-font"><%= review.user.name %> <%= review.user.email.to_s.split('@').first %></strong>
+      <small class="pull-right text-muted">
+        <i class="fa fa-clock-o fa-fw"></i> <%= time_ago_in_words(review.created_at) %>
+      </small>
+    </div>
+    <p>
+      <%= review.comment %>
+    </p>
+    <% (1..5).each do |i| %>
+        <%= (i <= review.rating.to_f) ? '<i class="fa fa-star"/></i>'.html_safe : '<i class="fa fa-star-o"/></i>'.html_safe %>
+    <% end %>
+    <p>
+    </p>
+  </div>
+</li>

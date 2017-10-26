@@ -1,5 +1,7 @@
 <%= form_for([@event, @event.reviews.build]) do |f| %>
+    <p>rating</p>
     <%= f.text_field :rating %>
+    <p>comment</p>
     <%= f.text_field :comment %>
     <%= f.button :submit %>
 <% end %>
