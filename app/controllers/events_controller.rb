@@ -10,8 +10,8 @@ class EventsController < ApplicationController
     if params[:category].blank?
       @events = Event.where('event_date > ?', Date.today).order('event_date ASC')
     else
-      @category_id = Category.find_by_name(params[:category])
-      @events = Event.where('event_date > ?', Date.today).where('category_id = ?', @category_id).order('event_date ASC')
+      @category = Category.find_by_name(params[:category])
+      @events = Event.where('event_date > ?', Date.today).where('category_id = ?', @category).order('event_date ASC')
     end
 
     if params[:param1] == 'months'
