@@ -26,9 +26,9 @@
           <% end %>
 
           <% if @event.cancelled? %>
-            <p>
-              <strong>Este evento ya fue cancelado</strong>
-            </p>
+              <p>
+                <strong>Este evento ya fue cancelado</strong>
+              </p>
           <% end %>
 
 
@@ -74,45 +74,44 @@
           <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12">
-           <div class="row">
-              <div class="row">
-                <div class="map">
-                  <div id="map" style="height: 400px; width: 95%; border-radius: 2rem;"></div>
-                  <script>
-                      function initMap() {
-                          var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
-                          var map = new google.maps.Map(document.getElementById('map'), {
-                              zoom: 20,
-                              center: uluru
-                          });
-                          var marker = new google.maps.Marker({
-                              position: uluru,
-                              map: map
-                          });
-                      }
-                  </script>
-                  <script async defer
-                          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
-                  </script>
-                </div>
-              </div>
-              <p>Dirección: cerca de <%= @event.address %></p>
-              <%= link_to 'Calificar', new_event_review_path(@event) %>
+          <div class="row">
+            <div class="map">
+              <div id="map" style="height: 400px; width: 95%; border-radius: 2rem;"></div>
+              <script>
+                  function initMap() {
+                      var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
+                      var map = new google.maps.Map(document.getElementById('map'), {
+                          zoom: 17,
+                          center: uluru
+                      });
+                      var marker = new google.maps.Marker({
+                          position: uluru,
+                          map: map
+                      });
+                  }
+              </script>
+              <script async defer
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
+              </script>
+            </div>
+
           </div>
         </div>
-    </div>
+      </div>
     </div>
     <div class="panel-footer">
       <div class="links">
-         <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
-      <% if @event.user == current_user %>
-          <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
-      <% end %>
-      <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
-      <%= link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf %>
+        <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
+        <% if @event.user == current_user %>
+            <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
+        <% end %>
+        <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
+        <%= link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf %>
       </div>
-      <div class="commentaries" style="height: 20rem;">
-          <div class="chat-panel panel panel-default" style="height: 20rem;">
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="chat-panel panel panel-default">
             <div class="panel-heading">
               <i class="fa fa-comments fa-fw"></i> Comentarios de la comunidad
               <span>( <%= @event.reviews.count %> )</span>
@@ -120,24 +119,71 @@
 
             </div>
             <!-- /.panel-heading -->
-            <div class="panel-body" style="height: 10rem; overflow: scroll;">
+            <div class="panel-body">
               <ul class="chat">
                 <%= render @event.reviews %>
               </ul>
             </div>
             <!-- /.panel-body -->
             <div class="panel-footer">
-              <%= link_to 'Calificar', new_event_review_path(@event), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#myModal', :class => 'btn btn-warning withe'} %>
+              <% if user_signed_in? %>
+                  <%= link_to 'Calificar', new_event_review_path(@event), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#myModal', :class => 'btn btn-primary btn-lg btn-block'} %>
+              <% end %>
             </div>
             <!-- /.panel-footer -->
           </div>
 
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-              </div>
+        </div>
+        <div class="col-md-8">
+          <div class="chat-panel panel panel-default">
+            <div class="panel-heading">
+              <i class="fa fa-calendar fa-fw"></i> OTROS EVENTOS SIMILARES
             </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <ul class="chat">
+                <%= render partial: 'suggestions', collection: @suggestions%>
+              </ul>
+            </div>
+            <!-- /.panel-body -->
+            <div class="panel-footer">
+            </div>
+            <!-- /.panel-footer -->
           </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          </div>
+        </div>
       </div>
     </div>
 
+  </div>
+</section>
+
+
+
+<p id="notice">
+  <%= notice %>
+</p>
+
+
+<script type="text/javascript" charset="utf-8">
+    $('.average-review-rating').raty({
+        readOnly: true,
+        score: function () {
+            return $(this).attr('data-score')
+        },
+        path: '/assets/'
+    })
+</script>
+
+<script>
+    $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    })
+</script>
