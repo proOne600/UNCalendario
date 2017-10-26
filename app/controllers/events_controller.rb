@@ -42,6 +42,7 @@ class EventsController < ApplicationController
     else
       @average_review = @event.reviews.average(:rating).round(2)
     end
+    @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4)
   end
 
   # GET /events/new
@@ -87,6 +88,12 @@ class EventsController < ApplicationController
   def get_pdf
     send_data generate_pdf(@event),
               filename: "#{@event.name}.pdf",
+              type: "application/pdf"
+  end
+  
+  def get_events
+    send_data gen_documents(@events),
+              filename: "Eventos.pdf",
               type: "application/pdf"
   end
 
@@ -152,6 +159,22 @@ class EventsController < ApplicationController
       end
       if event.even_end_date.present?
         text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
+      end
+    end.render
+  end
+  
+  def gen_documents(eventos)
+    Prawn::Document.new do
+      eventos.each do |event|
+        text event.name, align: :center
+        text "Descripcion: #{event.description}"
+        text "Categoria: #{Category.find(event.category_id).name}"
+        if event.event_date.present?
+          text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
+        end
+        if event.even_end_date.present?
+          text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
+        end
       end
     end.render
   end
