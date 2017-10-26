@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   get '/contact' => 'home#contact'
   get '/stadistics' =>'stadistics#show'
   get '/stadistics/generate' => 'stadistics#get_data'
-  get '/events' => 'events#gen_documents'
+  get '/events' => 'events#gen_documents', as: 'docs'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   #get ‘send’ => ‘send#index’
