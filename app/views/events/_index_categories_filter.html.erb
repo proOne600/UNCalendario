@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12 text-center">
     <% @categories.each do |category| %>
-        <%= link_to category.name, events_path(category: category.name), class: 'btn btn-primary' %>
+        <%= link_to category.name, events_path(category: category.name), class: 'btn btn-primary btn-sm' %>
     <% end %>
 
   </div>
