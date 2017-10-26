@@ -87,21 +87,21 @@
             </div>
             <!-- /.panel-body -->
             <div class="panel-footer">
-              <div class="input-group">
-                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here...">
-                <span class="input-group-btn">
-                  <button class="btn btn-warning btn-sm" id="btn-chat">
-                    Send
-                  </button>
-                </span>
-              </div>
+                  <%= link_to 'Calificar', new_event_review_path(@event), {:remote => true, 'data-toggle' => "modal", 'data-target' => '#myModal', :class=>'btn btn-warning withe' } %>
             </div>
             <!-- /.panel-footer -->
           </div>
-          <%= link_to 'Calificar', new_event_review_path(@event) %>
+
+
+
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              </div>
+            </div>
+          </div>
 
         </div>
-
       </div>
 
     </div>
@@ -118,9 +118,12 @@
   </div>
 </section>
 
+
+
 <p id="notice">
   <%= notice %>
 </p>
+
 
 <script type="text/javascript" charset="utf-8">
     $('.average-review-rating').raty({
@@ -129,5 +132,12 @@
             return $(this).attr('data-score')
         },
         path: '/assets/'
+    })
+</script>
+
+<script>
+    $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
     })
 </script>
