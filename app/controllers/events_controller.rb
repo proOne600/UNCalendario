@@ -36,6 +36,11 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    if @event.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @event.reviews.average(:rating).round(2)
+    end
   end
 
   # GET /events/new

@@ -6,15 +6,11 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-6 col-lg-6 col-xs-12">
-          <p>
-            <strong>Nombre del evento:</strong>
-            <%= @event.name %>
-          </p>
-
-          <p>
-            <strong>Descripcion:</strong>
+          <h2><%= @event.name %></h2>
+          <p class="lead">
             <%= @event.description %>
           </p>
+
 
           <p>
             <strong>Categoria</strong>
@@ -78,7 +74,9 @@
         <div class="col-md-6 col-lg-6 col-xs-12">
           <div class="chat-panel panel panel-default">
             <div class="panel-heading">
-              <i class="fa fa-comments fa-fw"></i> Calificaciones
+              <i class="fa fa-comments fa-fw"></i> Comentarios de la comunidad
+              <div class="average-review-rating float-right" data-score=<%= @average_review %>></div>
+
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -122,3 +120,13 @@
 <p id="notice">
   <%= notice %>
 </p>
+
+<script type="text/javascript" charset="utf-8">
+    $('.average-review-rating').raty({
+        readOnly: true,
+        score: function () {
+            return $(this).attr('data-score')
+        },
+        path: '/assets/'
+    })
+</script>
