@@ -17,6 +17,15 @@
             <%= @event.category.name %>
           </p>
 
+        <% if @event.published? %>
+          <p>
+            <strong>Este evento es privado</strong>
+          </p>
+        <% else %>
+          <p>
+            <strong>Este evento es publico</strong>
+          </p>
+        <% end %>
 
           <p>
             <strong>Publico:</strong>
@@ -72,7 +81,32 @@
 
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12">
-          <div class="chat-panel panel panel-default">
+            <div class="row">
+                <div class="map">
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                    <script>
+                      function initMap() {
+                        var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                          zoom: 20,
+                          center: uluru
+                        });
+                        var marker = new google.maps.Marker({
+                          position: uluru,
+                          map: map
+                        });
+                      }
+                    </script>
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
+                    </script>
+                </div>
+            </div>
+            <p>Dirección: cerca de <%= @event.address %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="chat-panel panel panel-default">
             <div class="panel-heading">
               <i class="fa fa-comments fa-fw"></i> Comentarios de la comunidad
               <div class="average-review-rating float-right" data-score=<%= @average_review %>></div>
@@ -99,11 +133,9 @@
           </div>
           <%= link_to 'Calificar', new_event_review_path(@event) %>
 
-        </div>
-
       </div>
 
-    </div>
+
 
     <div class="panel-footer">
       <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
