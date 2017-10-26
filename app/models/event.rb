@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
     belongs_to :user
-    belongs_to :category
+    belongs_to :category,  optional: true
     has_many :event_location
     has_many :event_tags
     has_many :event_califications
