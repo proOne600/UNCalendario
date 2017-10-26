@@ -11,12 +11,10 @@
             <%= @event.description %>
           </p>
 
-
           <p>
             <strong>Categoria</strong>
             <%= @event.category.name %>
           </p>
-
           <% if @event.published? %>
               <p>
                 <strong>Este evento es privado</strong>
@@ -26,16 +24,6 @@
                 <strong>Este evento es publico</strong>
               </p>
           <% end %>
-
-          <p>
-            <strong>Publico:</strong>
-            <%= @event.published %>
-          </p>
-
-          <p>
-            <strong>Privado:</strong>
-            <%= @event.cancelled %>
-          </p>
 
 
           <p>

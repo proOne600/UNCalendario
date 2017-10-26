@@ -1,8 +1,6 @@
-<div class="row">
-  <h1 class="text-center text-header">Eventos </h1>
-</div>
+<h1 class="text-center text-header">Eventos </h1>
 <% if defined?(@category) %>
-    <span class="alignright"><%= @category.name %></span>
+    <h3 class="text-center text-header"><%= @category.name %></h3>
 <% end %>
 
 <%= render 'index_categories_filter' %>

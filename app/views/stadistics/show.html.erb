@@ -29,8 +29,18 @@
         <%= @men %>
       </p>
       
+      <p>
+        <strong>Porcentaje de mujeres:</strong>
+        <%= (@women*100)/@total_users %> %
+      </p>
       
-      <%= pie_chart Event.group(:category_id).count %>
+      <p>
+        <strong>Porcentaje de Hombres:</strong>
+        <%= (@men*100)/@total_users %> %
+      </p>
+      
+      
+      
       
       <%= link_to 'Descargar estadisticas',stadistics_generate_path %>
 
