@@ -10,7 +10,7 @@ class EventsController < ApplicationController
       @events = Event.all
       render 'viewCalendar'
     else
-      @events = Event.all.paginate(:page => params[:page], :per_page => 6)
+      @events = Event.all.paginate(:page => params[:page], :per_page => 30)
       @size = Event.total_size
       render 'index'
     end

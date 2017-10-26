@@ -365,7 +365,7 @@ $secondary-color: $red-color;
 
 #show_event .panel-heading h2{
     color: white;
-}   
+}
 
 .fa.pull-right {
     margin-left: .3em;
@@ -376,6 +376,10 @@ $secondary-color: $red-color;
     padding: 0.5;
     background-color: $primary-color;
     color: white;
+}
+
+i.fa.fa-eye.align-index {
+  padding: 0.21em;
 }
 
 .box-transparent{

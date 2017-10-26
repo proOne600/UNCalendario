@@ -9,13 +9,15 @@
                        <h5 class="text-center"><%= event.name%> </h5>
                     </div>
                     <div class="panel panel-body">
-                         <div class='screen' style="background-image: url(assets/event-2);"">
+                         <div class='screen' style="background-image: url(assets/event-2);">
                             <div class='row'>
                                 <div class='col-sm-12 center-block '>
                                     <div class='box' >
                                         <p class='white-text '><%= event.description %>
                                         </p>
-                                        <%= link_to '', event, id:"show", title:"ver", class: "fa fa-eye pull-right" %> 
+                                      <%= link_to event, id:"show", class: "fa pull-right" do %>
+                                        <i class="fa fa-eye align-index"></i>
+                                    <% end %>
 
                                     </div>
                                 </div>
@@ -28,16 +30,16 @@
                         <% end %>
                     </div>
                 </div>
-            </div>    
+            </div>
         <% end %>
         <% if user_signed_in? %>
             <div class="col-xs-12 col-md-2 col-lg-2">
-               
+
                     <%= link_to '', new_event_path, class:"btn btn-default fa fa-plus-circle", id:"create-event", title:"Crea un nuevo evento" %>
-            </div> 
-            </div>   
+            </div>
+            </div>
         <% else %>
-            </div>        
+            </div>
                 <%= link_to '¿Quieres crear tu propio evento? ¡Inicia sesion!', new_user_session_path, class:"btn btn-default" %>
                 <%= link_to '¿No tienes una cuenta?', new_user_registration_path, class:"btn btn-default", id:"¡Registrate!" %>
         <% end %>
