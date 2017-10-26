@@ -33,9 +33,12 @@ gem "simple_calendar", "~> 2.0"
 
 #faker
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
