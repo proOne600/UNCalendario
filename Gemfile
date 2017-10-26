@@ -16,6 +16,12 @@ gem 'will_paginate'
 #Para poder generar PDF
 gem 'prawn'
 
+#Agrupar por dias o fechas
+gem 'groupdate'
+
+#Crear graficos
+gem "chartkick"
+
 #Usar metodos Delayed Job
 gem 'delayed_job_active_record'
 
