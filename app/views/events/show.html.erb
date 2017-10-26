@@ -6,8 +6,8 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-6 col-lg-6 col-xs-12">
-          <p>
-            <strong>Descripcion:</strong>
+          <h2><%= @event.name %></h2>
+          <p class="lead">
             <%= @event.description %>
           </p>
 
@@ -73,36 +73,35 @@
 
           <!-- Mostrar la imagen del evento-->
           <%= image_tag(@event.image.url, alt: 'Image') if @event.image? %>
-
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12">
            <div class="row">
-            <div class="map">
-              <div id="map" style="height: 400px; width: 100%;"></div>
-              <script>
-                  function initMap() {
-                      var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
-                      var map = new google.maps.Map(document.getElementById('map'), {
-                          zoom: 20,
-                          center: uluru
-                      });
-                      var marker = new google.maps.Marker({
-                          position: uluru,
-                          map: map
-                      });
-                  }
-              </script>
-              <script async defer
-                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
-              </script>
-            </div>
+              <div class="row">
+                <div class="map">
+                  <div id="map" style="height: 400px; width: 95%; border-radius: 2rem;"></div>
+                  <script>
+                      function initMap() {
+                          var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
+                          var map = new google.maps.Map(document.getElementById('map'), {
+                              zoom: 20,
+                              center: uluru
+                          });
+                          var marker = new google.maps.Marker({
+                              position: uluru,
+                              map: map
+                          });
+                      }
+                  </script>
+                  <script async defer
+                          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
+                  </script>
+                </div>
+              </div>
+              <p>Dirección: cerca de <%= @event.address %></p>
+              <%= link_to 'Calificar', new_event_review_path(@event) %>
           </div>
-          <p>Dirección: cerca de <%= @event.address %></p>
-          <%= link_to 'Calificar', new_event_review_path(@event) %>
         </div>
-        
-      </div>
-
+    </div>
     </div>
     <div class="panel-footer">
       <div class="links">
@@ -143,9 +142,3 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-<p id="notice">
-  <%= notice %>
-</p>
