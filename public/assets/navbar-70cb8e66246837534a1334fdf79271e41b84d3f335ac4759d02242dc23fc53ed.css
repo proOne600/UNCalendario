@@ -1,0 +1,93 @@
+/* line 7, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.sidebar {
+  margin-top: 7rem;
+  background-color: transparent;
+  border-style: none;
+  box-shadow: 0px 0px 0px white;
+}
+
+/* line 14, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.sidebar .navbar-default {
+  background-color: transparent;
+}
+
+/* line 18, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default {
+  height: 8rem;
+  background-color: rgba(143, 143, 143, 0.4);
+  line-height: 5	rem;
+  box-shadow: 1px 1px 1px #94B43B;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/* line 29, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar.top-links,
+.navbar-top-links li,
+.navbar-top-links li a {
+  font-family: 'Ancizar-Serif-Regular', sans-serif;
+  font-size: 2rem;
+  height: 100%;
+  min-width: 15rem;
+  line-height: 6rem;
+  text-align: center;
+  color: #94B43B;
+  border-radius: 1rem;
+  min-width: 20rem;
+}
+
+/* line 43, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-top-links li a:hover {
+  background-color: #88A61F;
+  color: white;
+}
+
+/* line 48, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .navbar-brand {
+  line-height: 4rem;
+  color: white;
+  font-size: 2.4rem;
+  font-family: 'Ancizar-Serif-Semibold', sans-serif;
+}
+
+/* line 55, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-brand img {
+  display: unset;
+}
+
+/* line 59, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.logo-un {
+  max-height: 150%;
+}
+
+/* line 64, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  right: 1rem;
+  top: 0.3rem;
+  background-color: transparent;
+}
+
+/* line 73, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.input-group-btn .btn-default {
+  background-color: transparent;
+  color: #94B43B;
+  border-radius: 50%;
+}
+
+/* line 79, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+#dropdown-search {
+  width: 70rem;
+  background-color: transparent;
+}
+
+/* line 84, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.input-group .form-control:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 4rem;
+}
