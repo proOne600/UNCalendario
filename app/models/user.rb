@@ -2,18 +2,17 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   after_create :send_auth_mail
+  before_create :build_user_profile
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable,:omniauthable, 
          omniauth_providers: [:google_oauth2, :facebook]
 
   has_many :event
-  has_many :event_califications
-  has_many :event_comments
   has_many :favorite_events
   has_many :shared_events
   has_many :event_documents
-  has_one :user_profiles
+  has_one :user_profile
   has_many :reviews
 
   # belongs_to :assignments

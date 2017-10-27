@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :roles
   resources :assignments
-  resources :user_profiles
+  resources :user_profiles, only: [:show, :edit]
   resources :shared_events
   resources :event_comments
   resources :event_documents

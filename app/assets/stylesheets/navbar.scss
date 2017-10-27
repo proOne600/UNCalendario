@@ -18,10 +18,14 @@ $secondary-color: $red-color;
 .navbar-default {
   height: 8rem;
   background-color: rgba(143, 143, 143, 0.4);
-  line-height: 5	rem;
+  line-height: 5rem;
   box-shadow: 1px 1px 1px $primary-color;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
+
+nav.navbar.navbar-default.navbar-static-top {
+  margin-bottom: 1rem!important;
 }
 
 
