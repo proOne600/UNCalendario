@@ -4,7 +4,8 @@ class User < ApplicationRecord
   after_create :send_auth_mail
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable,:omniauthable, omniauth_providers: [:facebook]
+         :omniauthable,:omniauthable, 
+         omniauth_providers: [:google_oauth2, :facebook]
 
   has_many :event
   has_many :event_califications
