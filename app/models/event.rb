@@ -10,9 +10,9 @@ class Event < ApplicationRecord
     has_many :reviews
 
 
-    attr_accessor :image
+    # attr_accessor :image
     
-    mount_uploader :image, ImageUploader
+    # mount_uploader :image, ImageUploader
     validates :name, :description, presence: true
 
     geocoded_by :address
