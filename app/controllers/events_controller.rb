@@ -70,7 +70,7 @@ class EventsController < ApplicationController
     @event.user= current_user
     @event.category_id= params[:event][:category_id]
     ## Insercion de imagen
-    @event.image= params[:file]
+    @event.image= '/assets/' + rand(9).to_s + '.jpg'
     ######################
 
     respond_to do |format|
