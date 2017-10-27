@@ -6,6 +6,8 @@ class StadisticsController < ApplicationController
 	    @women=User.total_women
 	    @men=User.total_men
 	    @categorias=Category.all
+	    @num_privates=Event.privates
+	    @num_publics=Event.publics
 	end
 	
 	def get_data
