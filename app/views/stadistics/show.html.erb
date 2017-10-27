@@ -1,3 +1,4 @@
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
 <section id="show_event">
   <div class="panel panel-success">
     <div class="panel-heading text-center">
@@ -39,7 +40,22 @@
         <%= (@men*100)/@total_users %> %
       </p>
       
+      <p>
+        <strong>Categorias:</strong> <br>
+        <% @categorias.each do |category| %> 
+          <%= category.id %> - <%= category.name %> <br>
+        <% end %>
+      </p>
       
+      <p class="text-center">
+        <strong>Grafica de eventos por categoria:</strong>
+        <%= pie_chart Event.group(:category_id).count %> <br>
+      </p>
+      
+      <p class="text-center">
+        <strong>Ubicacion de los eventos:</strong>
+        <%= geo_chart Event.group(:address).count %>
+      </p>
       
       
       <%= link_to 'Descargar estadisticas',stadistics_generate_path %>
