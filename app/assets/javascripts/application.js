@@ -6,3 +6,5 @@
 //= require theme/dist/js/sb-admin-2
 //= require jquery.raty
 //= require social-share-button
+//= require Chart.bundle
+//= require chartkick
