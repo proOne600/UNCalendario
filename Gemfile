@@ -15,6 +15,9 @@ gem 'carrierwave', '~> 1.0'
 gem 'will_paginate'
 #Para poder generar PDF
 gem 'prawn'
+#Para poder generar PDF con wicked PDF
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 #upload files
 gem 'paperclip'
