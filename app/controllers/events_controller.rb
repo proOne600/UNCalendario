@@ -43,6 +43,12 @@ class EventsController < ApplicationController
       @average_review = @event.reviews.average(:rating).round(2)
     end
     @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4)
+    
+    respond_to do |format|
+	        format.html
+	        format.json
+	        format.pdf { render template: 'events/event', pdf:'Event'}
+	    end
   end
 
   # GET /events/new

@@ -1,5 +1,21 @@
 class StadisticsController < ApplicationController
     
+    def index
+        @total_events = Event.total_size
+	    @total_users= User.total_size
+	    @women=User.total_women
+	    @men=User.total_men
+	    @categorias=Category.all
+	    @num_privates=Event.privates
+	    @num_publics=Event.publics
+	    
+	    respond_to do |format|
+	        format.html
+	        format.json
+	        format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    end
+	end
+    
     def show
 	    @total_events = Event.total_size
 	    @total_users= User.total_size
@@ -8,6 +24,11 @@ class StadisticsController < ApplicationController
 	    @categorias=Category.all
 	    @num_privates=Event.privates
 	    @num_publics=Event.publics
+	    respond_to do |format|
+	        format.html
+	        format.json
+	        format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    end
 	end
 	
 	def get_data

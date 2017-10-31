@@ -100,7 +100,8 @@
             <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
             <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
         <% end %>
-        <%= link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf %>
+        <!-- < % = link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf % > -->
+        <%= link_to "Descargar pdf 2",event_path(format: :pdf), id: "download" %>
       </div>
       <hr>
       <div class="row">
