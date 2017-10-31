@@ -4,19 +4,18 @@
         <title>Estadisticas</title>
     </head>
     <body>
-        <h1>Estadisticas</h1>
-        <h3> Eventos: <%= @total_events %></h3>
-        <h3> Eventos publicos: <%= @num_publics %></h3>
-        <h3> Eventos privados: <%= @num_privates %></h3>
-        <h3> Es decir:</h3>
-        <h3> <%= (@num_privates*100)/@total_events %>% son eventos privados </h3>
-        <h3> <%= (@num_publics*100)/@total_events %>% son eventos publicos </h3>
-        <h3> Hay <%= @total_users %> usuarios registrados</h3>
-        <h3> Aqui hay <%= @women %> mujeres!</h3>
-        <h3> ... ademas de <%= @men %> hombres!</h3>
-        <h3> Es decir, en porcentajes...</h3>
-        <h3> El <%= (@men*100)/@total_users %>% son hombres</h3>
-        <h3> y el <%= (@women*100)/@total_users %>% son mujeres</h3>
+        <h1 style="text-align:center;" >Estadisticas</h1>
+        <h2 style="text-align:center;" >Eventos</h2>
+        <p> Hay <%= @total_events %> eventos creados</p>
+        <p><h3> Eventos publicos:</h3> <%= @num_publics %></p>
+        <p><h3> Eventos privados:</h3> <%= @num_privates %></p>
+        <p> Es decir:</p>
+        <p> <%= (@num_privates*100)/@total_events %>% son eventos privados </p>
+        <p> <%= (@num_publics*100)/@total_events %>% son eventos publicos </p>
+        <h2 style="text-align:center;" >Usuarios</h2>
+        <p> Hay <%= @total_users %> usuarios registrados. De los cuales <%= @women %> son mujeres, y <%= @men %> son hombres!</p>
+        <p> Es decir, en porcentajes...</p>
+        <p> El <%= (@men*100)/@total_users %>% son hombres y el <%= (@women*100)/@total_users %>% son mujeres</p>
         
     </body>
 </html>
