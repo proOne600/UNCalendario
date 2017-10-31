@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Evento</title>
+        <title><%= @event.name %></title>
     </head>
     <body>
-        <h1> Nombre: <%= @event.name %></h1>
+        <h1 style="text-align:center;"> <%= @event.name %></h1>
+        <h3>Descripcion: </h3>
+        <p> <%= @event.description %></p>
+        <h3>Categoria: </h3>
+        <p> <%= Category.find(@event.category_id).name %></p>   <!-- Buscar una manera optima de llamar Category-->
+        <h3>Fecha de inicio: </h3>
+        <p> <%= @event.event_date.to_s(:short)%></p>
+        <h3>Fecha Final: </h3>
+        <p> <%= @event.even_end_date %></p>
+        <% if @event.published? %>
+            <h2>El evento es publico </h2>
+        <% else %>
+            <h4>El evento es privado </h4>
+        <% end %>
     </body>
 </html>
