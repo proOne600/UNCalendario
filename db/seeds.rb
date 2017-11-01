@@ -20,7 +20,8 @@ end
                      :latitude => 4.6815685,
                      :longitude => -74.0711358,
                      :address => Faker::Address.city,
-                     :image => ('/assets/' + (i%9).to_s + '.jpg')
+                     :image => ('/assets/' + (i%9).to_s + '.jpg'),
+                     :published => rand(1)
   )
   evento.save!(validate: false)
 end
