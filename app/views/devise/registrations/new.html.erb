@@ -11,7 +11,7 @@
                         <br/>
                         <span class="btn btn-default btn-file" id="avatar-upload-btn">
                             <i class="fa fa-user" aria-hidden="true" ></i>
-                            <%= f.file_field :avatar, id: "avatar-upload", title:"Agrega tu imagen de perfil" %>
+                            <%= f.file_field :avatar, id: "avatar-upload", title:"Agrega tu imagen de perfil", :required => true %>
                             </span>
                             <%= f.hidden_field :avatar_cache %>
                     </div>

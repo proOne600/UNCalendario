@@ -1,3 +1,48 @@
 // Place all the styles related to the user_profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.profile-header,
+.profile-body{
+	padding: 1rem;
+	background: rgba(143, 143, 143, 0.3);
+	border-radius: 2rem;
+	border: 1px double white;
+}
+
+.profile-avatar{
+	height: 30rem;
+	width: 30rem;
+	overflow: hidden;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+}
+
+.profile-avatar img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}
+
+.text-white{
+	color: white;
+}
+
+.full-name{
+	font-weight: bold;
+}
+
+.username{
+	font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 0.1rem
+}
+
+#edit-user-btn{
+	font-size: 3rem;
+}
+
+#edit-user-btn:hover{
+	font-size: 3rem;
+	color: grey;
+}
