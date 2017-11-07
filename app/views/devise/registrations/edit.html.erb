@@ -80,6 +80,24 @@
 
                 </div>
                 <div class="col-md-2">
+                     <div class="gender">
+                        <%= f.label :Genero %>
+                            <br/>
+                            <ul class="list-inline">
+                                <li>
+                                    <div>
+                                        <%= f.radio_button :is_female, {}, :checked => true %>
+                                            <%= f.label :is_female, 'Mujer' %>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <%= f.radio_button :is_female, {}, :checked => false %>
+                                            <%= f.label :is_female, 'Hombre' %>
+                                    </div>
+                                </li>
+                            </ul>
+                    </div>
                     <div class="actions">
                         <%= button_tag(type: 'submit', class: 'btn btn-success', id: 'submit-btn') do %>
                             <i class="fa fa-sign-in"></i> Actualiza

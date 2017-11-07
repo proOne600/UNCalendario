@@ -11,8 +11,35 @@
           <p class="h3 text-white text-center username">@baangaritar</p>
       </div>
       <div class="profile-body">
-          <p class="pull-left text-white">Correo Electronico</p> <p class="pull-right text-white"><%= current_user.email %></p>
-          <p class=""><%= current_user.date_of_birth %></p>
+          <div class="row">
+            <div class="col-md-6">
+              <p class="pull-left text-white">Correo Electronico</p><br>
+              <p class="pull-left text-white">Fecha de nacimiento</p><br><br>
+              <p class="pull-left text-white">Estudia</p><br><br>
+              <p class="pull-left text-white">Genero</p><br><br>
+              <p class="pull-left text-white">Intereses</p><br>
+            </div>
+            <div class="col-md-6">
+              <p class="pull-right text-white text-right"><%= current_user.email %></p><br>
+              <p class="pull-right text-white text-right"><%= current_user.date_of_birth.strftime("%d - %B - %Y") %></p><br>
+              <p class="pull-right text-white text-right">Ingeniería de Sistemas y computación</p><br>
+              <p class="pull-right text-white text-right"><% if current_user.is_female %>
+                Femenino <% else %> 
+                Masculino
+                <% end %>
+              </p><br>
+              <p class="pull-right text-white text-right">
+                <ul class="pull-right text-white list-inline text-right" >
+                  <li>Musica</li>
+                  <li>Arte</li>
+                  <li>Literatura</li>
+                  <li>Política</li>
+                </ul>
+              </p>
+
+            </div>
+          </div>
+           
       </div>
     </div>
 
