@@ -18,6 +18,7 @@ class StadisticsController < ApplicationController
     
     def show
     	if params[:param1] == 'day'
+    		@events= Event.days
     		@total_events=Event.days.total_size
     		@total_users= User.days.total_size
 	    	@women=User.days.total_women
@@ -25,7 +26,13 @@ class StadisticsController < ApplicationController
 	    	@categorias=Category.all
 	    	@num_privates=Event.days.privates
 	    	@num_publics=Event.days.publics
+	    	respond_to do |format|
+	       		format.html
+	       		format.json
+	       		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    	end
     	elsif params[:param1] == 'week'
+    		@events= Event.weeks
     		@total_events = Event.weeks.total_size
 	    	@total_users= User.weeks.total_size
 	    	@women=User.weeks.total_women
@@ -33,7 +40,13 @@ class StadisticsController < ApplicationController
 	    	@categorias=Category.all
 	    	@num_privates=Event.weeks.privates
 	    	@num_publics=Event.weeks.publics
+	    	respond_to do |format|
+	       		format.html
+	       		format.json
+	       		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    	end
     	elsif params[:param1] == 'month'
+    		@events= Event.monts
     		@total_events = Event.monts.total_size
 	    	@total_users= User.monts.total_size
 	    	@women=User.monts.total_women
@@ -41,7 +54,13 @@ class StadisticsController < ApplicationController
 	    	@categorias=Category.all
 	    	@num_privates=Event.monts.privates
 	    	@num_publics=Event.monts.publics
+	    	respond_to do |format|
+	       		format.html
+	       		format.json
+	       		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    	end
     	elsif params[:param1] == 'year'
+    		@events= Event.year
     		@total_events = Event.year.total_size
 	    	@total_users= User.year.total_size
 	    	@women=User.year.total_women
@@ -49,7 +68,13 @@ class StadisticsController < ApplicationController
 	    	@categorias=Category.all
 	    	@num_privates=Event.year.privates
 	    	@num_publics=Event.year.publics
+	    	respond_to do |format|
+	       		format.html
+	       		format.json
+	       		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    	end
     	else
+    		@events=Event.all
 	    	@total_events = Event.total_size
 	    	@total_users= User.total_size
 	    	@women=User.total_women
@@ -57,12 +82,13 @@ class StadisticsController < ApplicationController
 	    	@categorias=Category.all
 	    	@num_privates=Event.privates
 	    	@num_publics=Event.publics
+	    	respond_to do |format|
+	       		format.html
+	       		format.json
+	       		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    	end
 	    end
-	    respond_to do |format|
-	       	format.html
-	       	format.json
-	       	format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
-	    end
+	    
 	end
 	
 	def get_data

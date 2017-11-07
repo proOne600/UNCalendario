@@ -4,77 +4,104 @@
     <div class="panel-heading text-center">
       <h2>Estadisticas</h2>
     </div>
+    
     <div class="panel-body">
-      <%= link_to 'Ayer', stadistics_path(:param1 => "day"), class: "btn btn-default" %>
-      <%= link_to 'La ultima semana', stadistics_path(:param1 => "week"), class: "btn btn-default" %>
-      <%= link_to 'El ultimo mes', stadistics_path(:param1 => "month"), class: "btn btn-default" %>
-      <%= link_to 'El ultimo año', stadistics_path(:param1 => "year"), class: "btn btn-default" %>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Filtrar por... <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><%= link_to 'Ayer', stadistics_path(:param1 => "day") %></li>
+          <li><%= link_to 'La ultima semana', stadistics_path(:param1 => "week") %></li>
+          <li><%= link_to 'El ultimo mes', stadistics_path(:param1 => "month") %></li>
+          <li><%= link_to 'El ultimo año', stadistics_path(:param1 => "year") %></li>
+          <li><%= link_to 'Todos', stadistics_path %></li>
+        </ul>
+      </div>
+      
       <p>
-        <strong>Numero de eventos creados:</strong>
-        <%= @total_events %>
+        <h3 style="text-align:center;"><strong>Numero de eventos creados:</strong>
+        <%= @total_events %> </h3>
       </p>
       
       <p>
-        <strong>Eventos privados:</strong>
-        <%= @num_privates %>
+        <h4 style="text-align:center;"><strong>Eventos privados:</strong>
+        <%= @num_privates %></h4>
       </p>
       
       <p>
-        <strong>Eventos publicos:</strong>
-        <%= @num_publics %>
+        <h4 style="text-align:center;"><strong>Eventos publicos:</strong>
+        <%= @num_publics %></h4>
+      </p>
+      
+      <p>
+        <h4 style="text-align:center;"><strong>Porcentaje de eventos publicos:</strong>
+        <% if @total_events != 0 %>
+          <%= (@num_publics*100)/@total_events %>%
+        <% else %>
+          0%
+        <% end %></h4>
+      </p>
+      
+      <p>
+        <h4 style="text-align:center;"><strong>Porcentaje de eventos privados:</strong>
+        <% if @total_events != 0 %>
+          <%= (@num_privates*100)/@total_events %>%
+        <% else %>
+          0%
+        <% end %> </h4>
       </p>
 
       <p>
-        <strong>Numero de usuarios creados:</strong>
-        <%= @total_users %>
+        <h3 style="text-align:center;"><strong>Numero de usuarios creados:</strong>
+        <%= @total_users %></h3>
       </p>
       
       
 
       <p>
-        <strong>Numero de mujeres registradas:</strong>
-        <%= @women %>
+        <h4 style="text-align:center;"><strong>Numero de mujeres registradas:</strong>
+        <%= @women %></h4>
       </p>
 
 
       <p>
-        <strong>Numero de hombres registrados:</strong>
-        <%= @men %>
+        <h4 style="text-align:center;"><strong>Numero de hombres registrados:</strong>
+        <%= @men %></h4>
       </p>
       
       <p>
-        <strong>Porcentaje de mujeres:</strong>
+        <h4 style="text-align:center;"><strong>Porcentaje de mujeres:</strong>
         <% if @total_users != 0 %>
           <%= (@women*100)/@total_users %> %
         <% else %>
           0%
-        <% end %>
+        <% end %></h4>
       </p>
       
       <p>
-        <strong>Porcentaje de Hombres:</strong>
+        <h4 style="text-align:center;"><strong>Porcentaje de Hombres:</strong>
         <% if @total_users != 0 %>
           <%= (@men*100)/@total_users %> %
         <% else %>
           0%
-        <% end %>
+        <% end %></h4>
       </p>
       
       <p>
-        <strong>Categorias:</strong> <br>
+        <h3 style="text-align:center;"><strong>Categorias:</strong></h3> 
         <% @categorias.each do |category| %> 
-          <%= category.id %> - <%= category.name %> <br>
-        <% end %>
+          <h4 style="text-align:center;"><%= category.id %> - <%= category.name %></h4> 
+        <% end %><br>
       </p>
       
       <p class="text-center">
-        <strong>Grafica de eventos por categoria:</strong>
-        <%= pie_chart Event.group(:category_id).count %> <br>
+        <h3 style="text-align:center;"><strong>Grafica de eventos por categoria:</strong></h3>
+        <%= pie_chart @events.group(:category_id).count %> <br>
       </p>
       
       <p class="text-center">
         <strong>Ubicacion de los eventos:</strong>
-        <%= geo_chart Event.group(:address).count %>
+        <%= geo_chart @events.group(:address).count %>
       </p>
       
       
