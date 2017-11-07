@@ -1,43 +1,89 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="row" id="registration-form">
+  <h2 class="text-center">Edita tu perfil</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden" />
+                        <br/>
+                        <span class="btn btn-default btn-file" id="avatar-upload-btn">
+                            <i class="fa fa-user" aria-hidden="true" ></i>
+                            <%= f.file_field :avatar, id: "avatar-upload", title:"Agrega tu imagen de perfil" %>
+                            </span>
+                            <%= f.hidden_field :avatar_cache %>
+                    </div>
+                    <script>
+                    $(function() {
+                        function readURL(input) {
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+                                reader.onload = function(e) {
+                                    $('#img_prev').attr('src', e.target.result)
+                                }
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+                        $("#avatar-upload").change(function() {
+                            $('#img_prev').removeClass('hidden');
+                            $('.btn-file').addClass('hidden');
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                            readURL(this);
+                        });
+                    });
+                    </script>  
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group">
+                        <%= f.label :Nombre %>
+                        <br/>
+                        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :Correo %>
+                            <br/>
+                            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+                    </div>
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                    <% end %>
+                    <div class="form-group">
+                        <%= f.label :Contraseña %>
+                            <% if @minimum_password_length %>
+                                <em>(<%= @minimum_password_length %> caracteres minimo)</em>
+                                <% end %>
+                                    <br/>
+                                    <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :Confirma_tu_contraseña %>
+                            <br/>
+                            <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :current_password %> <i>(Necesitamos tu contraseña para confirmar los cambios)</i><br />
+                      <%= f.password_field :current_password, autocomplete: "off", class: 'form-control'%>
+                    </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="actions">
+                        <%= button_tag(type: 'submit', class: 'btn btn-success', id: 'submit-btn') do %>
+                            <i class="fa fa-sign-in"></i> Actualiza
+                        <% end %>
+                    </div>
+                    <% end %>
+                    <h3 class="text-center text-white">¿Quieres cancelar tu cuenta?</h3>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+                      <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger center-block" %></p>
+                </div>
+                      <%= link_to "", :back, style: "color:white", class: "fa fa-arrow-left"%>
 
-<h3>Cancel my account</h3>
+              </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
 
-<%= link_to "Back", :back %>
