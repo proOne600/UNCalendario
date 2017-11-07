@@ -47,7 +47,7 @@ class EventsController < ApplicationController
     respond_to do |format|
 	        format.html
 	        format.json
-	        format.pdf { render template: 'events/event', pdf:'Event'}
+	        format.pdf { render template: 'events/event', pdf:@event.name}
 	    end
   end
 
