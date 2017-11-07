@@ -32,6 +32,22 @@ class User < ApplicationRecord
   def self.total_men
     self.where(is_female: false).count
   end
+  
+  def self.days
+    self.where(created_at: (Time.now - 1.day )..Time.now )
+  end
+  
+  def self.weeks
+    self.where(created_at: (Time.now - 1.week )..Time.now )
+  end
+  
+  def self.monts
+    self.where(created_at: (Time.now - 1.month )..Time.now )
+  end
+  
+  def self.year
+    self.where(created_at: (Time.now - 1.year )..Time.now )
+  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

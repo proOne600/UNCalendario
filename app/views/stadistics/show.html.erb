@@ -5,6 +5,10 @@
       <h2>Estadisticas</h2>
     </div>
     <div class="panel-body">
+      <%= link_to 'Ayer', stadistics_path(:param1 => "day"), class: "btn btn-default" %>
+      <%= link_to 'La ultima semana', stadistics_path(:param1 => "week"), class: "btn btn-default" %>
+      <%= link_to 'El ultimo mes', stadistics_path(:param1 => "month"), class: "btn btn-default" %>
+      <%= link_to 'El ultimo año', stadistics_path(:param1 => "year"), class: "btn btn-default" %>
       <p>
         <strong>Numero de eventos creados:</strong>
         <%= @total_events %>
@@ -40,12 +44,20 @@
       
       <p>
         <strong>Porcentaje de mujeres:</strong>
-        <%= (@women*100)/@total_users %> %
+        <% if @total_users != 0 %>
+          <%= (@women*100)/@total_users %> %
+        <% else %>
+          0%
+        <% end %>
       </p>
       
       <p>
         <strong>Porcentaje de Hombres:</strong>
-        <%= (@men*100)/@total_users %> %
+        <% if @total_users != 0 %>
+          <%= (@men*100)/@total_users %> %
+        <% else %>
+          0%
+        <% end %>
       </p>
       
       <p>

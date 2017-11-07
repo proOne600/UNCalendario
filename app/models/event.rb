@@ -48,6 +48,22 @@ class Event < ApplicationRecord
   def self.privates
     self.where(published: false).count
   end
+  
+  def self.days
+    self.where(created_at: (Time.now - 1.day )..Time.now )
+  end
+  
+  def self.weeks
+    self.where(created_at: (Time.now - 1.week )..Time.now )
+  end
+  
+  def self.monts
+    self.where(created_at: (Time.now - 1.month )..Time.now )
+  end
+  
+  def self.year
+    self.where(created_at: (Time.now - 1.year )..Time.now )
+  end
   # @total =self.count
 
 

@@ -17,17 +17,51 @@ class StadisticsController < ApplicationController
 	end
     
     def show
-	    @total_events = Event.total_size
-	    @total_users= User.total_size
-	    @women=User.total_women
-	    @men=User.total_men
-	    @categorias=Category.all
-	    @num_privates=Event.privates
-	    @num_publics=Event.publics
+    	if params[:param1] == 'day'
+    		@total_events=Event.days.total_size
+    		@total_users= User.days.total_size
+	    	@women=User.days.total_women
+	    	@men=User.days.total_men
+	    	@categorias=Category.all
+	    	@num_privates=Event.days.privates
+	    	@num_publics=Event.days.publics
+    	elsif params[:param1] == 'week'
+    		@total_events = Event.weeks.total_size
+	    	@total_users= User.weeks.total_size
+	    	@women=User.weeks.total_women
+	    	@men=User.weeks.total_men
+	    	@categorias=Category.all
+	    	@num_privates=Event.weeks.privates
+	    	@num_publics=Event.weeks.publics
+    	elsif params[:param1] == 'month'
+    		@total_events = Event.monts.total_size
+	    	@total_users= User.monts.total_size
+	    	@women=User.monts.total_women
+	    	@men=User.monts.total_men
+	    	@categorias=Category.all
+	    	@num_privates=Event.monts.privates
+	    	@num_publics=Event.monts.publics
+    	elsif params[:param1] == 'year'
+    		@total_events = Event.year.total_size
+	    	@total_users= User.year.total_size
+	    	@women=User.year.total_women
+	    	@men=User.year.total_men
+	    	@categorias=Category.all
+	    	@num_privates=Event.year.privates
+	    	@num_publics=Event.year.publics
+    	else
+	    	@total_events = Event.total_size
+	    	@total_users= User.total_size
+	    	@women=User.total_women
+	    	@men=User.total_men
+	    	@categorias=Category.all
+	    	@num_privates=Event.privates
+	    	@num_publics=Event.publics
+	    end
 	    respond_to do |format|
-	        format.html
-	        format.json
-	        format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	       	format.html
+	       	format.json
+	       	format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
 	    end
 	end
 	
