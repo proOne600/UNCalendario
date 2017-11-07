@@ -1,6 +1,9 @@
 <div class='row'>
   <%- if controller_name != 'sessions' %>
-      <%= link_to 'Iniciar Sesión', new_session_path(resource_name) %><br/>
+     <p class="btn btn-default" id="login-link">
+           <i class="fa fa-angle-double-up"></i>
+        <%= link_to 'Iniciar Sesión', new_session_path(resource_name), class: "fa fa-chevron-sign-up"%>
+      </p> <br/>
   <% end -%>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -18,22 +21,29 @@
       <%= link_to '¿No recibiste correo de desbloqueo?', new_unlock_path(resource_name) %><br/>
   <% end -%>
 
-  <hr>
   <div class='col-lg-4 col-lg-offset-4'>
-  <!--Google-->
+    <ul class="list-inline">
+      <li>
+          <!--Google-->
   <%- if devise_mapping.omniauthable? %>
           <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-block btn-social btn-google-plus' do %>
               <i class='fa fa-google-plus'></i>
               Iniciar sesión con Google
       <% end -%>
   <% end -%>
-  <!--facebook-->
+      </li>
+      <li>
+          <!--facebook-->
   <%- if devise_mapping.omniauthable? %>
           <%= link_to user_facebook_omniauth_authorize_path, class: 'btn btn-block btn-social btn-facebook' do %>
               <i class='fa fa-facebook'></i>
               Iniciar sesión con Facebook
       <% end -%>
   <% end -%>
+      </li>
+    </ul>
+
+
   </div>
 
 </div>

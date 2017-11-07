@@ -1,0 +1,97 @@
+#registration-form{
+	background-color: rgba(214, 212, 161, 0.55);
+	border-radius: 3rem;
+	align-items: flex-start;
+}
+
+#registration-form .form-control{
+	width: 40rem;
+}
+
+#registration-form #submit-btn{
+	height: 17rem;
+	width: 17rem;
+	display: block;
+	margin: auto;
+	border-radius: 50%;
+	margin-top: 30%;
+	font-size: 2rem;
+}
+
+#avatar-upload-btn{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-style: none;
+    height: 27rem;
+    width: 27rem;
+    border-radius: 50%;
+    margin: auto;
+    background-color: #D6CBCE;
+    border: 1px solid black;
+    margin-top: 7%;
+
+}
+
+#avatar-upload-btn .fa-user{
+	font-size: 22rem;
+	color: #43c7b1;
+	margin-top: 5%;
+}
+
+#avatar-upload-btn input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+
+#img_prev{
+	height: 20rem;
+	width: 20rem;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+}
+
+.gender .list-inline{
+	width: 25rem;
+	display:block;
+	margin: auto;
+}
+
+.date_select{
+	width: 30rem;
+    display: block;
+    margin: auto;
+}
+
+#login-link{
+	right: 49%;
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+}
+
+#login-link a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+
+#login-link .fa-angle-double-up{
+	font-size: 3rem;
+}

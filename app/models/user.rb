@@ -15,8 +15,21 @@ class User < ApplicationRecord
   has_one :user_profile
   has_many :reviews
 
-  # belongs_to :assignments
-  
+ mount_uploader :avatar, AvatarUploader
+ 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+ 
+  # User Avatar Validation
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
+ 
+  private
+    def avatar_size_validation
+      errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
+    end
+
+    
   def send_auth_mail
     UserMailer.delay.welcome_email(self)
   end
@@ -61,3 +74,5 @@ class User < ApplicationRecord
   end
 
 end
+
+

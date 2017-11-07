@@ -1,0 +1,19 @@
+.bnt-file{
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    background-color: #5cb85c;
+    border-style: none;
+}
+
+.btn-file input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
