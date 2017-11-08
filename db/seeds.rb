@@ -20,10 +20,10 @@ end
                      :latitude => 4.6815685,
                      :longitude => -74.0711358,
                      :address => Faker::Address.city,
-                     :image => ('/assets/' + (i%9).to_s + '.jpg'),
+                     :image => File.new(File.join(Rails.root, 'app', 'assets', 'images', (rand(8).to_s+'.jpg'))),
                      :published => Faker::Boolean.boolean
-                    ## :published => rand(1)
-                    
+  ## :published => rand(1)
+
   )
   evento.save!(validate: false)
 end
