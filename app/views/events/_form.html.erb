@@ -22,7 +22,7 @@
                 <i class="fa fa-picture-o" aria-hidden="true" ></i>
                 <%= f.file_field :image, id: "image-upload", title:"Agrega imagenes a tu evento" %>
                 </span>
-                <%= f.hidden_field :avatar_cache %>
+                <%= f.hidden_field :image_cache %>
         </div>
         <script>
         $(function() {
@@ -59,13 +59,85 @@
             <%= f.label :category_id %>
             <%= f.select :category_id, options_for_select(@categories),{prompt:'Seleccione'}, {required: true , class:'form-control', id:"select_category"}%>
         </div>
-        <br>
-         <div class="form-group">
-          <%= f.label :Ubicacion %>
-          <%= f.text_field :address, autofocus: true, class: 'form-control', required: true, id:'ubication-form'%>
-        </div>
     </div>
     <div class="col-md-5">
+        <br>
+        <div class="form-group">
+          <%= f.text_field :address, autofocus: true, class: 'controls', required: true, id:'pac-input', type:'text', placeholder:'¿A donde quieres ir?'%>
+          <div id="map"></div>
+          <script>
+
+            function initAutocomplete() {
+              var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat:  4.63858 , lng: -74.0841},
+                zoom: 13,
+                mapTypeId: 'roadmap'
+              });
+
+              // Create the search box and link it to the UI element.
+              var input = document.getElementById('pac-input');
+              var searchBox = new google.maps.places.SearchBox(input);
+              map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+              // Bias the SearchBox results towards current map's viewport.
+              map.addListener('bounds_changed', function() {
+                searchBox.setBounds(map.getBounds());
+              });
+
+              var markers = [];
+              // Listen for the event fired when the user selects a prediction and retrieve
+              // more details for that place.
+              searchBox.addListener('places_changed', function() {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                  return;
+                }
+
+                // Clear out the old markers.
+                markers.forEach(function(marker) {
+                  marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function(place) {
+                  if (!place.geometry) {
+                    console.log("Returned place contains no geometry");
+                    return;
+                  }
+                  var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                  };
+
+                  // Create a marker for each place.
+                  markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                  }));
+
+                  if (place.geometry.viewport) {
+                    // Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+                  } else {
+                    bounds.extend(place.geometry.location);
+                  }
+                });
+                map.fitBounds(bounds);
+              });
+            }
+
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&libraries=places&callback=initAutocomplete"
+               async defer></script>
+        </div>
         <div class="form-group">
           <%= f.label :Publico %>
           <%= f.check_box :published, id: :event_publico %>
@@ -76,44 +148,22 @@
         </div>
         <div class="field date">
           <%= f.label :Fecha_del_evento %>
-          <br>
           <div class="date_select">
             <%= f.date_select :event_date, order: [:day, :month, :year], id: :event_event_date %>
              <%= f.time_select :event_init_hour, id: :event_event_init_hour %>
           </div>
         </div>
+        <br>
         <div class="field date">
           <%= f.label :Fecha_de_finalizacion %>
-          <br>
           <div class="date_select">
             <%= f.date_select :even_end_date, order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c' %>
             <%= f.time_select :event_end_hour, id: :event_event_end_hour %>
 
           </div>
         </div>
-
-<div style="overflow:hidden;">
-    <div class="form-group">
-        <div class="row">
-            <div class="col-md-8">
-                <div id="datetimepicker12"></div>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker12').datetimepicker({
-                inline: true,
-                sideBySide: true
-            });
-        });
-    </script>
-</div>
-</div>
-       
-    </div>
+    </div>       
     <div class="col-md-1">
-    
     </div>
 </div>
 
