@@ -1,14 +1,185 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 $green-color: #94B43B;
 $red-color: #A61C31;
 $gray-color: #B1B2B0;
 $primary-color: $green-color;
 $secondary-color: $red-color;
 
-@import "main";
-//Event, forms
+
+#image-upload-btn{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-style: none;
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    margin: auto;
+    background-color: #D6CBCE;
+    border: 1px solid $primary-color;
+}
+
+#image-upload-btn .fa-picture-o{
+  font-size: 10rem;
+  color: $primary-color;
+  margin-top: 20%;
+}
+
+#image-upload-btn input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+
+#img_prev{
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.event_form input,
+.event_form textarea{
+  min-width: 70%;
+  resize: none;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  border: 1px solid black;
+  background-color: transparent;
+  text-align: center;
+  float: right;
+  outline: none;
+
+}
+
+#select_category,
+#ubication-form {
+  width: 70%;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  border: 1px solid black;
+  background-color: transparent;
+  text-align: center;
+  float: right;
+
+}
+
+#map {
+  width: 50rem;
+  height: 20rem;
+}
+/* Optional: Makes the sample page fill the window. */
+
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+#target {
+  width: 345px;
+}
+
+
+#new_event_form #event_id_user,
+#edit_event_form #event_id_user,
+#new_event_form #event_cancelled,
+#edit_event_form #event_cancelled,
+#new_event_form #event_published,
+#edit_event_form #event_published,
+#new_event_form #event_calification,
+#new_event_form #event_all_calification,
+#edit_event_form #event_calification,
+#edit_event_form #event_all_calification,
+#new_event_form label[for=event_Público],
+#edit_event_form label[for=event_Público],
+#new_event_form label[for=event_Cancelado],
+#edit_event_form label[for=event_Cancelado],
+#new_event_form label[for=event_id_user],
+#new_event_form label[for=event_Calificación],
+#new_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_Calificación],
+#edit_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_id_user] {
+  display: none;
+  visibility: hidden;
+}
+
+#register-event .date_select {
+    width: 20rem;
+    display: block;
+    float: right;
+    text-align: right;
+}
+
+
 
 #event_view .panel-heading {
   height: 3rem;
@@ -144,7 +315,6 @@ $secondary-color: $red-color;
 
 //Event, forms
 .event_form {
-  width: 50%;
   margin-right: auto;
   margin-left: auto;
   border-radius: 0.5rem;
@@ -164,30 +334,11 @@ $secondary-color: $red-color;
 
 .event_form .panel-default {
   border-style: none;
-  background-color: rgba(143, 143, 143, 0.3);
+  background-color: rgba(143, 143, 143, 1);
   border-radius: 2rem;
 }
 
-.event_form label {
-  text-align: center;
-  align-items: center;
-  width: 100%;
-  display: inline-block;
-  color: #ffffff;
-}
 
-.event_form input,
-.event_form textarea {
-  min-width: 90%;
-  resize: none;
-  border-radius: 0.5rem;
-  margin-left: 2rem;
-  border-style: none;
-  border-bottom: 1px solid $secondary-color;
-  background-color: transparent;
-  text-align: center;
-
-}
 
 .event_form .date_select {
 
@@ -204,35 +355,11 @@ $secondary-color: $red-color;
   margin-right: auto;
 }
 
-#new_event_form #event_id_user,
-#edit_event_form #event_id_user,
-#new_event_form #event_cancelled,
-#edit_event_form #event_cancelled,
-#new_event_form #event_published,
-#edit_event_form #event_published,
-#new_event_form #event_calification,
-#new_event_form #event_all_calification,
-#edit_event_form #event_calification,
-#edit_event_form #event_all_calification,
-#new_event_form label[for=event_Público],
-#edit_event_form label[for=event_Público],
-#new_event_form label[for=event_Cancelado],
-#edit_event_form label[for=event_Cancelado],
-#new_event_form label[for=event_id_user],
-#new_event_form label[for=event_Calificación],
-#new_event_form label[for=event_all_calification],
-#edit_event_form label[for=event_Calificación],
-#edit_event_form label[for=event_all_calification],
-#edit_event_form label[for=event_id_user] {
-  display: none;
-  visibility: hidden;
-}
 
 .event_form input:focus,
 .event_form textarea:focus {
-
-  box-shadow: 0px 0px 8px 2px $secondary-color;
   outline: none;
+  color: white;
 }
 
 .event_form .btn-success {
