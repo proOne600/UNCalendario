@@ -29,6 +29,12 @@ class User < ApplicationRecord
       errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
     end
 
+   def default_date
+  if self.date_of_birth.nil?
+      self.date_of_birth = Time.now
+  end
+end
+
     
   def send_auth_mail
     UserMailer.delay.welcome_email(self)

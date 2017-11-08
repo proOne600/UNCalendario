@@ -5,7 +5,7 @@
   <div class="col-md-4 profile-information">
       <div class="profile-header">
           <div class="profile-avatar">
-            <%= image_tag current_user.avatar.url() %>
+            <%= image_tag current_user.avatar.url()  %>
           </div>
           <p class="h3 text-uppercase text-white text-center full-name"><%= current_user.name %></p>
           <p class="h3 text-white text-center username">@baangaritar</p>
@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6">
               <p class="pull-right text-white text-right"><%= current_user.email %></p><br>
-              <p class="pull-right text-white text-right"><%= current_user.date_of_birth.strftime("%d - %B - %Y") %></p><br>
+              <p class="pull-right text-white text-right"><%= current_user.try(:request_date).try(:strftime, '%B %e, %Y') %></p><br>
               <p class="pull-right text-white text-right">Ingeniería de Sistemas y computación</p><br>
               <p class="pull-right text-white text-right"><% if current_user.is_female %>
                 Femenino <% else %> 
