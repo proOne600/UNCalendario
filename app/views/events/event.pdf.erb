@@ -21,36 +21,13 @@
         
         <h3><strong>Ubicacion:</strong> 
          <%= @event.address %> </h3>
+          <%= wicked_pdf_image_tag "https://maps.googleapis.com/maps/api/staticmap?size=600x300&center=#{@event.latitude},#{@event.longitude}&zoom=17&maptype=roadmap&markers=#{@event.address}&key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4" %>
         
         <!-- < %= wicked_pdf_image_tag (@event.image,:height => '200', :width => '400')%> -->
         <%= wicked_pdf_image_tag (@event.image) if @event.image? %> 
         
         
-        <!-- < %= wicked_pdf_image_tag 'http://maps.google.com/maps/api/staticmap?size=450×300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}' %>-->
         
-        <!--<div class="col-md-6 col-lg-6 col-xs-12">-->
-        <!--  <div class="row">-->
-        <!--    <div class="map">-->
-        <!--      <div id="map" style="height: 400px; width: 95%; border-radius: 2rem;"></div>-->
-        <!--      <script>-->
-        <!--          function initMap() {-->
-        <!--              var uluru = {lat: < %= @event.latitude %>, lng: < %= @event.longitude %>};-->
-        <!--              var map = new google.maps.Map(document.getElementById('map'), {-->
-        <!--                  zoom: 17,-->
-        <!--                  center: uluru-->
-        <!--              });-->
-        <!--              var marker = new google.maps.Marker({-->
-        <!--                  position: uluru,-->
-        <!--                  map: map-->
-        <!--              });-->
-        <!--          }-->
-        <!--      </script>-->
-        <!--      <script async defer-->
-        <!--              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">-->
-        <!--      </script>-->
-        <!--    </div>-->
-
-        <!--  </div>-->
-        <!--</div>-->
+        
     </body>
 </html>
