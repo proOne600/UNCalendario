@@ -36,9 +36,9 @@ $secondary-color: $red-color;
     cursor: pointer;
 }
 
-#img_prev{
-  height: 20rem;
-  width: 20rem;
+#register-event  #img_prev{
+  height: 17rem !important;
+  width: 17rem !important;
   border-radius: 50%;
   display: block;
   margin: auto;
@@ -359,7 +359,6 @@ $secondary-color: $red-color;
 .event_form input:focus,
 .event_form textarea:focus {
   outline: none;
-  color: white;
 }
 
 .event_form .btn-success {

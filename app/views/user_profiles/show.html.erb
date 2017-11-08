@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6">
               <p class="pull-right text-white text-right"><%= current_user.email %></p><br>
-              <p class="pull-right text-white text-right"><%= current_user.try(:request_date).try(:strftime, '%B %e, %Y') %></p><br>
+              <p class="pull-right text-white text-right"><%= current_user.date_of_birth.strftime("%d - %B - %Y") %></p><br>
               <p class="pull-right text-white text-right">Ingeniería de Sistemas y computación</p><br>
               <p class="pull-right text-white text-right"><% if current_user.is_female %>
                 Femenino <% else %> 
