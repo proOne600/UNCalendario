@@ -1,4 +1,5 @@
-<%= form_with(model: event, local: true) do |f| %>
+<div class="row" id="register-event">
+    <%= form_with(model: event, local: true) do |f| %>
     <% if event.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -11,70 +12,115 @@
           </ul>
         </div>
     <% end %>
-    <div class="form-group">
-      <%= f.label :Nombre %>
-      <%= f.text_field :name, id: :event_name, :required => true %>
-    </div>
-    <div class="form-group">
-      <%= f.label :Descripcion %>
-      <%= f.text_area :description, id: :event_description, :required => true %>
-    </div>
+    <div class="col-md-1">   
+    </div>  
+    <div class="col-md-5">
+        <div class="form-group">
+            <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden" />
+            <br/>
+            <span class="btn btn-default btn-file" id="image-upload-btn">
+                <i class="fa fa-picture-o" aria-hidden="true" ></i>
+                <%= f.file_field :image, id: "image-upload", title:"Agrega imagenes a tu evento" %>
+                </span>
+                <%= f.hidden_field :avatar_cache %>
+        </div>
+        <script>
+        $(function() {
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
 
-    <div class="form-group">
-      <%= f.label :category_id %>
-      <%= f.select :category_id, options_for_select(@categories),{prompt:'Seleccione'}, {required: true , class:'form-control'}%>
-    </div>
+                    reader.onload = function(e) {
+                        $('#img_prev').attr('src', e.target.result)
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
 
-    <div class="form-group">
-      <%= f.label :Publico %>
-      <%= f.check_box :published, id: :event_publico %>
+            $("#avatar-upload").change(function() {
+                $('#img_prev').removeClass('hidden');
+                $('.btn-file').addClass('hidden');
+
+                readURL(this);
+            });
+        });
+        </script>  
+        <div class="form-group">
+            <%= f.label :Nombre %>
+            <%= f.text_field :name, id: :event_name, :required => true %>
+        </div>
+        <br>
+        <div class="form-group">
+            <%= f.label :Descripcion %>
+            <%= f.text_area :description, id: :event_description, :required => true %>
+        </div>  
+        <br>
+        <div class="form-group">
+            <%= f.label :category_id %>
+            <%= f.select :category_id, options_for_select(@categories),{prompt:'Seleccione'}, {required: true , class:'form-control', id:"select_category"}%>
+        </div>
+        <br>
+         <div class="form-group">
+          <%= f.label :Ubicacion %>
+          <%= f.text_field :address, autofocus: true, class: 'form-control', required: true, id:'ubication-form'%>
+        </div>
     </div>
-    <div class="form-group">
-      <%= f.label :Cancelado %>
-      <%= f.check_box :cancelled, id: :event_cancelled %>
-    </div>
-    <div class="field date">
-      <%= f.label :Fecha_del_evento %>
-      <br>
-      <div class="date_select">
-        <%= f.date_select :event_date, order: [:day, :month, :year], id: :event_event_date %>
-      </div>
-    </div>
-    <div class="field date">
-      <%= f.label :Hora_de_inicio %>
-      <br>
-      <div class="date_select">
-        <%= f.time_select :event_init_hour, id: :event_event_init_hour %>
-      </div>
-    </div>
-    <div class="field date">
-      <%= f.label :Hora_de_finalizacion %>
-      <br>
-      <div class="date_select">
-        <%= f.time_select :event_end_hour, id: :event_event_end_hour %>
-      </div>
-    </div>
-    <div class="field date">
-      <%= f.label :Fecha_de_finalizacion %>
-      <br>
-      <div class="date_select">
-        <%= f.date_select :even_end_date, order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c' %>
-      </div>
-    </div>
-     <div class="form-group">
-          <%= f.label :Ubicacion %><br/>
-          <%= f.text_field :address, autofocus: true, class: 'form-control', required: true%>
+    <div class="col-md-5">
+        <div class="form-group">
+          <%= f.label :Publico %>
+          <%= f.check_box :published, id: :event_publico %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Cancelado %>
+          <%= f.check_box :cancelled, id: :event_cancelled %>
+        </div>
+        <div class="field date">
+          <%= f.label :Fecha_del_evento %>
+          <br>
+          <div class="date_select">
+            <%= f.date_select :event_date, order: [:day, :month, :year], id: :event_event_date %>
+             <%= f.time_select :event_init_hour, id: :event_event_init_hour %>
+          </div>
+        </div>
+        <div class="field date">
+          <%= f.label :Fecha_de_finalizacion %>
+          <br>
+          <div class="date_select">
+            <%= f.date_select :even_end_date, order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c' %>
+            <%= f.time_select :event_end_hour, id: :event_event_end_hour %>
+
+          </div>
         </div>
 
-    <!-- Insertar imagen -->
-<div class="form-group">
-  <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden"/> <br/>
-  <span class="btn btn-default btn-file">
-    Agrega una imagen a tu evento<%= f.file_field :image, id: "image-upload" %>
-  </span>
-  <%= f.hidden_field :avatar_cache %>
+<div style="overflow:hidden;">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="datetimepicker12"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker12').datetimepicker({
+                inline: true,
+                sideBySide: true
+            });
+        });
+    </script>
 </div>
-    <!-- Insertar imagen -->
+</div>
+       
+    </div>
+    <div class="col-md-1">
+    
+    </div>
+</div>
+
+
+    
+
+
     <div class="actions">
       <br>
 
