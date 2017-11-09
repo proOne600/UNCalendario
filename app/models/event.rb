@@ -70,18 +70,6 @@ class Event < ApplicationRecord
     self.where(self.reviews.average(:rating).round(2) >= calo)
   end
 
-  def self.get_all_events
-    self.where('event_date > ?', Date.today).order('event_date ASC')
-  end
-
-  def self.get_all_events_by_category(category)
-    self.where('event_date > ?', Date.today).where('category_id = ?', category).order('event_date ASC')
-  end
-
-  def self.get_all_events_by_term(term)
-    self.where('name LIKE ?', "%#{term}%")
-  end
-
   def self.search(term, category)
     if term
       where('name LIKE ?', "%#{term}%").where('event_date > ?', Date.today).order('event_date ASC')
