@@ -51,7 +51,9 @@
         <% end %> </h4>
       </p>
       
-      <%= pie_chart @events.group(:published).count %> <br>
+      <% if @total_events != 0 %>
+        <%= pie_chart @events.group(:published).count %> <br>
+      <% end %>
 
       <p>
         <h3 style="text-align:center;"><strong>Numero de usuarios creados:</strong>
@@ -89,7 +91,9 @@
         <% end %></h4>
       </p>
       
-      <%= pie_chart @users.group(:is_female).count %> <br>
+      <% if @total_users != 0 %>
+        <%= pie_chart @users.group(:is_female).count %> <br>
+      <% end %>
       
       <p>
         <h3 style="text-align:center;"><strong>Categorias:</strong></h3> 
@@ -98,38 +102,39 @@
         <% end %><br>
       </p>
       
-      <p class="text-center">
-        <h3 style="text-align:center;"><strong>Grafica de eventos por categoria:</strong></h3>
-        <%= pie_chart @events.group(:category_id).count %> <br>
-      </p>
+      
+      <h3 style="text-align:center;"><strong>Grafica de eventos por categoria:</strong></h3>
+      
+      <%= pie_chart @events.group(:category_id).count %> 
+      
       
       <p class="text-center">
         <strong>Ubicacion de los eventos:</strong>
-        <%= geo_chart @events.group(:address).count %>
-      </p>
       
-      <div class="map">
-              <div id="map" style="height: 400px; width: 95%; border-radius: 2rem;"></div>
-              <script>
-                  function initMap() {
-                    
+      
+        <div class="map">
+                <div id="map" style="height: 400px; width: 95%; border-radius: 2rem;"></div>
+                <script>
+                    function initMap() {
                       
-                      var map = new google.maps.Map(document.getElementById('map'), {
-                          zoom: 10,
-                          center: {lat: 4.6097100, lng:  -74.0817500}
-                      });
-                    <% @events.each do |event| %>
-                      var marker = new google.maps.Marker({
-                          position: {lat: <%= event.latitude %>, lng: <%= event.longitude %>},
-                          map: map
-                      });
-                    <% end %>
-                  }
-              </script>
-              <script async defer
-                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
-              </script>
-      </div>
+                        
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 11,
+                            center: {lat: 4.6097100, lng:  -74.0817500}
+                        });
+                      <% @events.each do |event| %>
+                        var marker = new google.maps.Marker({
+                            position: {lat: <%= event.latitude %>, lng: <%= event.longitude %>},
+                            map: map
+                        });
+                      <% end %>
+                    }
+                </script>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4&callback=initMap">
+                </script>
+        </div>
+      </p>
       
       
       <!-- < % = link_to 'Descargar estadisticas',stadistics_generate_path, class: "btn btn-default" % > -->
