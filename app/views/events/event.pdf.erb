@@ -4,26 +4,34 @@
         <title><%= @event.name %></title>
     </head>
     <body>
+        
         <h1 style="text-align:center; color:green  "> <%= @event.name %></h1>
-        <h3><strong>Descripcion: </strong></h3>
-        <p> <%= @event.description %></p>
-        <h3><strong>Categoria: </strong></h3>
-        <p> <%= Category.find(@event.category_id).name %></p>   <!-- Buscar una manera optima de llamar Category-->
-        <h3><strong>Fecha de inicio: </strong> </h3>
-        <p> <%= @event.event_date.to_s(:short)%></p>
-        <h3><strong>Fecha Final: </strong> </h3>
-        <p> <%= @event.even_end_date.to_s(:short) %></p>
-        <% if @event.published? %>
-            <h2>El evento es publico </h2>
-        <% else %>
-            <h4>El evento es privado </h4>
-        <% end %>
+        <div style="float: left; width: 45%">
+            <h2><strong>Descripcion: </strong></h2>
+            <h3> <%= @event.description %></h3>
+            <h2><strong>Categoria: </strong></h2>
+            <h3> <%= Category.find(@event.category_id).name %></h3>   <!-- Buscar una manera optima de llamar Category-->
+            <h2><strong>Fecha de inicio: </strong> </h2>
+            <h3> <%= @event.event_date.to_s(:short)%></h3>
+            <h2><strong>Fecha Final: </strong> </h2>
+            <h3> <%= @event.even_end_date.to_s(:short) %></h3>
+            <% if @event.published? %>
+                <h2>El evento es publico </h2>
+            <% else %>
+                <h2>El evento es privado </h2>
+            <% end %>
         
-        <h3><strong>Ubicacion:</strong> 
-         <%= @event.address %> </h3>
-          <%= wicked_pdf_image_tag "https://maps.googleapis.com/maps/api/staticmap?size=600x300&center=#{@event.latitude},#{@event.longitude}&zoom=17&maptype=roadmap&markers=#{@event.address}&key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4" %>
-        
+            
+        </div>
+        <div style="float: right; width: 50%">
+            <h2><strong>Ubicacion:</strong>  <%= @event.address %> </h2>
+            <h2><strong>Mapa:</strong></h2>
+            <%= wicked_pdf_image_tag "https://maps.googleapis.com/maps/api/staticmap?size=500x500&center=#{@event.latitude},#{@event.longitude}&zoom=17&maptype=roadmap&markers=#{@event.latitude},#{@event.longitude}&key=AIzaSyCZPi8lJu5oihv0cTfeeQ6h3VZV_OuFtf4" %>
+          
+          
+        </div>
         <!-- < %= wicked_pdf_image_tag (@event.image,:height => '200', :width => '400')%> -->
+        
         <%= wicked_pdf_image_tag (@event.image) if @event.image? %> 
         
         
