@@ -6,8 +6,3 @@ one:
   birth: 2017-10-05
   user_id: 1
 
-two:
-  name: MyString
-  last_name: MyString
-  birth: 2017-10-05
-  user_id: 1
