@@ -20,6 +20,7 @@ class StadisticsController < ApplicationController
     	if params[:param1] == 'day'
     		@events= Event.days
     		@total_events=Event.days.total_size
+    		@users= User.days
     		@total_users= User.days.total_size
 	    	@women=User.days.total_women
 	    	@men=User.days.total_men
@@ -34,6 +35,7 @@ class StadisticsController < ApplicationController
     	elsif params[:param1] == 'week'
     		@events= Event.weeks
     		@total_events = Event.weeks.total_size
+    		@users= User.weeks
 	    	@total_users= User.weeks.total_size
 	    	@women=User.weeks.total_women
 	    	@men=User.weeks.total_men
@@ -48,6 +50,7 @@ class StadisticsController < ApplicationController
     	elsif params[:param1] == 'month'
     		@events= Event.monts
     		@total_events = Event.monts.total_size
+    		@users= User.monts
 	    	@total_users= User.monts.total_size
 	    	@women=User.monts.total_women
 	    	@men=User.monts.total_men
@@ -62,6 +65,7 @@ class StadisticsController < ApplicationController
     	elsif params[:param1] == 'year'
     		@events= Event.year
     		@total_events = Event.year.total_size
+    		@users=User.year
 	    	@total_users= User.year.total_size
 	    	@women=User.year.total_women
 	    	@men=User.year.total_men
@@ -76,6 +80,7 @@ class StadisticsController < ApplicationController
     	else
     		@events=Event.all
 	    	@total_events = Event.total_size
+	    	@users=User.all
 	    	@total_users= User.total_size
 	    	@women=User.total_women
 	    	@men=User.total_men

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+
 <html>
     <head>
+        <meta charset='utf-8' />
+        <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
         <title>Estadisticas</title>
+        
     </head>
-    <body>
-        <h1 style="text-align:center;" >Estadisticas</h1>
+    <body onload='https://www.gstatic.com/charts/loader.js'>
+        <h1 style="text-align:center; color:green  ">Estadisticas</h1>
         <h2 style="text-align:center;" >Eventos</h2>
         <p> Hay <%= @total_events %> eventos creados</p>
         <p><h3> Eventos publicos:</h3> <%= @num_publics %></p>
@@ -12,6 +17,10 @@
         <p> Es decir:</p>
         <p> <%= (@num_privates*100)/@total_events %>% son eventos privados </p>
         <p> <%= (@num_publics*100)/@total_events %>% son eventos publicos </p>
+        <p class="text-center">
+        <h3 style="text-align:center;"><strong>Grafica de eventos por categoria:</strong></h3>
+        <%= pie_chart @events.group(:category_id).count %> <br>
+        </p>
         <h2 style="text-align:center;" >Usuarios</h2>
         <p> Hay <%= @total_users %> usuarios registrados. De los cuales <%= @women %> son mujeres, y <%= @men %> son hombres!</p>
         <p> Es decir, en porcentajes...</p>
