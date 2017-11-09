@@ -72,7 +72,7 @@ class Event < ApplicationRecord
 
   def self.search(term, category)
     if term
-      where('name LIKE ?', "%#{term}%").where('event_date > ?', Date.today).order('event_date ASC')
+      where('LOWER(name) LIKE LOWER(?)', "%#{term}%").where('event_date > ?', Date.today).order('event_date ASC')
     elsif category
       id_catagory = Category.find_by_name(category)
       where('category_id = ?', id_catagory).where('event_date > ?', Date.today).order('event_date ASC')
