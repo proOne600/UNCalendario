@@ -3,6 +3,8 @@ class EventsController < ApplicationController
   before_action :confirm_user, only: [:update, :destroy]
   before_action :authenticate_user!, only: [:destroy, :new]
 
+  helper_method :asset_exist?
+
 
   # GET /events
   # GET /events.json
@@ -28,6 +30,7 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+
   #Verificar usuario y su id
   def verID
     if (user_signed_in?)
@@ -43,12 +46,12 @@ class EventsController < ApplicationController
       @average_review = @event.reviews.average(:rating).round(2)
     end
     @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4)
-    
+
     respond_to do |format|
-	        format.html
-	        format.json
-	        format.pdf { render template: 'events/event', pdf:@event.name}
-	    end
+      format.html
+      format.json
+      format.pdf {render template: 'events/event', pdf: @event.name}
+    end
   end
 
   # GET /events/new
@@ -77,7 +80,6 @@ class EventsController < ApplicationController
     @event.category_id= params[:event][:category_id]
     ######################
 
-    
 
     respond_to do |format|
       if @event.save
@@ -96,7 +98,7 @@ class EventsController < ApplicationController
               filename: "#{@event.name}.pdf",
               type: "application/pdf"
   end
-  
+
   def get_events
     send_data gen_documents(@events),
               filename: "Eventos.pdf",
@@ -155,6 +157,14 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def asset_exist?(path)
+    if Rails.configuration.assets.compile
+      Rails.application.precompiled_assets.include? path
+    else
+      Rails.application.assets_manifest.assets[path].present?
+    end
+  end
+
   def generate_pdf(event)
     Prawn::Document.new do
       text event.name, align: :center
@@ -168,7 +178,7 @@ class EventsController < ApplicationController
       end
     end.render
   end
-  
+
   def gen_documents(eventos)
     Prawn::Document.new do
       eventos.each do |event|

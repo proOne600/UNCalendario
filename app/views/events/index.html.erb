@@ -10,7 +10,7 @@
             <h5 class="text-center"><%= event.name %> </h5>
           </div>
           <div class="panel panel-body">
-            <div class='screen' style="background-image:  url(<%= event.image%>);">
+            <div class='screen' style="background-image:  url(<%=  File.exist?(Rails.root.to_s + '/public' + event.image.to_s)? event.image: asset_path(rand(9).to_s+'.jpg') %>);">
               <div class='row'>
                 <div class='col-sm-12 center-block '>
                   <div class='box'>
