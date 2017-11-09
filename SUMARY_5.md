@@ -6,7 +6,7 @@
 
 -David Rico:
 
--Bryan Angarita:
+-Bryan Angarita: Selección de la ubicación en el mapa, sugerencia de sitios segun vaya escribiendo, agregar imagen al evento, agregar imagen al usuario, mostrar perfil del usuario, editar perfil del usuario, preview
 
 
 ###Actividades sprint 6
