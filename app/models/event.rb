@@ -47,32 +47,57 @@ class Event < ApplicationRecord
   def self.privates
     self.where(published: false).count
   end
-  
+
   def self.days
-    self.where(created_at: (Time.now - 1.day )..Time.now )
+    self.where(created_at: (Time.now - 1.day)..Time.now)
   end
-  
+
   def self.weeks
-    self.where(created_at: (Time.now - 1.week )..Time.now )
+    self.where(created_at: (Time.now - 1.week)..Time.now)
   end
-  
+
   def self.monts
-    self.where(created_at: (Time.now - 1.month )..Time.now )
+    self.where(created_at: (Time.now - 1.month)..Time.now)
   end
-  
+
   def self.year
-    self.where(created_at: (Time.now - 1.year )..Time.now )
+    self.where(created_at: (Time.now - 1.year)..Time.now)
   end
+
   # @total =self.count
-  
+
   def self.calification(calo)
     self.where(self.reviews.average(:rating).round(2) >= calo)
   end
-  
+
+  def self.get_all_events
+    self.where('event_date > ?', Date.today).order('event_date ASC')
+  end
+
+  def self.get_all_events_by_category(category)
+    self.where('event_date > ?', Date.today).where('category_id = ?', category).order('event_date ASC')
+  end
+
+  def self.get_all_events_by_term(term)
+    self.where('name LIKE ?', "%#{term}%")
+  end
+
+  def self.search(term, category)
+    if term
+      where('name LIKE ?', "%#{term}%").where('event_date > ?', Date.today).order('event_date ASC')
+    elsif category
+      id_catagory = Category.find_by_name(category)
+      where('category_id = ?', id_catagory).where('event_date > ?', Date.today).order('event_date ASC')
+    else
+      where('event_date > ?', Date.today).order('event_date ASC')
+    end
+
+  end
+
   # def self.domainUN
   #   self.joins(:user).where("user.email.to_s.split('@').last = ?",  "unal.edu.co")
   # end
-  
+
   # def self.parti
   #   self.where(user.email.to_s.split('@').last !=  'unal.edu.co')
   # end

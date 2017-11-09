@@ -6,14 +6,12 @@
     <ul class="dropdown-menu dropdown-tasks" id="dropdown-search">
       <!--Search bar input-->
       <li class="sidebar-search">
-        <div class="input-group custom-search-form">
-          <input type="text" class="form-control" placeholder="Buscar evento...">
-          <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
-        </div>
+        <%= form_tag(events_path, method: :get) do %>
+            <div class="input-group custom-search-form">
+              <%= text_field_tag :term, params[:term] %>
+              <%= submit_tag 'Search', name: nil %>
+            </div>
+        <% end %>
         <!-- /input-group -->
       </li>
       <!--END Search bar input-->

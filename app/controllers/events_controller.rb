@@ -10,12 +10,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @categories = Category.all
-    if params[:category].blank?
-      @events = Event.where('event_date > ?', Date.today).order('event_date ASC')
-    else
-      @category = Category.find_by_name(params[:category])
-      @events = Event.where('event_date > ?', Date.today).where('category_id = ?', @category).order('event_date ASC')
-    end
+    @events = Event.search(params[:term], params[:category])
 
     if params[:param1] == 'months'
       render 'index_calendar'
@@ -197,10 +192,7 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:name, :description, :published, :cancelled, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :category_id, :address, :image, :image_cache)
-    #params.require(:event).permit(:name, :description, :published, :cancelled, :id_user, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
-    #params.require(:event).permit(:name, :description, :published, :cancelled, :current_user_id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
-    #params.require(:event).permit(:name, :description, :published, :cancelled, @users.id, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :calification, :all_calification)
+    params.require(:event).permit(:name, :description, :published, :cancelled, :event_date, :event_init_hour, :event_end_hour, :even_end_date, :category_id, :address, :image, :image_cache, :term)
   end
 
   def confirm_user
@@ -213,13 +205,13 @@ class EventsController < ApplicationController
   end
 
 
-  #cal = {}
+#cal = {}
 
-  #def required_login
-  #  unless logged_in?
-  #    flash[:error] = "Necesita iniciar sesion para realizar esta accion"
-  #    redirect_to new_user_session_path
-  #  end
-  #end
+#def required_login
+#  unless logged_in?
+#    flash[:error] = "Necesita iniciar sesion para realizar esta accion"
+#    redirect_to new_user_session_path
+#  end
+#end
 
 end
