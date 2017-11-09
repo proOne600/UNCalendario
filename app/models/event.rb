@@ -64,6 +64,18 @@ class Event < ApplicationRecord
     self.where(created_at: (Time.now - 1.year )..Time.now )
   end
   # @total =self.count
+  
+  def self.calification(calo)
+    self.where(self.reviews.average(:rating).round(2) >= calo)
+  end
+  
+  # def self.domainUN
+  #   self.joins(:user).where("user.email.to_s.split('@').last = ?",  "unal.edu.co")
+  # end
+  
+  # def self.parti
+  #   self.where(user.email.to_s.split('@').last !=  'unal.edu.co')
+  # end
 
 
 end

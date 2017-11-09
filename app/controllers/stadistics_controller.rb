@@ -77,7 +77,7 @@ class StadisticsController < ApplicationController
 	       		format.json
 	       		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
 	    	end
-    	else
+	    else
     		@events=Event.all
 	    	@total_events = Event.total_size
 	    	@users=User.all
