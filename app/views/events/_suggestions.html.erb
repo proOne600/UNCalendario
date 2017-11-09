@@ -1,7 +1,8 @@
 <li class="left clearfix">
   <span class="chat-img pull-left">
     <%= link_to event_path(suggestions) do %>
-      <%= image_tag('event-2.jpg', size: '50') %>
+        <% foto = File.exist?(Rails.root.to_s + '/public' + suggestions.image.to_s)? suggestions.image: asset_path(rand(9).to_s+'.jpg')%>
+      <%= image_tag(foto, size: '50') %>
     <% end %>
   </span>
   <div class="chat-body clearfix">
