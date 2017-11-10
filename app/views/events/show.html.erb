@@ -61,7 +61,7 @@
           </p>
           <hr>
 
-          <%= social_share_button_tag(@event.name[0..20].gsub(/\s\w+\s*$/,'...') + ' en ' + time_ago_in_words(@event.event_date) + 'mas detalles en ')%>
+          <%= social_share_button_tag(@event.name[0..20].gsub(/\s\w+\s*$/, '...') + ' en ' + time_ago_in_words(@event.event_date) + 'mas detalles en ') %>
           <hr>
 
           <!-- Mostrar la imagen del evento-->
@@ -95,13 +95,13 @@
     </div>
     <div class="panel-footer">
       <div class="links">
-        <%= link_to 'Back', events_path, id: "back", title: "Atras" %>
+        <%= link_to 'atras', events_path, id: "back", title: "Atras" %>
         <% if @event.user == current_user %>
-            <%= link_to 'Edit', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
-            <%= link_to 'Eliminar', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
+            <%= link_to 'edita', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
+            <%= link_to 'elimi', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
         <% end %>
         <!-- < % = link_to 'Descargar PDF', @event, id: "download", title: "Descargar PDF", method: :get_pdf % > -->
-        <%= link_to "Descargar pdf 2",event_path(format: :pdf), id: "download" %>
+        <%= link_to 'desca', event_path(format: :pdf), id: "download" %>
       </div>
       <hr>
       <div class="row">
@@ -137,7 +137,7 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
               <ul class="chat">
-                <%= render partial: 'suggestions', collection: @suggestions%>
+                <%= render partial: 'suggestions', collection: @suggestions %>
               </ul>
             </div>
             <!-- /.panel-body -->
