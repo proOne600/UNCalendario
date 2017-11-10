@@ -1,0 +1,547 @@
+@charset "UTF-8";
+/* line 8, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#image-upload-btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-style: none;
+  height: 17rem;
+  width: 17rem;
+  border-radius: 50%;
+  margin: auto;
+  background-color: #D6CBCE;
+  border: 1px solid #94B43B;
+}
+
+/* line 21, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#image-upload-btn .fa-picture-o {
+  font-size: 10rem;
+  color: #94B43B;
+  margin-top: 20%;
+}
+
+/* line 27, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#image-upload-btn input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* line 39, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#register-event #img_prev {
+  height: 17rem !important;
+  width: 17rem !important;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+/* line 47, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form input,
+.event_form textarea {
+  min-width: 70%;
+  resize: none;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  border: 1px solid black;
+  background-color: transparent;
+  text-align: center;
+  float: right;
+  outline: none;
+}
+
+/* line 61, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#select_category,
+#ubication-form {
+  width: 70%;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+  border: 1px solid black;
+  background-color: transparent;
+  text-align: center;
+  float: right;
+}
+
+/* line 73, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#map {
+  width: 50rem;
+  height: 20rem;
+}
+
+/* Optional: Makes the sample page fill the window. */
+/* line 79, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* line 85, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+/* line 89, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#infowindow-content {
+  display: none;
+}
+
+/* line 93, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#map #infowindow-content {
+  display: inline;
+}
+
+/* line 97, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+/* line 108, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+/* line 113, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+/* line 118, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* line 124, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+/* line 135, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+/* line 139, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+/* line 146, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#target {
+  width: 345px;
+}
+
+/* line 151, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#new_event_form #event_id_user,
+#edit_event_form #event_id_user,
+#new_event_form #event_cancelled,
+#edit_event_form #event_cancelled,
+#new_event_form #event_published,
+#edit_event_form #event_published,
+#new_event_form #event_calification,
+#new_event_form #event_all_calification,
+#edit_event_form #event_calification,
+#edit_event_form #event_all_calification,
+#new_event_form label[for=event_Público],
+#edit_event_form label[for=event_Público],
+#new_event_form label[for=event_Cancelado],
+#edit_event_form label[for=event_Cancelado],
+#new_event_form label[for=event_id_user],
+#new_event_form label[for=event_Calificación],
+#new_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_Calificación],
+#edit_event_form label[for=event_all_calification],
+#edit_event_form label[for=event_id_user] {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 175, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#register-event .date_select {
+  width: 20rem;
+  display: block;
+  float: right;
+  text-align: right;
+}
+
+/* line 184, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .panel-heading {
+  height: 3rem;
+  overflow: hidden;
+  padding-top: 0;
+  margin: 0;
+  background-color: #111;
+  color: white;
+  border-style: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+/* line 196, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .panel-footer {
+  height: 4.5rem;
+  overflow: hidden;
+  padding-top: 0;
+  margin: 0;
+  background-color: #111;
+  color: white;
+  border-style: none;
+}
+
+/* line 207, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .panel {
+  border-radius: 0rem;
+}
+
+/* line 211, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .panel-body {
+  height: 22rem;
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  color: white;
+}
+
+/* line 220, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .panel-heading h5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  /* fallback */
+  max-height: 32px;
+  /* fallback */
+  -webkit-line-clamp: 1;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+/* line 233, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .panel-body .white-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  /* fallback */
+  max-height: 40rem;
+  /* fallback */
+  -webkit-line-clamp: 10;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+  text-align: justify;
+  text-last-align: center;
+  color: white;
+}
+
+/* line 247, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .btn-default#create-event {
+  height: 15rem;
+  width: 100%;
+  line-height: 13rem;
+  font-size: 10rem;
+  border-radius: 50%;
+  margin-top: 7rem;
+}
+
+/* line 257, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .screen {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+/* line 265, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .col-sm-12,
+#event_view .box {
+  margin-top: 0;
+  height: 22rem;
+}
+
+/* line 271, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .box {
+  text-align: center;
+  background-color: rgba(123, 123, 123, 0.5);
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  top: 100%;
+  bottom: 0;
+  visibility: hidden;
+  -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+}
+
+/* line 285, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .screen:hover .box {
+  top: 0;
+  height: 22rem;
+  visibility: visible;
+}
+
+/* line 291, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .box .white-text {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  text-align: justify;
+  text-align-last: center;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* line 303, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .box #show {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 3rem;
+}
+
+/* line 311, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#event_view .box #show:hover {
+  text-decoration: none;
+  color: #A61C31;
+}
+
+/* line 317, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form {
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 0.5rem;
+}
+
+/* line 323, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form h1 {
+  color: white !important;
+}
+
+/* line 327, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .field {
+  margin-top: 1rem;
+}
+
+/* line 331, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-default .panel-heading {
+  background-color: #A61C31;
+}
+
+/* line 335, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-default {
+  border-style: none;
+  background-color: #8f8f8f;
+  border-radius: 2rem;
+}
+
+/* line 343, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .date_select {
+  text-align: center;
+  align-items: center;
+}
+
+/* line 349, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form #event_image {
+  border-style: none;
+  min-width: 50%;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 359, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form input:focus,
+.event_form textarea:focus {
+  outline: none;
+}
+
+/* line 364, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .btn-success {
+  background-color: #94B43B;
+  border-color: transparent;
+}
+
+/* line 369, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-footer {
+  background-color: #A61C31;
+}
+
+/* line 373, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.event_form .panel-footer a {
+  color: white;
+  text-align: center;
+}
+
+/* line 378, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #back {
+  visibility: hidden;
+}
+
+/* line 382, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #back:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f0a8';
+}
+
+/* line 390, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #show {
+  visibility: hidden;
+}
+
+/* line 394, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #show:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f06e';
+}
+
+/* line 402, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #delete {
+  visibility: hidden;
+}
+
+/* line 406, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #delete:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f00d';
+}
+
+/* line 414, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #download {
+  visibility: hidden;
+}
+
+/* line 418, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #download:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f019';
+}
+
+/* line 426, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit {
+  visibility: hidden;
+}
+
+/* line 430, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer #edit:before {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  display: inline-block;
+  content: '\f044';
+}
+
+/* line 438, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.panel-footer a {
+  color: #94B43B;
+}
+
+/* line 442, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+a.btn.btn-warning.withe {
+  color: white;
+}
+
+/* line 446, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#events_view .panel-body {
+  background-color: grey;
+}
+
+/* line 454, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#file-btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 19rem;
+}
+
+/* line 464, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#file-btn input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* line 476, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#show_event .panel-heading {
+  background-color: #94B43B;
+}
+
+/* line 480, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+#show_event .panel-heading h2 {
+  color: white;
+}
+
+/* line 484, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.fa.pull-right {
+  margin-left: .3em;
+  border-radius: 50%;
+  height: 4.5rem;
+  width: 4.5rem;
+  font-size: 2.6rem;
+  padding: 0.5;
+  background-color: #94B43B;
+  color: white;
+}
+
+/* line 495, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+i.fa.fa-eye.align-index {
+  padding: 0.21em;
+}
+
+/* line 499, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/events.scss */
+.box-transparent {
+  background-color: rgba(0, 0, 0, 0.5);
+}

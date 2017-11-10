@@ -32,7 +32,7 @@
         </div>
         <!-- < %= wicked_pdf_image_tag (@event.image,:height => '200', :width => '400')%> -->
         
-        <%= wicked_pdf_image_tag (@event.image) if @event.image? %> 
+        <%= wicked_pdf_image_tag (@event.image) if File.exist?(Rails.root.to_s + '/public' + @event.image.to_s) %> 
         
         
         

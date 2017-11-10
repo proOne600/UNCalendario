@@ -1,0 +1,53 @@
+/* line 4, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+.profile-header,
+.profile-body {
+  padding: 1rem;
+  background: rgba(143, 143, 143, 0.3);
+  border-radius: 2rem;
+  border: 1px double white;
+}
+
+/* line 12, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+.profile-avatar {
+  height: 30rem;
+  width: 30rem;
+  overflow: hidden;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+/* line 21, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+.profile-avatar img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* line 27, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+.text-white {
+  color: white;
+}
+
+/* line 31, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+.full-name {
+  font-weight: bold;
+}
+
+/* line 35, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+.username {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 0.1rem;
+}
+
+/* line 41, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+#edit-user-btn {
+  font-size: 3rem;
+}
+
+/* line 45, /home/ubuntu/workspace/UNCalendario/app/assets/stylesheets/user_profiles.scss */
+#edit-user-btn:hover {
+  font-size: 3rem;
+  color: grey;
+}
