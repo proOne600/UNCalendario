@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     if params[:param1] == 'months'
       render 'index_calendar'
     else
-      @events = @events.paginate(:page => params[:page], :per_page => 30)
+      @events = @events.paginate(:page => params[:page], :per_page => 30) #model
       @size = Event.total_size
       render 'index'
     end
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
     else
       @average_review = @event.reviews.average(:rating).round(2)
     end
-    @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4)
+    @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4) #model
 
     respond_to do |format|
       format.html
