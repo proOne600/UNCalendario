@@ -18,7 +18,22 @@
               <li><%= link_to 'El ultimo mes', stadistics_path(:param1 => "month") %></li>
               <li><%= link_to 'El ultimo año', stadistics_path(:param1 => "year") %></li>
               <li><%= link_to 'Todos', stadistics_path %></li>
+              
             </ul>
+            <!-- Inicio filtro por entrada -->
+              <!--<li class="sidebar-search">-->
+              <!--  < %= form_tag(stadistics_path(:param1 => "filter"), method: :get) do %>-->
+              <!--  Filtrar entre :-->
+              <!--    <div class="input-group custom-search-form">-->
+              <!--      < %= date_select :started, params[:started] %>-->
+              <!--      y-->
+              <!--      < %= date_select :finished, params[:finished] %>-->
+              <!--      < %= submit_tag 'Search', name: nil %>-->
+              <!--    </div>-->
+              <!--  < % end %>-->
+                <!-- /input-group -->
+              <!--</li>-->
+              <!-- final filtro por entrada -->
           
             <!--<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">-->
             <!--Dominio <span class="caret"></span></button>-->

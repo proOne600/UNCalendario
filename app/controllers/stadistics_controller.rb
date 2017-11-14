@@ -77,6 +77,23 @@ class StadisticsController < ApplicationController
 	       		format.json
 	       		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
 	    	end
+	    ########################## Inicio filtro entrada #######################
+	    # elsif params[:param1] == 'filter'
+    	# 	@events= Event.search_date(params[:started],params[:finished])
+    	# 	@total_events = @events.total_size
+    	# 	@users=User.year
+	    # 	@total_users= User.year.total_size
+	    # 	@women=User.year.total_women
+	    # 	@men=User.year.total_men
+	    # 	@categorias=Category.all
+	    # 	@num_privates=@events.privates
+	    # 	@num_publics=@events.publics
+	    # 	respond_to do |format|
+	    #   		format.html
+	    #   		format.json
+	    #   		format.pdf { render template: 'stadistics/report', pdf:'Reporte'}
+	    # 	end
+	    #################################### fin filtro entrada ####################
 	    else
     		@events=Event.all
 	    	@total_events = Event.total_size

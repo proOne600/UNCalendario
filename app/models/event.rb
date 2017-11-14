@@ -81,6 +81,15 @@ class Event < ApplicationRecord
     end
 
   end
+  
+  ##################################################### Filtro fecha #######################
+  # def self.search_date(started, finished)
+  #     where("created_at >= :start_date AND created_at <= :end_date",{start_date: started, end_date: finished})
+    
+
+  # end
+  
+  ###################################################### fin filtro por fecha ##################
 
   # def self.domainUN
   #   self.joins(:user).where("user.email.to_s.split('@').last = ?",  "unal.edu.co")
