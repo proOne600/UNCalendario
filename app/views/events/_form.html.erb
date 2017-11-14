@@ -12,9 +12,9 @@
             </ul>
           </div>
       <% end %>
-      <div class="col-md-1">   
+      <div class="col-lg-1">   
       </div>  
-      <div class="col-md-5">
+      <div class="col-lg-5">
           <div class="form-group">
               <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden" />
               <br/>
@@ -60,7 +60,7 @@
               <%= f.select :category_id, options_for_select(@categories),{prompt:'Seleccione'}, {required: true , class:'form-control', id:"select_category"}%>
           </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-lg-5">
           <br>
           <div class="form-group">
             <%= f.text_field :address, autofocus: true, class: 'controls', required: true, id:'pac-input', type:'text', placeholder:'¿A donde quieres ir?'%>
@@ -149,26 +149,67 @@
           <div class="field date">
             <%= f.label :Fecha_del_evento %>
             <div class="date_select">
-              <%= f.date_select :event_date, order: [:day, :month, :year], id: :event_event_date %>
-               <%= f.time_select :event_init_hour, id: :event_event_init_hour %>
+                <div class='input-group date' id='datetimepicker1'>
+                  <%= f.text_field :event_date, id: :event_event_date, class:'form-control' %>
+                  <span class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                  </span>
+                </div>
+            </div>
+            <div class="date_select">
+                <div class='input-group date' id='datetimepicker2'>
+                  <%= f.text_field :event_init_hour, id: :event_event_init_hour, class:'form-control' %>
+                  <span class="input-group-addon">
+                    <span class="fa fa-clock-o"></span>
+                  </span>
+                </div>
             </div>
           </div>
           <br>
           <div class="field date">
-            <%= f.label :Fecha_de_finalizacion %>
+            <%= f.label :Finalización_del_evento %>
             <div class="date_select">
-              <%= f.date_select :even_end_date, order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c' %>
-              <%= f.time_select :event_end_hour, id: :event_event_end_hour %>
-
+                <div class='input-group date' id='datetimepicker3'>
+                  <%= f.text_field :even_end_date, id: :event_event_date, class:'form-control' %>
+                  <span class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                  </span>
+                </div>
+            </div>
+            <div class="date_select">
+                <div class='input-group date' id='datetimepicker4'>
+                  <%= f.text_field :event_end_hour, id: :event_event_end_hour, class:'form-control' %>
+                  <span class="input-group-addon">
+                    <span class="fa fa-clock-o"></span>
+                  </span>
+                </div>
             </div>
           </div>
       </div>       
-      <div class="col-md-1">
+      <div class="col-lg-1">
       </div>
+</div>
+
       <br>
-      <%= button_tag( :class => "btn btn-success center-block") do %>
+          <%= button_tag( :class => "btn btn-success center-block") do %>
    -      <i class="fa fa-calendar-plus-o" aria-hidden="true"> Crear evento</i>
    -  <% end %>
     <% end -%>
-</div>
 
+
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    format: 'YYYY-MM-DD'
+                });
+                 $('#datetimepicker2').datetimepicker({
+                    format: 'LT'
+                });
+                 $('#datetimepicker3').datetimepicker({
+                    format: 'YYYY-MM-DD'
+                });
+                 $('#datetimepicker4').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>

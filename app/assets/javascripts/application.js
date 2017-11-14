@@ -8,3 +8,5 @@
 //= require social-share-button
 //= require Chart.bundle
 //= require chartkick
+//= require moment
+//= require bootstrap-datetimepicker

@@ -173,7 +173,6 @@ $secondary-color: $red-color;
 }
 
 #register-event .date_select {
-    width: 20rem;
     display: block;
     float: right;
     text-align: right;
@@ -500,3 +499,33 @@ i.fa.fa-eye.align-index {
   background-color: rgba(0, 0, 0, .5);
 }
 
+
+.input-group.date{
+    
+    width: 100%;
+
+  .input-group-addon{
+    position: absolute;
+    height: 3.4rem;
+    width: 3.4rem;
+    right: 0;
+    z-index: 10;
+    padding: 0.8rem;
+  }
+
+  input{
+    position: relative;
+    right: 1rem;
+    margin-left: 0;
+  }  
+}
+#datetimepicker1,
+#datetimepicker3{
+  width: 50%;
+}
+
+#datetimepicker2,
+#datetimepicker4{
+  width: 35%;
+  float: right;
+}
