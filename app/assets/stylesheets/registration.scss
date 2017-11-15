@@ -95,3 +95,13 @@
 #login-link .fa-angle-double-up{
 	font-size: 3rem;
 }
+
+#registration-form{
+    .date_select{
+        width: auto;
+    }
+
+    .input-group .form-control:first-child{
+        position: relative;
+    }
+}
