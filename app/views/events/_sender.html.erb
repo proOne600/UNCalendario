@@ -1,0 +1,16 @@
+<div class="row" id="register-event">
+    <%= form_tag( @event) do |f| %>
+      
+      
+      <p>
+        <%= @event.name %>
+      </p>
+      <div class="form-group">
+        
+        <%= label_tag 'Destinatarios' %><br/>
+        <%= text_area_tag :destinos, params[:destinos],:required => true, class: 'form-control' %>
+      </div>
+      <br>
+      <%= submit_tag 'Enviar correo' %>
+    <% end -%>
+</div>

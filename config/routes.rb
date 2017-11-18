@@ -27,10 +27,10 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   #get 'events/:id/asistir' => 'events#asistir'
-  post 'events/:id/asistir' => 'events#asistir'
   ## Ruta para creacion de PDF
   #get 'events/:id/get_pdf' => 'events#get_pdf'
-  post 'events/:id' => 'events#get_pdf'
+  #post 'events/:id' => 'events#sender_event'
+  post 'events/:id' => 'events#send_event'
   #######################
   #get 'events/:id/grade' => 'events#grade'
   post 'events/:id' => 'events#grade'

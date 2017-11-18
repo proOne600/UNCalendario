@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :get_pdf]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :get_pdf, :send_event]
   before_action :confirm_user, only: [:update, :destroy]
   before_action :authenticate_user!, only: [:destroy, :new]
 
@@ -35,17 +35,21 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    if @event.reviews.blank?
-      @average_review = 0
+    if params[:destinos]
+      sendero_event
     else
-      @average_review = @event.reviews.average(:rating).round(2)
-    end
-    @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4) #model
-
-    respond_to do |format|
-      format.html
-      format.json
-      format.pdf {render template: 'events/event', pdf: @event.name}
+      if @event.reviews.blank?
+        @average_review = 0
+      else
+        @average_review = @event.reviews.average(:rating).round(2)
+      end
+      @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4) #model
+  
+      respond_to do |format|
+        format.html
+        format.json
+        format.pdf {render template: 'events/event', pdf: @event.name}
+      end
     end
   end
 
@@ -87,7 +91,17 @@ class EventsController < ApplicationController
       end
     end
   end
-
+  
+  def send_event
+    render 'sender_event'
+  end
+  def sendero_event
+    @dest= params[:destinos].split(',')
+    
+    @dest.each do |mail| 
+      EventMailer.delay.shared_event(even,mail)
+    end
+  end
   def get_pdf
     send_data generate_pdf(@event),
               filename: "#{@event.name}.pdf",
