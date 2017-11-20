@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :event_tags
   resources :events do
     resources :reviews
+    match "/share", :to => "events#send_event",:via =>  [:get, :post] , :as => "share"
   end
 
   get 'sessions/create'
@@ -30,14 +31,15 @@ Rails.application.routes.draw do
   ## Ruta para creacion de PDF
   #get 'events/:id/get_pdf' => 'events#get_pdf'
   #post 'events/:id' => 'events#sender_event'
-  post 'events/:id' => 'events#send_event'
+
   #######################
   #get 'events/:id/grade' => 'events#grade'
   post 'events/:id' => 'events#grade'
 
   #get 'events/:id/noasistire' => 'events#noasistire'
   post 'events/:id' => 'events#noasistire'
-  
+
+
   #Link al calendario
   #match 'events/' => 'events#viewCalendar', :defaults => { :id => 'about' }
   #get '/events' => 'events#viewCalendar',as: 'horario'

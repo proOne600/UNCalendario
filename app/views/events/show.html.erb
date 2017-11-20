@@ -100,7 +100,7 @@
             <%= link_to 'edita', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
             <%= link_to 'elimi', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
         <% end %>
-        <%= link_to 'Compartir',@event, title: "Comparte", method: :send_event %>
+        <%= link_to 'Compartir',event_share_path(@event) %>
         <%= link_to 'desca', event_path(format: :pdf), id: "download" %>
         <!--< %= form_tag(events_path, method: :get) do %>-->
         <!--    <div class="input-group custom-search-form">-->

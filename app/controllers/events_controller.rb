@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :get_pdf, :send_event]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :get_pdf]
   before_action :confirm_user, only: [:update, :destroy]
   before_action :authenticate_user!, only: [:destroy, :new]
 
@@ -93,15 +93,20 @@ class EventsController < ApplicationController
   end
   
   def send_event
-    render 'sender_event'
-  end
-  def sendero_event
-    @dest= params[:destinos].split(',')
+    @event = Event.find(params[:event_id])
+    if params[:destinos]
+      @dest= params[:destinos].split(',')
     
-    @dest.each do |mail| 
-      EventMailer.delay.shared_event(even,mail)
+      @dest.each do |mail| 
+        EventMailer.delay.shared_event(@event,mail,current_user)
+      end
+      redirect_to @event, notice: 'Event was successfully shared.'
+    else
+      render 'sender_event'
     end
+  
   end
+
   def get_pdf
     send_data generate_pdf(@event),
               filename: "#{@event.name}.pdf",
