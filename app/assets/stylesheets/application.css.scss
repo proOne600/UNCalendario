@@ -1,3 +1,4 @@
+@import 'variables';
 @import "theme/bootstrap/css/bootstrap";
 @import "theme/vendor/metisMenu/metisMenu";
 @import "theme/dist/sb-admin-2";
@@ -10,9 +11,5 @@
 @import "registration";
 @import "user_profiles";
 @import 'bootstrap-datetimepicker';
+@import 'session';
 
-$green-color: #94B43B;
-$red-color: #A61C31;
-$gray-color: #B1B2B0;
-$primary-color: $green-color;
-$secondary-color: $red-color;

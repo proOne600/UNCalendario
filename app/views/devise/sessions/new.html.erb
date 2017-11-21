@@ -1,9 +1,12 @@
-<div class="row">
+<div class="row form-row">
   <div class="col-lg-12">
     <h1 class="text-center">¡Bienvenido!</h1>
     <h2 class="text-center">Gracias por compartir con nosotros</h2>
   </div>
-  <div class="col-lg-4 col-lg-offset-4">
+  <div class="col-lg-4 col-md-3 col-sm-2 col-xs-1">
+    
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
@@ -31,17 +34,20 @@
           <% end %>
         </div>
     <% end %>
-
+  </div>
+  <div class="col-lg-4 col-md-3 col-sm-2 col-xs-1">
+    
+  </div>
+  <div class="col-lg-12">
+    <div class="links">
+      <%= render 'devise/shared/links' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
   </div>
 </div>
 
-<div class="links">
-  <%= render 'devise/shared/links' %>
 
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</div>
 
 
 
