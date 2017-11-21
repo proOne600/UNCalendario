@@ -35,17 +35,21 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    if @event.reviews.blank?
-      @average_review = 0
+    if params[:destinos]
+      sendero_event
     else
-      @average_review = @event.reviews.average(:rating).round(2)
-    end
-    @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4) #model
-
-    respond_to do |format|
-      format.html
-      format.json
-      format.pdf {render template: 'events/event', pdf: @event.name}
+      if @event.reviews.blank?
+        @average_review = 0
+      else
+        @average_review = @event.reviews.average(:rating).round(2)
+      end
+      @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4) #model
+  
+      respond_to do |format|
+        format.html
+        format.json
+        format.pdf {render template: 'events/event', pdf: @event.name}
+      end
     end
   end
 
@@ -86,6 +90,21 @@ class EventsController < ApplicationController
         format.json {render json: @event.errors, status: :unprocessable_entity}
       end
     end
+  end
+  
+  def send_event
+    @event = Event.find(params[:event_id])
+    if params[:destinos]
+      @dest= params[:destinos].split(',')
+    
+      @dest.each do |mail| 
+        EventMailer.delay.shared_event(@event,mail,current_user)
+      end
+      redirect_to @event, notice: 'Event was successfully shared.'
+    else
+      render 'sender_event'
+    end
+  
   end
 
   def get_pdf

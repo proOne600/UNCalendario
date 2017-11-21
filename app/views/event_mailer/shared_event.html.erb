@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1>¡Se te ha invitado a un evento! <%= @user_m %></h1>
+        
+        <p> <%= @user_o.email %> te ha invitado al siguiente evento: </p>
+        <p>
+            Nombre del evento: <%= @event.name %> </p>
+         <p>Descripcion del evento: <%= @event.description %>.<br>
+            Fecha y hora inicio: <%= @event.event_date %> - <%= @event.event_init_hour %> .<br>
+            
+            Fecha y hora terminacion: <%= @event.even_end_date %> - <%= @event.event_end_hour %> .<br>
+        </p>
+        <p>
+            To login to the site, just follow this link: <%= @url %>.
+        </p>
+        <p>Thanks for joining and have a great day!</p>
+    </body>
+</html>

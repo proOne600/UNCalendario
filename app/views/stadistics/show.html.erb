@@ -22,16 +22,17 @@
             </ul>
             <!-- Inicio filtro por entrada -->
               <!--<li class="sidebar-search">-->
-              <!--  < %= form_tag(stadistics_path(:param1 => "filter"), method: :get) do %>-->
+              <!--  < %= form_tag(stadistics_path, method: :get) do %>-->
+              <!--  < %= hidden_field :param1, 'filter'%>-->
               <!--  Filtrar entre :-->
               <!--    <div class="input-group custom-search-form">-->
-              <!--      < %= date_select :started, params[:started] %>-->
+              <!--      < %= date_select :started, params[:started], order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c'  %>-->
               <!--      y-->
-              <!--      < %= date_select :finished, params[:finished] %>-->
+              <!--      < %= date_select :finished, params[:finished], order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c'  %>-->
               <!--      < %= submit_tag 'Search', name: nil %>-->
               <!--    </div>-->
               <!--  < % end %>-->
-                <!-- /input-group -->
+                 
               <!--</li>-->
               <!-- final filtro por entrada -->
           
@@ -46,6 +47,12 @@
             <!--</ul>-->
           </div>
       </div>
+      
+      <!--<p>-->
+      <!--  <h4 style="text-align:center;"><strong>Prueba:</strong>-->
+      <!--   y < %= params[:started].to_s %> __________ < %= params[:finished].to_s %></h4>-->
+      <!--</p>-->
+
       
       <p>
         <h3 style="text-align:center;"><strong>Numero de eventos creados:</strong>
@@ -95,7 +102,8 @@
         <h4 style="text-align:center;"><strong>Numero de mujeres registradas:</strong>
         <%= @women %></h4>
       </p>
-
+      
+      
 
       <p>
         <h4 style="text-align:center;"><strong>Numero de hombres registrados:</strong>

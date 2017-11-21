@@ -79,7 +79,9 @@ class StadisticsController < ApplicationController
 	    	end
 	    ########################## Inicio filtro entrada #######################
 	    # elsif params[:param1] == 'filter'
-    	# 	@events= Event.search_date(params[:started],params[:finished])
+    	# 	@events= Event.search_date(:started,:finished)
+    	# 	@events_Date= params[:started]
+    	# 	@events_end= params[:finished]
     	# 	@total_events = @events.total_size
     	# 	@users=User.year
 	    # 	@total_users= User.year.total_size
