@@ -1,20 +1,17 @@
 // Place all the styles related to the session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
-.form-row{
-	background-color: $background-color;
-	border-radius: 2rem;
-	
-	label{
-		color: white;
-	}
+.form-row {
+  background-color: $background-color;
+  border-radius: 2rem;
 
-	button{
-		display: block;
-		margin: auto;
-	}
+  label {
+    color: white;
+  }
 
+<<<<<<< HEAD
 	.links{
 		.btn-social{
 			max-width: 17rem;
@@ -25,6 +22,22 @@
 			color: $anchor-color !important;
 		}
 	}
+=======
+  button {
+    display: block;
+    margin: auto;
+  }
+
+  .links {
+    .btn-social {
+      max-width: 17rem;
+    }
+
+    a {
+      color: white !important;
+    }
+  }
+>>>>>>> develop
 
 }
 
