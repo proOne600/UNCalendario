@@ -27,6 +27,11 @@ jQuery ->
     }
   );
   $('#calendar').fullCalendar({
+    header: {
+      left: 'title',
+      center: 'month,agendaWeek,agendaDay',
+      right: 'today prev,next'
+    },
     locale: 'es',
     events: '/events.json'
   });
