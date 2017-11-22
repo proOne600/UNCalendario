@@ -39,7 +39,11 @@
                 Mi perfil
             <% end %>
           </li>
-          <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
+          <li>
+            <%= link_to new_event_path, :class => 'dropdown-toggle' do %>
+                <i class="fa fa-calendar-plus-o fa-fw"></i>
+                Nuevo evento
+            <% end %>
           </li>
           <li>
             <%= link_to events_path, :class => 'dropdown-toggle' do %>
