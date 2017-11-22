@@ -10,11 +10,14 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @categories = Category.all
-    @events = Event.search(params[:term], params[:category], params)
-
     if params[:param1] == 'months'
       render 'index_calendar'
     else
+      respond_to do |format|
+        format.html {@events = Event.search(params[:term], params[:category], params, true)}
+        format.json {@events = Event.all}
+      end
+
       @size = Event.total_size
       render 'index'
     end

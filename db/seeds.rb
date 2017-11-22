@@ -12,12 +12,14 @@ user = User.create! :name => 'John Doe', :email => 'mail@mail.com', :password =>
   Category.create! :name => Faker::Commerce.department(2, true), :description => Faker::Lorem.sentence(4)
 end
 
-150.times do |i|
+250.times do |i|
+  time = Faker::Time.forward(120, :all)
   evento = Event.new(:name => Faker::Lorem.sentence(2),
                      :description => Faker::Lorem.sentence(20),
                      :user => user,
                      :category_id => (1 + rand(10)),
-                     :event_date => Faker::Date.forward(30),
+                     :event_date => time,
+                     :even_end_date => Faker::Time.between(time, time.tomorrow, :all),
                      :latitude => 4.6815685,
                      :longitude => -74.0711358,
                      :address => Faker::Address.city,

@@ -70,16 +70,17 @@ class Event < ApplicationRecord
     self.where(self.reviews.average(:rating).round(2) >= calo)
   end
 
-  def self.search(term, category, params)
+  def self.search(term, category, params, paginate)
     if term
       where('LOWER(name) LIKE LOWER(?)', "%#{term}%").where('event_date > ?', Date.today).order('event_date ASC').paginate(:page => params[:page], :per_page => 30)
     elsif category
       id_catagory = Category.find_by_name(category)
       where('category_id = ?', id_catagory).where('event_date > ?', Date.today).order('event_date ASC').paginate(:page => params[:page], :per_page => 30)
-    else
+    elsif paginate
       where('event_date > ?', Date.today).order('event_date ASC').paginate(:page => params[:page], :per_page => 30)
+    else
+      where('event_date > ?', Date.today).order('event_date ASC')
     end
-
   end
 
   ##################################################### Filtro fecha #######################
