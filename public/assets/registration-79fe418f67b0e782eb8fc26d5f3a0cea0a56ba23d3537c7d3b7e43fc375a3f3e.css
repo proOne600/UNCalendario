@@ -1,0 +1,117 @@
+/* line 1, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#registration-form {
+  background-color: rgba(214, 212, 161, 0.55);
+  border-radius: 3rem;
+  align-items: flex-start;
+}
+
+/* line 7, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#registration-form .form-control {
+  width: 40rem;
+}
+
+/* line 11, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#registration-form #submit-btn {
+  height: 17rem;
+  width: 17rem;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  margin-top: 30%;
+  font-size: 2rem;
+}
+
+/* line 21, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#avatar-upload-btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-style: none;
+  height: 27rem;
+  width: 27rem;
+  border-radius: 50%;
+  margin: auto;
+  background-color: #D6CBCE;
+  border: 1px solid black;
+  margin-top: 7%;
+}
+
+/* line 36, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#avatar-upload-btn .fa-user {
+  font-size: 22rem;
+  color: #43c7b1;
+  margin-top: 5%;
+}
+
+/* line 42, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#avatar-upload-btn input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* line 54, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#img_prev {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+/* line 62, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+.gender .list-inline {
+  width: 25rem;
+  display: block;
+  margin: auto;
+}
+
+/* line 68, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+.date_select {
+  width: 30rem;
+  display: block;
+  margin: auto;
+}
+
+/* line 74, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#login-link {
+  right: 49%;
+  display: block;
+  position: absolute;
+  bottom: 1rem;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+}
+
+/* line 84, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#login-link a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* line 95, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#login-link .fa-angle-double-up {
+  font-size: 3rem;
+}
+
+/* line 100, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#registration-form .date_select {
+  width: auto;
+}
+/* line 104, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/registration.scss */
+#registration-form .input-group .form-control:first-child {
+  position: relative;
+}

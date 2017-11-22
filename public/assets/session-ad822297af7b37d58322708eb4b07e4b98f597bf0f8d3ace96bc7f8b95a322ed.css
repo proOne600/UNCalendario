@@ -1,0 +1,23 @@
+/* line 6, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/session.scss */
+.form-row {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+}
+/* line 10, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/session.scss */
+.form-row label {
+  color: white;
+}
+/* line 14, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/session.scss */
+.form-row .links .btn-social {
+  max-width: 17rem;
+  color: white !important;
+}
+/* line 19, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/session.scss */
+.form-row .links a {
+  color: #f99f11 !important;
+}
+/* line 23, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/session.scss */
+.form-row button {
+  display: block;
+  margin: auto;
+}
