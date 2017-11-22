@@ -95,28 +95,28 @@
         </a>
         <ul class="dropdown-menu dropdown-user">
           <li>
-            <%= link_to user_profile_path(current_user), :class => 'dropdown-toggle' do %>
+            <%= link_to user_profile_path(current_user), :class => 'dropdown-item text-center' do %>
                 <i class="fa fa-user fa-fw"></i>
                 Mi perfil
             <% end %>
           </li>
-          <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
+          <li><a href="#" class="dropdown-item text-center"><i class="fa fa-gear fa-fw"></i> Configuración</a>
           </li>
           <li>
-            <%= link_to events_path, :class => 'dropdown-toggle' do %>
+            <%= link_to events_path, :class => 'dropdown-item text-center' do %>
                 <i class="fa fa-calendar fa-fw"></i>
                 Ver eventos
             <% end %>
           </li>
           <li class="divider"></li>
           <li>
-            <%= link_to user_registration_path, data: {confirm: '¿Estas seguro de querer eliminar la cuenta?'}, method: :delete, :class => 'dropdown-toggle' do %>
+            <%= link_to user_registration_path, data: {confirm: '¿Estas seguro de querer eliminar la cuenta?'}, method: :delete, :class => 'dropdown-item text-center' do %>
                 <i class="fa fa-sign-out fa-fw"></i>
                 Cancelar mi cuenta
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-toggle' do %>
+            <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-item text-center' do %>
                 <i class="fa fa-sign-out fa-fw"></i>
                 Salir
             <% end %>

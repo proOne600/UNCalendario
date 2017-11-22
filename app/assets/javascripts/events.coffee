@@ -27,5 +27,16 @@ jQuery ->
 
     }
   );
+  $('#datetimepicker3').datetimepicker(
+    locale: 'es',
+    format: 'DD - MM - YYYY'
+    icons: {
+      date: "fa fa-calendar",
+      up: "fa fa-arrow-up",
+      down: "fa fa-arrow-down",
+      next: "fa fa-arrow-right",
+      previous: "fa fa-arrow-left",
 
+    }
+  );
 

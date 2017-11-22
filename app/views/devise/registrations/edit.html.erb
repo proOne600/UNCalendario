@@ -66,15 +66,9 @@
                             </div>
                             <div class="date-of-birth">
                                 <%= f.label :date_of_birth %>
-                                    <br/>
-                                    <div class="date_select">
-                                        <div class='input-group date' id='datetimepicker1'>
-                                            <%= f.text_field :date_of_birth, id: :date_of_birth, class:'form-control' %>
-                                                <span class="input-group-addon">
-                    <span class="fa fa-calendar"></span>
-                                                </span>
-                                        </div>
-                                    </div>
+                                <br>
+                                <%= f.text_field :date_of_birth, :id => 'datetimepicker3', class: 'form-control' %>
+
                             </div>
                             <br>
                             <div class="form-group">

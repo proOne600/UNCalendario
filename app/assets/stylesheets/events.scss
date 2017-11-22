@@ -532,3 +532,17 @@ i.fa.fa-eye.align-index {
 #calendar {
   margin: 10px;
 }
+
+.panel-footer #share {
+  visibility: hidden;
+  font-size: 0.5rem;
+}
+
+
+.panel-footer #share::before {
+    visibility: visible;
+    font-family: FontAwesome;
+    font-size: 2rem;
+    display: inline-block;
+    content: '\f064';
+}
