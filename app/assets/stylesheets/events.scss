@@ -4,39 +4,38 @@ $gray-color: #B1B2B0;
 $primary-color: $green-color;
 $secondary-color: $red-color;
 
-
-#image-upload-btn{
-    position: relative;
-    overflow: hidden;
-    display: block;
-    border-style: none;
-    height: 17rem;
-    width: 17rem;
-    border-radius: 50%;
-    margin: auto;
-    background-color: #D6CBCE;
-    border: 1px solid $primary-color;
+#image-upload-btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-style: none;
+  height: 17rem;
+  width: 17rem;
+  border-radius: 50%;
+  margin: auto;
+  background-color: #D6CBCE;
+  border: 1px solid $primary-color;
 }
 
-#image-upload-btn .fa-picture-o{
+#image-upload-btn .fa-picture-o {
   font-size: 10rem;
   color: $primary-color;
   margin-top: 20%;
 }
 
-#image-upload-btn input{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    opacity: 0;
-    -ms-filter: 'alpha(opacity=0)';
-    font-size: 200px !important;
-    direction: ltr;
-    cursor: pointer;
+#image-upload-btn input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
 }
 
-#register-event  #img_prev{
+#register-event #img_prev {
   height: 17rem !important;
   width: 17rem !important;
   border-radius: 50%;
@@ -45,7 +44,7 @@ $secondary-color: $red-color;
 }
 
 .event_form input,
-.event_form textarea{
+.event_form textarea {
   min-width: 70%;
   resize: none;
   border-radius: 0.5rem;
@@ -74,6 +73,7 @@ $secondary-color: $red-color;
   width: 50rem;
   height: 20rem;
 }
+
 /* Optional: Makes the sample page fill the window. */
 
 #description {
@@ -143,10 +143,10 @@ $secondary-color: $red-color;
   font-weight: 500;
   padding: 6px 12px;
 }
+
 #target {
   width: 345px;
 }
-
 
 #new_event_form #event_id_user,
 #edit_event_form #event_id_user,
@@ -173,12 +173,10 @@ $secondary-color: $red-color;
 }
 
 #register-event .date_select {
-    display: block;
-    float: right;
-    text-align: right;
+  display: block;
+  float: right;
+  text-align: right;
 }
-
-
 
 #event_view .panel-heading {
   height: 3rem;
@@ -245,8 +243,8 @@ $secondary-color: $red-color;
 
 #event_view .btn-default#create-event {
   height: 15rem;
-  width: 100%;
-  line-height: 13rem;
+  width: 15rem;
+  line-height: 13.6rem;
   font-size: 10rem;
   border-radius: 50%;
   margin-top: 7rem;
@@ -337,8 +335,6 @@ $secondary-color: $red-color;
   border-radius: 2rem;
 }
 
-
-
 .event_form .date_select {
 
   text-align: center;
@@ -353,7 +349,6 @@ $secondary-color: $red-color;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .event_form input:focus,
 .event_form textarea:focus {
@@ -499,12 +494,11 @@ i.fa.fa-eye.align-index {
   background-color: rgba(0, 0, 0, .5);
 }
 
+.input-group.date {
 
-.input-group.date{
-    
-    width: 100%;
+  width: 100%;
 
-  .input-group-addon{
+  .input-group-addon {
     position: absolute;
     height: 3.4rem;
     width: 3.4rem;
@@ -513,19 +507,20 @@ i.fa.fa-eye.align-index {
     padding: 0.8rem;
   }
 
-  input{
+  input {
     position: relative;
     right: 1rem;
     margin-left: 0;
-  }  
+  }
 }
+
 #datetimepicker1,
-#datetimepicker3{
+#datetimepicker3 {
   width: 50%;
 }
 
 #datetimepicker2,
-#datetimepicker4{
+#datetimepicker4 {
   width: 35%;
   float: right;
 }
