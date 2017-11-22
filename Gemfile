@@ -77,6 +77,8 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 gem "mini_magick"
 
+gem 'fullcalendar-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

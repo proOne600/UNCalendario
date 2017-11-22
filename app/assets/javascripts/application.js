@@ -12,3 +12,4 @@
 //= require theme/bootstrap/js/bootstrap-datetimepicker
 //= require es
 //= require events
+//= require fullcalendar

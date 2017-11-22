@@ -26,3 +26,7 @@ jQuery ->
 
     }
   );
+  $('#calendar').fullCalendar({
+    locale: 'es',
+    events: '/events.json'
+  });
