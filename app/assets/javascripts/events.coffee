@@ -1,6 +1,7 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
 jQuery ->
   $('#datetimepicker').datetimepicker(
     locale: 'es'
@@ -26,12 +27,5 @@ jQuery ->
 
     }
   );
-  $('#calendar').fullCalendar({
-    header: {
-      left: 'title',
-      center: 'month,agendaWeek,agendaDay',
-      right: 'today prev,next'
-    },
-    locale: 'es',
-    events: '/events.json'
-  });
+
+
