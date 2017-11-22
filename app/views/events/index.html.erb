@@ -36,7 +36,7 @@
   <% if user_signed_in? %>
       <div class="col-xs-12 col-md-2 col-lg-2">
 
-        <%= link_to '', new_event_path, class: "btn btn-default fa fa-plus-circle", id: "create-event", title: "Crea un nuevo evento" %>
+        <%= link_to '', new_event_path, class: "btn btn-default fa fa-plus-circle", id: "create-event", title: "Crea un nuevo evento", :"data-no-turbolink" => true %>
       </div>
       </div>
   <% else %>
