@@ -19,7 +19,8 @@
         }
     }
 
-    .dropdown {
+    .dropdown,
+    li {
         min-width: 20rem;
         a {
             text-align: center;
@@ -31,8 +32,7 @@
         }
 
         a:hover,
-        a:focus,
-        a:visited {
+        a:focus {
             color: #09323f;
             background-color: rgba(255, 255, 255, 0.5);
         }
