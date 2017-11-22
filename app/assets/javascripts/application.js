@@ -11,5 +11,6 @@
 //= require moment
 //= require theme/bootstrap/js/bootstrap-datetimepicker
 //= require es
+//= require events_calendar
 //= require events
 //= require fullcalendar

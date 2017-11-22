@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def viewCalendar
+  def view_calendar
     @events = Event.all
   end
 
