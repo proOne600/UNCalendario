@@ -10,12 +10,11 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @categories = Category.all
-    @events = Event.search(params[:term], params[:category])
+    @events = Event.search(params[:term], params[:category], params)
 
     if params[:param1] == 'months'
       render 'index_calendar'
     else
-      @events = @events.paginate(:page => params[:page], :per_page => 30) #model
       @size = Event.total_size
       render 'index'
     end
@@ -44,7 +43,7 @@ class EventsController < ApplicationController
         @average_review = @event.reviews.average(:rating).round(2)
       end
       @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4) #model
-  
+
       respond_to do |format|
         format.html
         format.json
@@ -91,20 +90,20 @@ class EventsController < ApplicationController
       end
     end
   end
-  
+
   def send_event
     @event = Event.find(params[:event_id])
     if params[:destinos]
       @dest= params[:destinos].split(',')
-    
-      @dest.each do |mail| 
-        EventMailer.delay.shared_event(@event,mail,current_user)
+
+      @dest.each do |mail|
+        EventMailer.delay.shared_event(@event, mail, current_user)
       end
       redirect_to @event, notice: 'Event was successfully shared.'
     else
       render 'sender_event'
     end
-  
+
   end
 
   def get_pdf
