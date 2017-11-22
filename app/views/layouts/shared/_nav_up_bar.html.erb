@@ -1,146 +1,131 @@
-<ul class="nav navbar-top-links navbar-right">
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="fa fa-search fa-fw"></i> <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-tasks" id="dropdown-search">
-      <!--Search bar input-->
-      <li class="sidebar-search">
-        <%= form_tag(events_path, method: :get) do %>
-            <div class="input-group custom-search-form">
-              <%= text_field_tag :term, params[:term] %>
-              <%= submit_tag 'Search', name: nil %>
-            </div>
-        <% end %>
-        <!-- /input-group -->
-      </li>
-      <!--END Search bar input-->
+<div class="navbar-collapse collapse">
+  <ul class="nav navbar-top-links navbar-right">
+    <li class="navbar-search">
+      <%= form_tag(events_path, method: :get) do %>
+          <div class="input-group custom-search-form">
+            <%= text_field_tag :term, params[:term] %>
+            <%= submit_tag 'Buscar', name: nil%>
+          </div>
+      <% end %>
+    </li>
 
-    </ul>
-    <!-- /.dropdown-tasks -->
-  </li>
-  <% if user_signed_in? %>
-      <!-- /.dropdown -->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-alerts">
-          <li>
-            <a href="#">
-              <div>
-                <i class="fa fa-comment fa-fw"></i> Nuevo Commentario
-                <span class="pull-right text-muted small">4 minutos atrás</span>
-              </div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">
-              <div>
-                <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                <span class="pull-right text-muted small">12 minutos atrás</span>
-              </div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">
-              <div>
-                <i class="fa fa-envelope fa-fw"></i> Message Sent
-                <span class="pull-right text-muted small">4 minutos atrás</span>
-              </div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">
-              <div>
-                <i class="fa fa-tasks fa-fw"></i> New Task
-                <span class="pull-right text-muted small">4 minutos atrás</span>
-              </div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">
-              <div>
-                <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                <span class="pull-right text-muted small">4 minutos atrás</span>
-              </div>
-            </a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a class="text-center" href="#">
-              <strong>Ver todas las notificaciones</strong>
-              <i class="fa fa-angle-right"></i>
-            </a>
-          </li>
-        </ul>
-        <!-- /.dropdown-alerts -->
-      </li>
-      <!-- /.dropdown -->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-user fa-fw"></i>
-          <%= current_user.email.to_s.split('@').first %>
-          <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-user">
-          <li>
-            <%= link_to user_profile_path(current_user), :class => 'dropdown-toggle' do %>
-                <i class="fa fa-user fa-fw"></i>
-                Mi perfil
-            <% end %>
-          </li>
-          <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
-          </li>
-          <li>
-            <%= link_to events_path, :class => 'dropdown-toggle' do %>
-                <i class="fa fa-calendar fa-fw"></i>
-                Ver eventos
-            <% end %>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <%= link_to user_registration_path, data: {confirm: '¿Estas seguro de querer eliminar la cuenta?'}, method: :delete, :class => 'dropdown-toggle' do %>
-                <i class="fa fa-sign-out fa-fw"></i>
-                Cancelar mi cuenta
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-toggle' do %>
-                <i class="fa fa-sign-out fa-fw"></i>
-                Salir
-            <% end %>
-          </li>
-
-        </ul>
-        <!-- /.dropdown-user -->
-      </li>
-      <!-- /.dropdown -->
-  <% else %>
-
-
-      <li>
-        <%= link_to events_path, :class => 'dropdown-toggle' do %>
+    <% if user_signed_in? %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-alerts">
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-comment fa-fw"></i> Nuevo Commentario
+                  <span class="pull-right text-muted small">4 minutos atrás</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                  <span class="pull-right text-muted small">12 minutos atrás</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-envelope fa-fw"></i> Message Sent
+                  <span class="pull-right text-muted small">4 minutos atrás</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-tasks fa-fw"></i> New Task
+                  <span class="pull-right text-muted small">4 minutos atrás</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                  <span class="pull-right text-muted small">4 minutos atrás</span>
+                </div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a class="text-center" href="#">
+                <strong>Ver todas las notificaciones</strong>
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- /.dropdown-alerts -->
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-user fa-fw"></i>
-            Ver eventos
-        <% end %>
-      </li>
-      <li>
-        <%= link_to new_user_registration_path, :class => 'dropdown-toggle' do %>
-            <i class="fa fa-user fa-fw"></i>
-            Registrate
-        <% end %>
-      </li>
-      <li>
-        <%= link_to new_user_session_path, :class => 'dropdown-toggle' do %>
-            <i class="fa fa-user fa-fw"></i>
-            Iniciar Sesión
-        <% end %>
-      </li>
-  <% end %>
+            <%= current_user.email.to_s.split('@').first %>
+            <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li>
+              <%= link_to user_profile_path(current_user), :class => 'dropdown-toggle' do %>
+                  <i class="fa fa-user fa-fw"></i>
+                  Mi perfil
+              <% end %>
+            </li>
+            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
+            </li>
+            <li>
+              <%= link_to events_path, :class => 'dropdown-toggle' do %>
+                  <i class="fa fa-calendar fa-fw"></i>
+                  Ver eventos
+              <% end %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to user_registration_path, data: {confirm: '¿Estas seguro de querer eliminar la cuenta?'}, method: :delete, :class => 'dropdown-toggle' do %>
+                  <i class="fa fa-sign-out fa-fw"></i>
+                  Cancelar mi cuenta
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete, :class => 'dropdown-toggle' do %>
+                  <i class="fa fa-sign-out fa-fw"></i>
+                  Salir
+              <% end %>
+            </li>
 
-</ul>
+          </ul>
+          <!-- /.dropdown-user -->
+        </li>
+    <% else %>    
+        <li>
+          <%= link_to events_path, :class => 'dropdown-toggle' do %>
+              <i class="fa fa-user fa-fw"></i>
+              Ver eventos
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_registration_path, :class => 'dropdown-toggle' do %>
+              <i class="fa fa-user fa-fw"></i>
+              Registrate
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path, :class => 'dropdown-toggle' do %>
+              <i class="fa fa-user fa-fw"></i>
+              Iniciar Sesión
+          <% end %>
+        </li>
+    <% end %>
+  </ul>
+</div>

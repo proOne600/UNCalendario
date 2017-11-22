@@ -1,8 +1,4 @@
-$green-color: #94B43B;
-$red-color: #A61C31;
-$gray-color: #B1B2B0;
-$primary-color: $green-color;
-$secondary-color: $red-color;
+
 
 .sidebar {
   margin-top: 7rem;
@@ -16,13 +12,18 @@ $secondary-color: $red-color;
 }
 
 .navbar-default {
-  height: 8rem;
+  height: 6rem;
   background-color: rgba(143, 143, 143, 0.4);
-  line-height: 5rem;
   box-shadow: 1px 1px 1px $primary-color;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
+
+.navbar-header{
+  height: 6rem;
+}
+
+
 
 nav.navbar.navbar-default.navbar-static-top {
   margin-bottom: 1rem!important;
@@ -35,9 +36,7 @@ nav.navbar.navbar-default.navbar-static-top {
 .navbar-top-links li a {
   font-family: 'Ancizar-Serif-Regular', sans-serif;
   font-size: 2rem;
-  height: 100%;
   min-width: 15rem;
-  line-height: 6rem;
   text-align: center;
   color: $primary-color;
   border-radius: 1rem;
@@ -91,4 +90,51 @@ nav.navbar.navbar-default.navbar-static-top {
 	right: 0;
 	width: 100%;
 	border-radius: 4rem;
+}
+
+.navbar-search{
+  height: 5rem;
+  padding-top: 2.5rem;
+  min-width: 30rem;
+}
+
+
+
+.navbar-search form{
+  margin-bottom: 0;
+
+}
+
+.navbar-search form input[type="text"]{
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem; 
+  width: 40rem;
+}
+
+
+
+
+.navbar.top-links, .navbar-top-links li, .navbar-top-links li a{
+  margin-top: -1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-static-top{
+    position: relative; /* this can also be static */
+    height: auto;
+  }
+
+  .navbar-top-links{
+    height: auto;
+  }
+  
+  .navbar-top-links li{
+    height: 5rem;
+
+  }
+
+  .navbar-top-links li a{
+    height: 5rem;
+    line-height: normal !important;
+  }
 }

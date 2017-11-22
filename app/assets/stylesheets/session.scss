@@ -18,10 +18,11 @@
 	.links{
 		.btn-social{
 			max-width: 17rem;
+			color: white !important;
 		}
 
 		a{
-			color: white !important;
+			color: $anchor-color !important;
 		}
 	}
 
