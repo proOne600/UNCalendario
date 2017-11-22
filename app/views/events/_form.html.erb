@@ -149,17 +149,14 @@
         <div class="field date">
           <%= f.label :Fecha_del_evento %>
           <div class="date_select">
-            <%= f.date_select :event_date, order: [:day, :month, :year], id: :event_event_date %>
-            <%= f.time_select :event_init_hour, id: :event_event_init_hour %>
+            <%= f.text_field :event_date, :id => 'datetimepicker' %>
           </div>
         </div>
         <br>
         <div class="field date">
           <%= f.label :Fecha_de_finalizacion %>
           <div class="date_select">
-            <%= f.date_select :even_end_date, order: [:day, :month, :year], id: :event_even_end_date, class: 'form-c' %>
-            <%= f.time_select :event_end_hour, id: :event_event_end_hour %>
-
+            <%= f.text_field :event_end_date, :id => 'datetimepicker2' %>
           </div>
         </div>
       </div>

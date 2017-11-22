@@ -3,6 +3,7 @@
 @import "theme/vendor/metisMenu/metisMenu";
 @import "theme/dist/sb-admin-2";
 @import "theme/bootstrap-social/bootstrap-social";
+@import "theme/bootstrap/css/bootstrap-datetimepicker";
 @import "main";
 @import "events";
 @import "navbar";
@@ -10,6 +11,5 @@
 @import "custom-share-buttons";
 @import "registration";
 @import "user_profiles";
-@import 'bootstrap-datetimepicker';
 @import 'session';
 

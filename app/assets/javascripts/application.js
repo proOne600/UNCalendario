@@ -9,4 +9,6 @@
 //= require Chart.bundle
 //= require chartkick
 //= require moment
-//= require bootstrap-datetimepicker
+//= require theme/bootstrap/js/bootstrap-datetimepicker
+//= require es
+//= require events
