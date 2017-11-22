@@ -2,15 +2,19 @@
     <%= form_tag(  event_share_path(@event)) do |f| %>
       
       
-      <p>
+      <h3 style="text-align:center;">
         <%= @event.name %>
-      </p>
+      </h3>
       <div class="form-group">
         
         <%= label_tag 'Destinatarios' %><br/>
         <%= text_area_tag :destinos, params[:destinos],:required => true, class: 'form-control' %>
       </div>
       <br>
-      <%= submit_tag 'Enviar correo' %>
+      <div class="row">
+        <div class="col-md-12 center-block">
+          <%= submit_tag 'Enviar correo', class: 'btn btn-lg btn-success center-block' %>
+        </div>
+      </div>
     <% end -%>
 </div>
