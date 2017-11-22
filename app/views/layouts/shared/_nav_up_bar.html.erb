@@ -9,8 +9,12 @@
       <li class="sidebar-search">
         <%= form_tag(events_path, method: :get) do %>
             <div class="input-group custom-search-form">
-              <%= text_field_tag :term, params[:term] %>
-              <%= submit_tag 'Buscar', name: nil %>
+              <%= text_field_tag :term, params[:term], class: 'form-control', placeholder: 'Buscar evento...' %>
+              <span class="input-group-btn">
+              <%= button_tag(type: 'submit', class: 'btn btn-default') do %>
+                  <i class="fa fa-search"></i>
+              <% end %>
+              </span>
             </div>
         <% end %>
         <!-- /input-group -->

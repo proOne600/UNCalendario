@@ -1,4 +1,4 @@
-@import "variables"; 
+@import "variables";
 
 
 .navbar-default {
@@ -49,14 +49,20 @@
             form {
                 margin-bottom: 0;
                 .custom-search-form {
-                    width: 100%;
-
-
+                    width: 80%;
                     input[type="text"] {
-                        width: 80%;
+                        width: 100%;
                         border-top-left-radius: 2rem;
                         border-bottom-left-radius: 2rem;
                     }
+                    button {
+                      height: 3.4rem;
+                      background: $green-color;
+                      border-color: $green-color;
+                    }
+                  i {
+                    color: white;
+                  }
                 }
             }
         }
