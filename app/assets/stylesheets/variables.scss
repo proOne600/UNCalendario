@@ -1,6 +1,7 @@
 $background-color: rgba(0, 0, 0, 0.5);
+$title-color: rgb(238, 255, 135);
 $error-color: #b30015;
-$anchor-color: #2a00b3;
+$anchor-color: rgba(249, 159, 17, 1);
 $anchor-hover-color: #0077b3;
 $anchor-visited-color: #00b0b3;
 $anchor-visited-blending-color: #24fbff;
@@ -12,3 +13,8 @@ $username-color: #363636;
 $shadow-color: #303030;
 $border-color: #292929;
 $marquee-color: #111;
+$green-color: #94B43B;
+$red-color: #A61C31;
+$gray-color: #B1B2B0;
+$primary-color: $green-color;
+$secondary-color: $red-color;

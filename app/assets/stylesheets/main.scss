@@ -128,11 +128,6 @@
   src: asset_url('Ancizar-Serif-SemiboldItalic.otf');
 }
 
-$green-color: #94B43B;
-$red-color: #A61C31;
-$gray-color: #B1B2B0;
-$primary-color: $green-color;
-$secondary-color: $red-color;
 
 html, body, #page-wrapper {
   height: 100%;
@@ -153,6 +148,9 @@ body {
 }
 
 //Navbar classes
+@import "variables"; 
+
+
 
 //Typography classes
 h1,

@@ -10,21 +10,21 @@
   label {
     color: white;
   }
+	.links{
+		.btn-social{
+			max-width: 17rem;
+			color: white !important;
+		}
 
+		a{
+			color: $anchor-color !important;
+		}
+	}
   button {
     display: block;
     margin: auto;
   }
 
-  .links {
-    .btn-social {
-      max-width: 17rem;
-    }
-
-    a {
-      color: white !important;
-    }
-  }
 
 }
 

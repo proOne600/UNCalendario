@@ -1,94 +1,86 @@
-$green-color: #94B43B;
-$red-color: #A61C31;
-$gray-color: #B1B2B0;
-$primary-color: $green-color;
-$secondary-color: $red-color;
+@import "variables"; 
 
-.sidebar {
-  margin-top: 7rem;
-  background-color: transparent;
-  border-style: none;
-  box-shadow: 0px 0px 0px white;
-}
-
-.sidebar .navbar-default {
-  background-color: transparent;
-}
 
 .navbar-default {
-  height: 8rem;
-  background-color: rgba(143, 143, 143, 0.4);
-  line-height: 5rem;
-  box-shadow: 1px 1px 1px $primary-color;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+    background-color: $background-color;
+    margin-bottom: 2rem;
+    height: 6rem;
+    .navbar-brand {
+        height: 4rem;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: -1.5rem;
+        img {
+            height: 5rem;
+            display: inline;
+        }
+        a {
+            color: white;
+        }
+    }
+
+    .dropdown {
+        min-width: 20rem;
+        a {
+            text-align: center;
+            font-size: 1.7rem;
+            color: $title-color;
+            height: 6rem;
+            line-height: 3rem;
+            font-weight: bold;
+        }
+
+        a:hover,
+        a:focus,
+        a:visited {
+            color: #09323f;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #dropdown-search {
+            width: 62rem;
+            background-color: $background-color;
+            padding: 1rem;
+        }
+
+        .sidebar-search {
+            width: 70rem;
+            background-color: transparent;
+            form {
+                margin-bottom: 0;
+                .custom-search-form {
+                    width: 100%;
+
+
+                    input[type="text"] {
+                        width: 80%;
+                        border-top-left-radius: 2rem;
+                        border-bottom-left-radius: 2rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
-nav.navbar.navbar-default.navbar-static-top {
-  margin-bottom: 1rem!important;
-}
 
+@media screen and (max-width: 768px) {
+    .navbar-static-top {
+        position: relative;
+        /* this can also be static */
+        height: auto;
+    }
 
+    .navbar-top-links {
+        height: auto;
+    }
 
-.navbar.top-links,
-.navbar-top-links li,
-.navbar-top-links li a {
-  font-family: 'Ancizar-Serif-Regular', sans-serif;
-  font-size: 2rem;
-  height: 100%;
-  min-width: 15rem;
-  line-height: 6rem;
-  text-align: center;
-  color: $primary-color;
-  border-radius: 1rem;
-  min-width: 20rem;
-}
+    .navbar-top-links li {
+        height: 5rem;
+    }
 
-.navbar-top-links li a:hover {
-  background-color: #88A61F;
-  color: white;
-}
-
-.navbar-default .navbar-brand {
-  line-height: 4rem;
-  color: white;
-  font-size: 2.4rem;
-  font-family: 'Ancizar-Serif-Semibold', sans-serif;
-}
-
-.navbar-brand img {
-  display: unset;
-}
-
-.logo-un {
-  max-height: 150%;
-
-}
-
-.input-group-btn  {
-    position: relative;
-    font-size: 0;
-    white-space: nowrap;
-    right: 1rem;
-    top: 0.3rem;
-    background-color: transparent
-}
-
-.input-group-btn .btn-default{
-	background-color: transparent;
-	color: $primary-color;
-	border-radius: 50%;
-}
-
-#dropdown-search{
-	width: 70rem;
-	background-color: transparent;
-}
-
-.input-group .form-control:first-child{
-	position: absolute;
-	left: 0; 
-	right: 0;
-	width: 100%;
-	border-radius: 4rem;
+    .navbar-top-links li a {
+        height: 5rem;
+        line-height: normal !important;
+    }
 }
