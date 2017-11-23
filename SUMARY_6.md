@@ -6,7 +6,7 @@
 
 -David Rico:
 
--Bryan Angarita: 
+-Bryan Angarita: Estilos buscar, Datepicker, Arreglo estilos. Minimagic y Carrierwave imagenes unicamente y resize
 
 
 
