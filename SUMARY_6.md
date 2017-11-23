@@ -1,4 +1,4 @@
-###Trabajos realizado por cada integrante del grupo #SPRINT 7:
+###Trabajos realizado por cada integrante del grupo #SPRINT 6:
 
 - Miguel Tovar: Implementacion de compartir a correos determinados.
             
