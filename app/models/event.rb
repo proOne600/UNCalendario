@@ -83,6 +83,19 @@ class Event < ApplicationRecord
     end
   end
 
+  def self.suggestions(category)
+    where('event_date > ?', Date.today).where('category_id = ?', category).order('event_date ASC').limit(6)
+  end
+
+  def self.getEventsCurrentUser(user)
+    where(:user_id => user)
+  end
+
+  def self.getFavoritesCurrentUser(user)
+    where(:user_id => 0)
+  end
+
+
   ##################################################### Filtro fecha #######################
   # def self.search_date(started, finished)
   #     where("created_at >= :start_date AND created_at <= :end_date",{start_date: started, end_date: finished})

@@ -45,7 +45,7 @@ class EventsController < ApplicationController
       else
         @average_review = @event.reviews.average(:rating).round(2)
       end
-      @suggestions = Event.where('event_date > ?', Date.today).where('category_id = ?', @event.category.id).order('event_date ASC').limit(4) #model
+      @suggestions = Event.suggestions(@event.category)
 
       respond_to do |format|
         format.html
