@@ -39,19 +39,6 @@
             <% end %>
           </p>
 
-          <p>
-            <strong>Hora de inicio:</strong>
-            <% if @event.event_init_hour.present? %>
-                <%= @event.event_init_hour.to_formatted_s(:time) %>
-            <% end %>
-          </p>
-
-          <p>
-            <strong>Hora final:</strong>
-            <% if @event.event_end_hour.present? %>
-                <%= @event.event_end_hour.to_formatted_s(:time) %>
-            <% end %>
-          </p>
 
           <p>
             <strong>Fin del evento :</strong>
@@ -61,7 +48,7 @@
           </p>
           <hr>
 
-          <%= social_share_button_tag(@event.name[0..20].gsub(/\s\w+\s*$/, '...') + ' en ' + time_ago_in_words(@event.event_date) + 'mas detalles en ') %>
+          <%= social_share_button_tag(@event.name[0..20].gsub(/\s\w+\s*$/, '...') + ' en ' + time_ago_in_words(@event.event_date) + '- mas detalles en ') %>
           <hr>
 
           <!-- Mostrar la imagen del evento-->
