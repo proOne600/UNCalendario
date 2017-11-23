@@ -83,22 +83,39 @@ class Event < ApplicationRecord
     end
   end
 
-  ##################################################### Filtro fecha #######################
-  # def self.search_date(started, finished)
-  #     where("created_at >= :start_date AND created_at <= :end_date",{start_date: started, end_date: finished})
+  def self.find_between_dates(start_date, end_date)
+    where('event_date >= ?', start_date).where('event_date <= ?', end_date)
+  end
+
+  def self.suggestions(category)
+    where('event_date > ?', Date.today).where('category_id = ?', category).order('event_date ASC').limit(6)
+  end
+
+  def self.getEventsCurrentUser(user)
+    where(:user_id => user)
+  end
+
+  def self.getFavoritesCurrentUser(user)
+    where(:user_id => 0)
+  end
 
 
-  # end
+##################################################### Filtro fecha #######################
+# def self.search_date(started, finished)
+#     where("created_at >= :start_date AND created_at <= :end_date",{start_date: started, end_date: finished})
 
-  ###################################################### fin filtro por fecha ##################
 
-  # def self.domainUN
-  #   self.joins(:user).where("user.email.to_s.split('@').last = ?",  "unal.edu.co")
-  # end
+# end
 
-  # def self.parti
-  #   self.where(user.email.to_s.split('@').last !=  'unal.edu.co')
-  # end
+###################################################### fin filtro por fecha ##################
+
+# def self.domainUN
+#   self.joins(:user).where("user.email.to_s.split('@').last = ?",  "unal.edu.co")
+# end
+
+# def self.parti
+#   self.where(user.email.to_s.split('@').last !=  'unal.edu.co')
+# end
 
 
 end

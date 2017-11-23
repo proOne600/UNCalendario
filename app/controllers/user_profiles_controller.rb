@@ -11,6 +11,8 @@ class UserProfilesController < ApplicationController
   # GET /user_profiles/1
   # GET /user_profiles/1.json
   def show
+    @user_events = Event.getEventsCurrentUser(current_user)
+    @user_favorites = Event.getFavoritesCurrentUser(current_user)
   end
 
   # GET /user_profiles/new

@@ -20,8 +20,8 @@ end
                      :category_id => (1 + rand(10)),
                      :event_date => time,
                      :even_end_date => Faker::Time.between(time, time.tomorrow, :all),
-                     :latitude => 4.6815685,
-                     :longitude => -74.0711358,
+                     :latitude => ('4.62'+4.times.map{rand(10)}.join).to_f,
+                     :longitude => ('-74.06'+4.times.map{rand(10)}.join).to_f,
                      :address => Faker::Address.city,
                      :image => File.new(File.join(Rails.root, 'app', 'assets', 'images', (rand(8).to_s+'.jpg'))),
                      :published => Faker::Boolean.boolean

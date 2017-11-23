@@ -1,5 +1,5 @@
 <div class="row" id="register-event">
-  <%= form_with(model: event, local: true) do |f| %>
+  <%= form_for @event do |f| %>
       <% if event.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -149,14 +149,14 @@
         <div class="field date">
           <%= f.label :Fecha_del_evento %>
           <div class="date_select">
-            <%= f.text_field :event_date, :id => 'datetimepicker' %>
+            <%= f.text_field :event_date, :id => 'datetimepicker', :value => "#{f.object.event_date.strftime("%d-%m-%Y") unless f.object.new_record?}" %>
           </div>
         </div>
         <br>
         <div class="field date">
           <%= f.label :Fecha_de_finalizacion %>
           <div class="date_select">
-            <%= f.text_field :event_end_date, :id => 'datetimepicker2' %>
+            <%= f.text_field :even_end_date, :id => 'datetimepicker2', :value => "#{f.object.even_end_date.strftime("%d-%m-%Y") unless f.object.new_record?}" %>
           </div>
         </div>
       </div>
@@ -164,7 +164,7 @@
       <div class="row">
         <div class="col-md-12 center-block">
           <%= button_tag(:class => 'btn btn-lg btn-success center-block') do %>
-              <i class="fa fa-calendar-plus-o" aria-hidden="true"> Crear evento</i>
+              <i class="fa fa-calendar-plus-o" aria-hidden="true"> <%= f.object.new_record?? 'Crear evento':'Editar evento'%></i>
           <% end %>
         </div>
       </div>

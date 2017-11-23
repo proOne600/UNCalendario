@@ -1,0 +1,113 @@
+/* line 4, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  height: 6rem;
+}
+/* line 8, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .navbar-brand {
+  height: 4rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: -1.5rem;
+  color: white;
+}
+/* line 14, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .navbar-brand img {
+  height: 5rem;
+  display: inline;
+}
+/* line 18, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .navbar-brand a {
+  color: white;
+}
+/* line 23, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown,
+.navbar-default li {
+  min-width: 20rem;
+}
+/* line 26, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown a,
+.navbar-default li a {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #94B43B;
+  height: 6rem;
+  line-height: 3rem;
+  font-weight: bold;
+}
+/* line 35, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown a:hover,
+.navbar-default .dropdown a:focus,
+.navbar-default li a:hover,
+.navbar-default li a:focus {
+  color: #09323f;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/* line 41, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown #dropdown-search,
+.navbar-default li #dropdown-search {
+  width: 62rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+/* line 47, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown .sidebar-search,
+.navbar-default li .sidebar-search {
+  width: 70rem;
+  background-color: transparent;
+}
+/* line 50, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown .sidebar-search form,
+.navbar-default li .sidebar-search form {
+  margin-bottom: 0;
+}
+/* line 52, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown .sidebar-search form .custom-search-form,
+.navbar-default li .sidebar-search form .custom-search-form {
+  width: 80%;
+}
+/* line 54, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown .sidebar-search form .custom-search-form input[type="text"],
+.navbar-default li .sidebar-search form .custom-search-form input[type="text"] {
+  width: 100%;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+/* line 59, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown .sidebar-search form .custom-search-form button,
+.navbar-default li .sidebar-search form .custom-search-form button {
+  height: 3.4rem;
+  background: #94B43B;
+  border-color: #94B43B;
+}
+/* line 64, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+.navbar-default .dropdown .sidebar-search form .custom-search-form i,
+.navbar-default li .sidebar-search form .custom-search-form i {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 75, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+  .navbar-static-top {
+    position: relative;
+    /* this can also be static */
+    height: auto;
+  }
+
+  /* line 81, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+  .navbar-top-links {
+    height: auto;
+  }
+
+  /* line 85, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+  .navbar-top-links li {
+    height: 5rem;
+  }
+
+  /* line 89, /Users/jdcifuentes/Documents/UNCalendario/UNCalendario/app/assets/stylesheets/navbar.scss */
+  .navbar-top-links li a {
+    height: 5rem;
+    line-height: normal !important;
+  }
+}

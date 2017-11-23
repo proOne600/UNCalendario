@@ -1,53 +1,142 @@
 <div class="row" id="profile">
   <div class="col-md-1">
-  <%= link_to '', edit_user_registration_path(@user), class:"btn btn-basic fa fa-pencil text-white", id:"edit-user-btn", title:"Edita tu perfil"%>.
+    <%= link_to '', edit_user_registration_path(@user), class: "btn btn-basic fa fa-pencil text-white", id: "edit-user-btn", title: "Edita tu perfil" %>
+    .
   </div>
   <div class="col-md-4 profile-information">
-      <div class="profile-header">
-          <div class="profile-avatar">
-            <%= image_tag current_user.avatar.url()  %>
-          </div>
-          <p class="h3 text-uppercase text-white text-center full-name"><%= current_user.name %></p>
-          <p class="h3 text-white text-center username">@baangaritar</p>
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <%= image_tag current_user.avatar.url() %>
       </div>
-      <div class="profile-body">
-          <div class="row">
-            <div class="col-md-6">
-              <p class="pull-left text-white">Correo Electronico</p><br>
-              <p class="pull-left text-white">Fecha de nacimiento</p><br><br>
-              <p class="pull-left text-white">Estudia</p><br><br>
-              <p class="pull-left text-white">Genero</p><br><br>
-              <p class="pull-left text-white">Intereses</p><br>
-            </div>
-            <div class="col-md-6">
-              <p class="pull-right text-white text-right"><%= current_user.email %></p><br>
-              <p class="pull-right text-white text-right"><%= current_user.date_of_birth.strftime("%d - %B - %Y") %></p><br>
-              <p class="pull-right text-white text-right">Ingeniería de Sistemas y computación</p><br>
-              <p class="pull-right text-white text-right"><% if current_user.is_female %>
-                Femenino <% else %> 
+      <p class="h3 text-uppercase text-white text-center full-name"><%= current_user.name %></p>
+      <p class="h3 text-white text-center username">@baangaritar</p>
+    </div>
+    <div class="profile-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="pull-left text-white">Correo Electronico</p><br>
+          <p class="pull-left text-white">Fecha de nacimiento</p><br><br>
+          <p class="pull-left text-white">Estudia</p><br><br>
+          <p class="pull-left text-white">Genero</p><br><br>
+          <p class="pull-left text-white">Intereses</p><br>
+        </div>
+        <div class="col-md-6">
+          <p class="pull-right text-white text-right"><%= current_user.email %></p><br>
+          <p class="pull-right text-white text-right"><%= current_user.date_of_birth.present? ? current_user.date_of_birth.strftime("%d - %B - %Y") : '' %></p>
+          <br>
+          <p class="pull-right text-white text-right">Ingeniería de Sistemas y computación</p><br>
+          <p class="pull-right text-white text-right">
+            <% if current_user.is_female %>
+                Femenino
+            <% else %>
                 Masculino
-                <% end %>
-              </p><br>
-              <p class="pull-right text-white text-right">
-                <ul class="pull-right text-white list-inline text-right" >
-                  <li>Musica</li>
-                  <li>Arte</li>
-                  <li>Literatura</li>
-                  <li>Política</li>
-                </ul>
-              </p>
+            <% end %>
+          </p><br>
+          <p class="pull-right text-white text-right">
+          <ul class="pull-right text-white list-inline text-right">
+            <li>Musica</li>
+            <li>Arte</li>
+            <li>Literatura</li>
+            <li>Política</li>
+          </ul>
+          </p>
 
-            </div>
-          </div>
-           
+        </div>
       </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading text-center">
+        <h3>Favoritos</h3>
+      </div>
+      <div class="chat-panel panel panel-default">
+        <div class="panel-heading">
+          <i class="fa fa-star fa-fw"></i> Tienes <%= @user_favorites.size %> evento(s) marcados como asistiré
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <ul class="chat">
+            <%= render partial: 'suggestions', collection: @user_favorites unless @user_favorites.size == 0 %>
+            <% if @user_favorites.size <= 0 %>
+                <li class="left clearfix">
+                  <span class="chat-img pull-left">
+                    <%= link_to events_path do %>
+                        <% foto = asset_path(rand(9).to_s+'.jpg') %>
+                        <%= image_tag(foto, size: '50') %>
+                    <% end %>
+                  </span>
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <%= link_to 'd' do %>
+                          <strong class="primary-font"><%= 'Descubre algún evento' %></strong>
+                      <% end %>
+                      <small class="pull-right text-muted">
+                        <i class="fa fa-clock-o fa-fw"></i> Comienza ahora
+                      </small>
+                    </div>
+                    <p>
+                      Comienza a explorar entre los cientos de eventos que están publicados, descubre y comparte ...
+                    </p>
+                  </div>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+        <!-- /.panel-body -->
+        <div class="panel-footer">
+        </div>
+        <!-- /.panel-footer -->
+      </div>
+
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-heading text-center">
+        <h3>Mis eventos</h3>
+      </div>
+      <div class="chat-panel panel panel-default">
+        <div class="panel-heading">
+          <i class="fa fa-calendar fa-fw"></i> Has creado <%= @user_events.size %> evento(s)
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <ul class="chat">
+            <%= render partial: 'suggestions', collection: @user_events %>
+            <% if @user_favorites.size <= 0 %>
+                <li class="left clearfix">
+                  <span class="chat-img pull-left">
+                    <%= link_to events_path do %>
+                        <% foto = asset_path(rand(9).to_s+'.jpg') %>
+                        <%= image_tag(foto, size: '50') %>
+                    <% end %>
+                  </span>
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <%= link_to 'd' do %>
+                          <strong class="primary-font"><%= 'Comienza creando tu propio evento' %></strong>
+                      <% end %>
+                      <small class="pull-right text-muted">
+                        <i class="fa fa-clock-o fa-fw"></i> ahora
+                      </small>
+                    </div>
+                    <p>
+                      Comienza creando tu propio evento, compártelo con la comunidad universitaria ...
+                    </p>
+                  </div>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+        <!-- /.panel-body -->
+        <div class="panel-footer">
+        </div>
+        <!-- /.panel-footer -->
+      </div>
+
     </div>
 
   </div>
-    <div class="col-md-6">
-    
-  </div>
-  <div class="col-md-1">
-    
-  </div>
+
 </div>

@@ -39,19 +39,6 @@
             <% end %>
           </p>
 
-          <p>
-            <strong>Hora de inicio:</strong>
-            <% if @event.event_init_hour.present? %>
-                <%= @event.event_init_hour.to_formatted_s(:time) %>
-            <% end %>
-          </p>
-
-          <p>
-            <strong>Hora final:</strong>
-            <% if @event.event_end_hour.present? %>
-                <%= @event.event_end_hour.to_formatted_s(:time) %>
-            <% end %>
-          </p>
 
           <p>
             <strong>Fin del evento :</strong>
@@ -61,7 +48,7 @@
           </p>
           <hr>
 
-          <%= social_share_button_tag(@event.name[0..20].gsub(/\s\w+\s*$/, '...') + ' en ' + time_ago_in_words(@event.event_date) + 'mas detalles en ') %>
+          <%= social_share_button_tag(@event.name[0..20].gsub(/\s\w+\s*$/, '...') + ' en ' + time_ago_in_words(@event.event_date) + '- mas detalles en ') %>
           <hr>
 
           <!-- Mostrar la imagen del evento-->
@@ -100,7 +87,9 @@
             <%= link_to 'edita', edit_event_path(@event), id: "edit", title: "Edita tu evento" %>
             <%= link_to 'elimi', @event, id: "delete", title: "Eliminar", method: :delete, data: {confirm: '¿Estas seguro de querer eliminarlo?'} %>
         <% end %>
-        <%= link_to 'Compartir',event_share_path(@event), id: 'share', title:'Comparte con tus amigos'%>
+        <% if user_signed_in? %>
+          <%= link_to 'Compartir',event_share_path(@event) %>
+        <% end %>
         <%= link_to 'desca', event_path(format: :pdf), id: "download" %>
         <!--< %= form_tag(events_path, method: :get) do %>-->
         <!--    <div class="input-group custom-search-form">-->
