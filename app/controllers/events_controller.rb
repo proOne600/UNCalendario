@@ -15,7 +15,9 @@ class EventsController < ApplicationController
     else
       respond_to do |format|
         format.html {@events = Event.search(params[:term], params[:category], params, true)}
-        format.json {@events = Event.all}
+        format.json {
+          @events = Event.find_between_dates(params[:start], params[:end])
+        }
       end
 
       @size = Event.total_size
