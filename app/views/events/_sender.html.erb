@@ -5,15 +5,15 @@
       <h3 style="text-align:center;">
         <%= @event.name %>
       </h3>
-      <div class="form-group">
+      <div class="form-group text-center">
         
         <%= label_tag 'Destinatarios' %><br/>
         <%= text_area_tag :destinos, params[:destinos],:required => true, class: 'form-control' %>
       </div>
       <br>
-      <div class="row">
-        <div class="col-md-12 center-block">
-          <%= submit_tag 'Enviar correo', class: 'btn btn-lg btn-success center-block' %>
+      <div class="row text-center">
+        <div class="col-md-12 text-center">
+          <%= submit_tag 'Enviar correo', class: 'btn btn-md btn-success' %>
         </div>
       </div>
     <% end -%>

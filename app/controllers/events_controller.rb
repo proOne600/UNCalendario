@@ -25,9 +25,9 @@ class EventsController < ApplicationController
     end
   end
 
-  def view_calendar
-    @events = Event.all
-  end
+  # def view_calendar
+  #   @events = Event.all
+  # end
 
 
   #Verificar usuario y su id
@@ -111,17 +111,17 @@ class EventsController < ApplicationController
 
   end
 
-  def get_pdf
-    send_data generate_pdf(@event),
-              filename: "#{@event.name}.pdf",
-              type: 'application/pdf'
-  end
+  # def get_pdf
+  #   send_data generate_pdf(@event),
+  #             filename: "#{@event.name}.pdf",
+  #             type: 'application/pdf'
+  # end
 
-  def get_events
-    send_data gen_documents(@events),
-              filename: 'Eventos.pdf',
-              type: 'application/pdf'
-  end
+  # def get_events
+  #   send_data gen_documents(@events),
+  #             filename: 'Eventos.pdf',
+  #             type: 'application/pdf'
+  # end
 
 
   #end
@@ -141,23 +141,23 @@ class EventsController < ApplicationController
     end
   end
 
-  def grade(grad)
-    cal[current_user]=grad
-  end
+  # def grade(grad)
+  #   cal[current_user]=grad
+  # end
 
-  @asis=Array.new
+  # @asis=Array.new
 
-  def asistir
-    @asis.push(current_user.id.to_s)
-  end
+  # def asistir
+  #   @asis.push(current_user.id.to_s)
+  # end
 
-  def noasistire
-    @asis.delete(current_user.id.to_s)
-  end
+  # def noasistire
+  #   @asis.delete(current_user.id.to_s)
+  # end
 
-  def dentro?
-    @asis.include?(current_user.id.to_s)
-  end
+  # def dentro?
+  #   @asis.include?(current_user.id.to_s)
+  # end
 
   # DELETE /events/1
   # DELETE /events/1.json
@@ -183,35 +183,35 @@ class EventsController < ApplicationController
     end
   end
 
-  def generate_pdf(event)
-    Prawn::Document.new do
-      text event.name, align: :center
-      text "Descripcion: #{event.description}"
-      text "Categoria: #{Category.find(event.category_id).name}"
-      if event.event_date.present?
-        text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
-      end
-      if event.even_end_date.present?
-        text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
-      end
-    end.render
-  end
+  # def generate_pdf(event)
+  #   Prawn::Document.new do
+  #     text event.name, align: :center
+  #     text "Descripcion: #{event.description}"
+  #     text "Categoria: #{Category.find(event.category_id).name}"
+  #     if event.event_date.present?
+  #       text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
+  #     end
+  #     if event.even_end_date.present?
+  #       text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
+  #     end
+  #   end.render
+  # end
 
-  def gen_documents(eventos)
-    Prawn::Document.new do
-      eventos.each do |event|
-        text event.name, align: :center
-        text "Descripcion: #{event.description}"
-        text "Categoria: #{Category.find(event.category_id).name}"
-        if event.event_date.present?
-          text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
-        end
-        if event.even_end_date.present?
-          text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
-        end
-      end
-    end.render
-  end
+  # def gen_documents(eventos)
+  #   Prawn::Document.new do
+  #     eventos.each do |event|
+  #       text event.name, align: :center
+  #       text "Descripcion: #{event.description}"
+  #       text "Categoria: #{Category.find(event.category_id).name}"
+  #       if event.event_date.present?
+  #         text "Fecha inicio: #{event.event_date.to_formatted_s(:short)}"
+  #       end
+  #       if event.even_end_date.present?
+  #         text "Fecha final: #{event.even_end_date.to_formatted_s(:short)}"
+  #       end
+  #     end
+  #   end.render
+  # end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params

@@ -69,6 +69,14 @@ class Event < ApplicationRecord
   def self.calification(calo)
     self.where(self.reviews.average(:rating).round(2) >= calo)
   end
+  
+  def self.mans_per_event
+    self.joins(:user).where(is_female: false)
+  end
+  
+  # def self.unal_per_event
+  #   self.joins(:user).where("user.email.to_s.split('@').last = ?",  "unal.edu.co").count
+  # end
 
   def self.search(term, category, params, paginate)
     if term
@@ -107,15 +115,7 @@ class Event < ApplicationRecord
 
 # end
 
-###################################################### fin filtro por fecha ##################
 
-# def self.domainUN
-#   self.joins(:user).where("user.email.to_s.split('@').last = ?",  "unal.edu.co")
-# end
-
-# def self.parti
-#   self.where(user.email.to_s.split('@').last !=  'unal.edu.co')
-# end
 
 
 end
