@@ -1,53 +1,57 @@
 <div class="row" id="profile">
   <div class="col-md-1">
-  <%= link_to '', edit_user_registration_path(@user), class:"btn btn-basic fa fa-pencil text-white", id:"edit-user-btn", title:"Edita tu perfil"%>.
+    <%= link_to '', edit_user_registration_path(@user), class: "btn btn-basic fa fa-pencil text-white", id: "edit-user-btn", title: "Edita tu perfil" %>
+    .
   </div>
   <div class="col-md-4 profile-information">
-      <div class="profile-header">
-          <div class="profile-avatar">
-            <%= image_tag current_user.avatar.url()  %>
-          </div>
-          <p class="h3 text-uppercase text-white text-center full-name"><%= current_user.name %></p>
-          <p class="h3 text-white text-center username">@baangaritar</p>
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <%= image_tag current_user.avatar.url() %>
       </div>
-      <div class="profile-body">
-          <div class="row">
-            <div class="col-md-6">
-              <p class="pull-left text-white">Correo Electronico</p><br>
-              <p class="pull-left text-white">Fecha de nacimiento</p><br><br>
-              <p class="pull-left text-white">Estudia</p><br><br>
-              <p class="pull-left text-white">Genero</p><br><br>
-              <p class="pull-left text-white">Intereses</p><br>
-            </div>
-            <div class="col-md-6">
-              <p class="pull-right text-white text-right"><%= current_user.email %></p><br>
-              <p class="pull-right text-white text-right"><%= current_user.date_of_birth.strftime("%d - %B - %Y") %></p><br>
-              <p class="pull-right text-white text-right">Ingeniería de Sistemas y computación</p><br>
-              <p class="pull-right text-white text-right"><% if current_user.is_female %>
-                Femenino <% else %> 
-                Masculino
-                <% end %>
-              </p><br>
-              <p class="pull-right text-white text-right">
-                <ul class="pull-right text-white list-inline text-right" >
-                  <li>Musica</li>
-                  <li>Arte</li>
-                  <li>Literatura</li>
-                  <li>Política</li>
-                </ul>
-              </p>
-
-            </div>
-          </div>
-           
-      </div>
+      <p class="h3 text-uppercase text-white text-center full-name"><%= current_user.name %></p>
+      <p class="h3 text-white text-center username">@baangaritar</p>
     </div>
+    <div class="profile-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="pull-left text-white">Correo Electronico</p><br>
+          <p class="pull-left text-white">Fecha de nacimiento</p><br><br>
+          <p class="pull-left text-white">Estudia</p><br><br>
+          <p class="pull-left text-white">Genero</p><br><br>
+          <p class="pull-left text-white">Intereses</p><br>
+        </div>
+        <div class="col-md-6">
+          <p class="pull-right text-white text-right"><%= current_user.email %></p><br>
+          <p class="pull-right text-white text-right"><%= current_user.date_of_birth.present? ? current_user.date_of_birth.strftime("%d - %B - %Y") : '' %></p>
+          <br>
+          <p class="pull-right text-white text-right">Ingeniería de Sistemas y computación</p><br>
+          <p class="pull-right text-white text-right">
+            <% if current_user.is_female %>
+                Femenino
+            <% else %>
+                Masculino
+            <% end %>
+          </p><br>
+          <p class="pull-right text-white text-right">
+          <ul class="pull-right text-white list-inline text-right">
+            <li>Musica</li>
+            <li>Arte</li>
+            <li>Literatura</li>
+            <li>Política</li>
+          </ul>
+          </p>
 
+        </div>
+      </div>
+
+    </div>
   </div>
-    <div class="col-md-6">
-    
-  </div>
-  <div class="col-md-1">
-    
-  </div>
+
+</div>
+<div class="col-md-6">
+
+</div>
+<div class="col-md-1">
+
+</div>
 </div>
