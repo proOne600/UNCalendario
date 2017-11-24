@@ -29,7 +29,6 @@ $secondary-color: $red-color;
   right: 0;
   margin: 0;
   opacity: 0;
-  -ms-filter: 'alpha(opacity=0)';
   font-size: 200px !important;
   direction: ltr;
   cursor: pointer;
@@ -50,7 +49,6 @@ $secondary-color: $red-color;
   border-radius: 0.5rem;
   margin-left: 2rem;
   border: 1px solid black;
-  background-color: transparent;
   text-align: center;
   float: right;
   outline: none;
@@ -63,7 +61,6 @@ $secondary-color: $red-color;
   border-radius: 0.5rem;
   margin-left: 2rem;
   border: 1px solid black;
-  background-color: transparent;
   text-align: center;
   float: right;
 
@@ -71,7 +68,7 @@ $secondary-color: $red-color;
 
 #map {
   width: 100%;
-  height: 34rem;
+  height: 20rem;
 }
 
 /* Optional: Makes the sample page fill the window. */

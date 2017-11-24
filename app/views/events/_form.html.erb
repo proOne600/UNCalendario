@@ -84,6 +84,10 @@
                       searchBox.setBounds(map.getBounds());
                   });
 
+
+
+
+
                   var markers = [];
                   // Listen for the event fired when the user selects a prediction and retrieve
                   // more details for that place.
@@ -115,6 +119,7 @@
                               scaledSize: new google.maps.Size(25, 25)
                           };
 
+
                           // Create a marker for each place.
                           markers.push(new google.maps.Marker({
                               map: map,
@@ -122,6 +127,7 @@
                               title: place.name,
                               position: place.geometry.location
                           }));
+
 
                           if (place.geometry.viewport) {
                               // Only geocodes have viewport.
@@ -133,6 +139,7 @@
                       map.fitBounds(bounds);
                   });
               }
+
 
           </script>
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL_-qfjE-xEnyhlQ6b76typA86CxqFNU8&libraries=places&callback=initAutocomplete"
@@ -160,7 +167,6 @@
           </div>
         </div>
       </div>
-      <hr>
       <div class="row">
         <div class="col-md-12 center-block">
           <%= button_tag(:class => 'btn btn-lg btn-success center-block') do %>
