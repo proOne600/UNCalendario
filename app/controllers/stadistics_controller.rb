@@ -106,6 +106,7 @@ class StadisticsController < ApplicationController
 	    	@categorias=Category.all
 	    	@num_privates=Event.privates
 	    	@num_publics=Event.publics
+	    	#@num_unal= @events.unal_per_event
 	    	respond_to do |format|
 	       		format.html
 	       		format.json

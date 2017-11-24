@@ -1,6 +1,6 @@
-###Trabajos realizado por cada integrante del grupo #SPRINT 7:
+###Trabajos realizado por cada integrante del grupo #SPRINT 6:
 
-- Miguel Tovar: 
+- Miguel Tovar: Implementacion de compartir a correos determinados.
             
 - Daniel Cifuentes: Refactor querys, estilos buscar, implementación fullcalendar, vista mis eventos, mis favoritos en el perfil, corrección de errores.   
 
